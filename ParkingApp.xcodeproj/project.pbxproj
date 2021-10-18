@@ -22,6 +22,7 @@
 		0DE6794D27160CBB002B0234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6794C27160CBB002B0234 /* Assets.xcassets */; };
 		0DE6795027160CBB002B0234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6794E27160CBB002B0234 /* LaunchScreen.storyboard */; };
 		0DE6795A27160EC7002B0234 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6795927160EC7002B0234 /* LoginViewModel.swift */; };
+		266D263B271DD3BB00409F3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263A271DD3BB00409F3B /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		0DE6794F27160CBB002B0234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DE6795127160CBB002B0234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DE6795927160EC7002B0234 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		266D263A271DD3BB00409F3B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		0DE6795727160E7F002B0234 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				266D263A271DD3BB00409F3B /* ViewController.swift */,
 				0DE6794727160CBA002B0234 /* LoginViewController.swift */,
 				0D5F0CB32716BDA800E05B01 /* NewUserViewController.swift */,
 				0D5F0CB82716BE1400E05B01 /* MainMapViewController.swift */,
@@ -205,6 +208,7 @@
 				0D5F0CBD2716BE7B00E05B01 /* MapDetailViewController.swift in Sources */,
 				0D5F0CB42716BDA800E05B01 /* NewUserViewController.swift in Sources */,
 				0D5F0CC32716BEF600E05B01 /* UserEditViewModel.swift in Sources */,
+				266D263B271DD3BB00409F3B /* ViewController.swift in Sources */,
 				0DE6794627160CBA002B0234 /* SceneDelegate.swift in Sources */,
 				0D5F0CBF2716BE9A00E05B01 /* MapDetailViewModel.swift in Sources */,
 				0D5F0CC12716BED600E05B01 /* UserEditViewController.swift in Sources */,
