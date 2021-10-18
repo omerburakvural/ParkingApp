@@ -23,6 +23,7 @@
 		0DE6795027160CBB002B0234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6794E27160CBB002B0234 /* LaunchScreen.storyboard */; };
 		0DE6795A27160EC7002B0234 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6795927160EC7002B0234 /* LoginViewModel.swift */; };
 		266D263B271DD3BB00409F3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263A271DD3BB00409F3B /* ViewController.swift */; };
+		266D263F271DF65700409F3B /* KeyboardConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263E271DF65700409F3B /* KeyboardConstraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		0DE6795127160CBB002B0234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DE6795927160EC7002B0234 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		266D263A271DD3BB00409F3B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		266D263E271DF65700409F3B /* KeyboardConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConstraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		0DE6794227160CBA002B0234 /* ParkingApp */ = {
 			isa = PBXGroup;
 			children = (
+				266D263E271DF65700409F3B /* KeyboardConstraints.swift */,
 				0DE6794327160CBA002B0234 /* AppDelegate.swift */,
 				0DE6794527160CBA002B0234 /* SceneDelegate.swift */,
 				0DE6794927160CBA002B0234 /* Main.storyboard */,
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5F0CBB2716BE3200E05B01 /* MainMapViewModel.swift in Sources */,
+				266D263F271DF65700409F3B /* KeyboardConstraints.swift in Sources */,
 				0D5F0CB92716BE1400E05B01 /* MainMapViewController.swift in Sources */,
 				0DE6794827160CBA002B0234 /* LoginViewController.swift in Sources */,
 				0DE6794427160CBA002B0234 /* AppDelegate.swift in Sources */,
