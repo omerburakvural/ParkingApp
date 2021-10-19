@@ -3,6 +3,7 @@
 //  ParkingApp
 //
 //  Created by Adem Er on 13.10.2021.
+//test
 //
 
 import UIKit
@@ -61,6 +62,7 @@ class NewUserViewController: UIViewController {
             passwordagainTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
         {
             errorLabel.text = "Lütfen bilgilerinizi giriniz"
+//            bilgiler validasyon edildi
     }
         else
         {
