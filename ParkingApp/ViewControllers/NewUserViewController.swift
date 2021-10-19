@@ -24,25 +24,62 @@ class NewUserViewController: UIViewController {
     @IBOutlet weak var passwordTextbox: UITextField!
     @IBOutlet weak var passwordagainTextbox: UITextField!
     
-    func valideteFields() -> String?
+    @IBOutlet weak var hideButton: UIButton!
+    
+    @IBOutlet weak var hideButton2: UIButton!
+    
+    @IBAction func hideButton(_ sender: Any) {
+        passwordTextbox.isSecureTextEntry.toggle()
+        passwordagainTextbox.isSecureTextEntry.toggle()
+           if passwordTextbox.isSecureTextEntry && passwordagainTextbox.isSecureTextEntry {
+               let image = UIImage(systemName: "eye")
+//                   (sender as AnyObject).setImage(image, for: .normal)
+                   hideButton2.setImage(image, for: .normal)
+                   hideButton.setImage(image, for: .normal)
+                   
+               }
+            else {
+//               if let image = UIImage(systemName: "eye.slash.fill") {
+//                   (sender as AnyObject).setImage(image, for: .normal)
+                let image = UIImage(systemName: "eye.slash.fill")
+ //                   (sender as AnyObject).setImage(image, for: .normal)
+                    hideButton2.setImage(image, for: .normal)
+                    hideButton.setImage(image, for: .normal)
+               }
+           }
+        
+    
+    
+    
+    
+    func valideteFields()
     {
         
-        if adLabel.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || soyadTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        if adTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || soyadTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             epostaTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordagainTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
         {
-        return "please fill"
+            errorLabel.text = "Lütfen bilgilerinizi giriniz"
     }
-     
+        else
+        {
+        errorLabel.text = ""
+        }
         
-        
-return nil
-        
+        if passwordTextbox.text == passwordagainTextbox.text
+        {
+            return
+        }
+        else
+        {
+            errorLabel.text = "Şifreleriniz aynı olmalıdır"
+        }
     }
     @IBAction func kayitButon(_ sender: Any) {
         
-      let email = "example@gmail.com"
+        valideteFields()
+//      let email = "example@gmail.com"
 //        test
 //        let password = "testtest"
 ////        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
@@ -72,16 +109,15 @@ return nil
     }
   
 
-    func showError(_ message:String)
-    {
-//        errorLabel.text = message
-        
-    }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        passwordTextbox.isSecureTextEntry.toggle()
+        passwordagainTextbox.isSecureTextEntry.toggle()
         
+      
         
     }
     
