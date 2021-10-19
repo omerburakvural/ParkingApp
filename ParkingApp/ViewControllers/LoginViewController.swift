@@ -1,17 +1,26 @@
 //
 //  LoginViewController.swift
-//  ParkingApp
+//  LoginWithFullPicture
 //
-//  Created by Omer Burak Vural on 12.10.2021.
+//  Created by PCMACEGITIM on 16.10.2021.
 //
 
 import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var girisButton: UIButton!
+    @IBOutlet weak var cardView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // cardView
+        cardView.layer.cornerRadius = 10.0
+        cardView.layer.shadowOpacity = 0.5
+        cardView.layer.shadowRadius = 10
+        cardView.layer.shadowOffset = CGSize (width: 10, height: 10)
+        // girisButton
+        girisButton.layer.cornerRadius = 10.0
     }
 
 
