@@ -97,6 +97,9 @@
                                                 <state key="normal" title="Üye Ol">
                                                     <color key="titleColor" red="0.18289321659999999" green="0.41205567119999997" blue="0.58041328189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="newUserButtonClicked:" destination="rN4-t7-Elb" eventType="touchUpInside" id="b8y-g1-0LB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pou-mR-xp0">
                                                 <rect key="frame" x="175" y="330" width="180" height="33"/>
@@ -104,6 +107,9 @@
                                                 <state key="normal" title="Üye Olmadan Devam Et">
                                                     <color key="titleColor" red="0.18289321659999999" green="0.41205567119999997" blue="0.58041328189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="noUserButtonClicked:" destination="rN4-t7-Elb" eventType="touchUpInside" id="p4Z-2K-GsE"/>
+                                                </connections>
                                             </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cbv-yX-eX1">
                                                 <rect key="frame" x="306" y="210" width="51" height="31"/>

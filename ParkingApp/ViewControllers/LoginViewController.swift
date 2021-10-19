@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  LoginWithFullPicture
 //
-//  Created by PCMACEGITIM on 16.10.2021.
+//  Created by Zeynep Zincirli on 16.10.2021.
 //
 
 import UIKit
@@ -23,6 +23,16 @@ class LoginViewController: UIViewController {
         girisButton.layer.cornerRadius = 10.0
     }
 
-
+    @IBAction func newUserButtonClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "NewUser", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "newUser") as? NewUserViewController {
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
+        }
+        
+    }
+    
+    @IBAction func noUserButtonClicked(_ sender: Any) {
+    }
 }
 

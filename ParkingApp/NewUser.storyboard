@@ -11,7 +11,7 @@
         <!--New User View Controller-->
         <scene sceneID="vju-Fp-xhx">
             <objects>
-                <viewController id="otX-AA-kiq" customClass="NewUserViewController" customModule="ParkingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newUser" useStoryboardIdentifierAsRestorationIdentifier="YES" id="otX-AA-kiq" customClass="NewUserViewController" customModule="ParkingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bH1-qE-IlH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
