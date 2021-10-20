@@ -29,7 +29,7 @@
         <!--Login View Controller-->
         <scene sceneID="g6Q-Ur-mlF">
             <objects>
-                <viewController id="rN4-t7-Elb" customClass="LoginViewController" customModule="ParkingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" id="rN4-t7-Elb" customClass="LoginViewController" customModule="ParkingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hqE-hG-Yg4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

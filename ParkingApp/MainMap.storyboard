@@ -26,7 +26,11 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Parking App" id="1zs-T1-trI">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="wLl-xJ-EK4"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="wLl-xJ-EK4">
+                                            <connections>
+                                                <action selector="backButtonClicked:" destination="Ez9-g6-wpc" id="bVP-7D-g7g"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="ByG-P1-H2e"/>
                                     </navigationItem>
                                 </items>
