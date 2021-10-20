@@ -4,18 +4,21 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--MainMap View Controller-->
         <scene sceneID="HW2-b2-Tnh">
             <objects>
-                <viewController id="Ez9-g6-wpc" userLabel="MainMap View Controller" customClass="MainMapViewController" customModule="ParkingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainMap" id="Ez9-g6-wpc" userLabel="MainMap View Controller" customClass="MainMapViewController" customModule="ParkingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CAZ-aK-Gcy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" image="trafik1" translatesAutoresizingMaskIntoConstraints="NO" id="aob-5v-uyT">
+                                <rect key="frame" x="-194" y="0.0" width="802" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AO7-mL-xTl">
                                 <rect key="frame" x="18" y="88" width="378" height="774"/>
                             </mapView>
@@ -30,7 +33,7 @@
                             </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VtT-2a-jtn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KAZ-Cp-azi" firstAttribute="top" secondItem="VtT-2a-jtn" secondAttribute="top" id="JEg-Ej-12y"/>
                             <constraint firstItem="AO7-mL-xTl" firstAttribute="bottom" secondItem="VtT-2a-jtn" secondAttribute="bottom" id="QKM-aK-9pm"/>
@@ -50,8 +53,6 @@
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="trafik1" width="657.5" height="370"/>
     </resources>
 </document>

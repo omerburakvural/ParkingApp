@@ -33,6 +33,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func noUserButtonClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "MainMap", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "mainMap") as? MainMapViewController {
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
+        }
     }
 }
 
