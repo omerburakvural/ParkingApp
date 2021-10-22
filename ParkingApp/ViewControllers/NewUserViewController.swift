@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class NewUserViewController: UIViewController {
 
@@ -81,32 +82,32 @@ class NewUserViewController: UIViewController {
     @IBAction func kayitButon(_ sender: Any) {
         
         valideteFields()
-//      let email = "example@gmail.com"
-//        test
-//        let password = "testtest"
-////        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-//
-//            if let error = error as NSError? {
-//            switch AuthErrorCode(rawValue: error.code) {
-//            case .operationNotAllowed: break
-//              // Error: The given sign-in provider is disabled for this Firebase project. Enable it in the Firebase console, under the sign-in method tab of the Auth section.
-//            case .emailAlreadyInUse: break
-//              // Error: The email address is already in use by another account.
-//            case .invalidEmail: break
-//              // Error: The email address is badly formatted.
-//            case .weakPassword: break
-//              // Error: The password must be 6 characters long or more.
-//            default:
-//                print("Error: \(error.localizedDescription)")
-//            }
-//          }
-//
-//          else {
-//            print("User signs up successfully")
-////            let newUserInfo = Auth.auth().currentUser
-////            let email = newUserInfo?.email
-//          }
-//        }
+      let email = "example@gmail.com"
+        
+        let password = "testtest"
+   Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+
+            if let error = error as NSError? {
+            switch AuthErrorCode(rawValue: error.code) {
+            case .operationNotAllowed: break
+              // Error: The given sign-in provider is disabled for this Firebase project. Enable it in the Firebase console, under the sign-in method tab of the Auth section.
+            case .emailAlreadyInUse: break
+              // Error: The email address is already in use by another account.
+            case .invalidEmail: break
+              // Error: The email address is badly formatted.
+            case .weakPassword: break
+              // Error: The password must be 6 characters long or more.
+            default:
+                print("Error: \(error.localizedDescription)")
+            }
+          }
+
+          else {
+            print("User signs up successfully")
+//            let newUserInfo = Auth.auth().currentUser
+//            let email = newUserInfo?.email
+          }
+        }
         
     }
   

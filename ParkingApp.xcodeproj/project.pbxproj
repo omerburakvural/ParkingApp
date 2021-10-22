@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06F66AA8033F53B8273821D4 /* Pods_ParkingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E280B2B4DD782E80C66A25F0 /* Pods_ParkingApp.framework */; };
 		0D5F0CB42716BDA800E05B01 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F0CB32716BDA800E05B01 /* NewUserViewController.swift */; };
 		0D5F0CB62716BDCA00E05B01 /* NewUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F0CB52716BDCA00E05B01 /* NewUserViewModel.swift */; };
 		0D5F0CB92716BE1400E05B01 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F0CB82716BE1400E05B01 /* MainMapViewController.swift */; };
@@ -27,6 +28,7 @@
 		0DEF50D8271F34950024225D /* UserEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF50D7271F34950024225D /* UserEdit.storyboard */; };
 		266D263B271DD3BB00409F3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263A271DD3BB00409F3B /* LoginViewController.swift */; };
 		266D263F271DF65700409F3B /* KeyboardConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263E271DF65700409F3B /* KeyboardConstraints.swift */; };
+		2690C2172722D6EE00982178 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2690C2162722D6EE00982178 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,10 @@
 		0DEF50D7271F34950024225D /* UserEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserEdit.storyboard; sourceTree = "<group>"; };
 		266D263A271DD3BB00409F3B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		266D263E271DF65700409F3B /* KeyboardConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConstraints.swift; sourceTree = "<group>"; };
+		2690C2162722D6EE00982178 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DFCE72DF5C79F2D9AEB578DA /* Pods-ParkingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingApp.release.xcconfig"; path = "Target Support Files/Pods-ParkingApp/Pods-ParkingApp.release.xcconfig"; sourceTree = "<group>"; };
+		E280B2B4DD782E80C66A25F0 /* Pods_ParkingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2339727B765E3B98CA3E887 /* Pods-ParkingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingApp.debug.xcconfig"; path = "Target Support Files/Pods-ParkingApp/Pods-ParkingApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06F66AA8033F53B8273821D4 /* Pods_ParkingApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +94,8 @@
 			children = (
 				0DE6794227160CBA002B0234 /* ParkingApp */,
 				0DE6794127160CBA002B0234 /* Products */,
+				B4830CD7F58D358359FF612F /* Pods */,
+				85FBADBA338CE696FE17299F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +110,7 @@
 		0DE6794227160CBA002B0234 /* ParkingApp */ = {
 			isa = PBXGroup;
 			children = (
+				2690C2162722D6EE00982178 /* GoogleService-Info.plist */,
 				266D263E271DF65700409F3B /* KeyboardConstraints.swift */,
 				0DE6794327160CBA002B0234 /* AppDelegate.swift */,
 				0DE6794527160CBA002B0234 /* SceneDelegate.swift */,
@@ -141,6 +151,24 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		85FBADBA338CE696FE17299F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E280B2B4DD782E80C66A25F0 /* Pods_ParkingApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4830CD7F58D358359FF612F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F2339727B765E3B98CA3E887 /* Pods-ParkingApp.debug.xcconfig */,
+				DFCE72DF5C79F2D9AEB578DA /* Pods-ParkingApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DE6795427160CBB002B0234 /* Build configuration list for PBXNativeTarget "ParkingApp" */;
 			buildPhases = (
+				CBB9457695460FDDD3D95582 /* [CP] Check Pods Manifest.lock */,
 				0DE6793C27160CBA002B0234 /* Sources */,
 				0DE6793D27160CBA002B0234 /* Frameworks */,
 				0DE6793E27160CBA002B0234 /* Resources */,
+				1063231148F1CCA71323B327 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -200,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DE6795027160CBB002B0234 /* LaunchScreen.storyboard in Resources */,
+				2690C2172722D6EE00982178 /* GoogleService-Info.plist in Resources */,
 				0DEF50D3271F34750024225D /* MainMap.storyboard in Resources */,
 				0DEF50D8271F34950024225D /* UserEdit.storyboard in Resources */,
 				0DEF50D5271F34800024225D /* MapDetail.storyboard in Resources */,
@@ -210,6 +241,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1063231148F1CCA71323B327 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ParkingApp/Pods-ParkingApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ParkingApp/Pods-ParkingApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ParkingApp/Pods-ParkingApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBB9457695460FDDD3D95582 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ParkingApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DE6793C27160CBA002B0234 /* Sources */ = {
@@ -372,6 +445,7 @@
 		};
 		0DE6795527160CBB002B0234 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2339727B765E3B98CA3E887 /* Pods-ParkingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -400,6 +474,7 @@
 		};
 		0DE6795627160CBB002B0234 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFCE72DF5C79F2D9AEB578DA /* Pods-ParkingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
