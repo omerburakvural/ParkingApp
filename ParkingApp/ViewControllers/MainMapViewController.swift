@@ -21,6 +21,23 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         checkLocationServices()
     }
     
+    
+    @IBAction func editProfileButtonClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "UserEdit", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "userEdit") as? UserEditViewController {
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
+        }
+    }
+    
+    @IBAction func dummyPinButtonClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "MapDetail", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "mapDetail") as? MapDetailViewController {
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
+        }
+    }
+    
     func setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest

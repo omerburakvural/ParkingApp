@@ -11,7 +11,7 @@
         <!--MapDetail View Controller-->
         <scene sceneID="30O-cE-N9m">
             <objects>
-                <viewController id="mcA-4h-JuF" userLabel="MapDetail View Controller" customClass="MapDetailViewController" customModule="ParkingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapDetail" id="mcA-4h-JuF" userLabel="MapDetail View Controller" customClass="MapDetailViewController" customModule="ParkingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7e1-cb-k8P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

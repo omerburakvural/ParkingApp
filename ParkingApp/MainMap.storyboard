@@ -26,12 +26,23 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Parking App" id="1zs-T1-trI">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="wLl-xJ-EK4">
+                                        <barButtonItem key="leftBarButtonItem" title="backButton" image="chevron.backward" catalog="system" id="wLl-xJ-EK4">
                                             <connections>
                                                 <action selector="backButtonClicked:" destination="Ez9-g6-wpc" id="bVP-7D-g7g"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="ByG-P1-H2e"/>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="editProfileButton" image="person.fill" catalog="system" id="ooJ-ad-VbC">
+                                                <connections>
+                                                    <action selector="editProfileButtonClicked:" destination="Ez9-g6-wpc" id="hGE-um-7rG"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Dummy Pin" id="YWw-5Z-0jU">
+                                                <connections>
+                                                    <action selector="dummyPinButtonClicked:" destination="Ez9-g6-wpc" id="4AM-n4-KQ5"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -59,7 +70,7 @@
     </scenes>
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
-        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="trafik1" width="657.5" height="370"/>
     </resources>
 </document>
