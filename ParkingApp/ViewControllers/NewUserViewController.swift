@@ -8,9 +8,13 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class NewUserViewController: UIViewController {
 
+    
+    var newuserviewmodel = NewUserViewModel()
+    
     @IBOutlet weak var adLabel: UILabel!
     @IBOutlet weak var soyadLabel: UILabel!
     @IBOutlet weak var epostaLabel: UILabel!
@@ -81,12 +85,25 @@ class NewUserViewController: UIViewController {
     }
     @IBAction func kayitButon(_ sender: Any) {
         
-        valideteFields()
-      let email = "example@gmail.com"
+//        valideteFields()
+//        newuserviewmodel.email = "ademers@gmail.com"
         
-        let password = "testtest"
-   Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+//        newuserviewmodel.password = "denemesi123"
+        let name = self.adTextbox.text
+        let surname = self.soyadTextbox.text
+        let email = self.epostaTextbox.text
+        let password = self.passwordTextbox.text
+        
+        newuserviewmodel.email = email
+        newuserviewmodel.password = password
+        newuserviewmodel.name = name
+        newuserviewmodel.usersurname = surname
+      
 
+        
+        Auth.auth().createUser(withEmail: newuserviewmodel.email!, password: newuserviewmodel.password!) { (user, error) in
+
+//            self.errorLabel.text = email
             if let error = error as NSError? {
             switch AuthErrorCode(rawValue: error.code) {
             case .operationNotAllowed: break
@@ -103,7 +120,7 @@ class NewUserViewController: UIViewController {
           }
 
           else {
-            print("User signs up successfully")
+            print("Kayıt başarılı")
 //            let newUserInfo = Auth.auth().currentUser
 //            let email = newUserInfo?.email
           }
@@ -119,7 +136,7 @@ class NewUserViewController: UIViewController {
         
         passwordTextbox.isSecureTextEntry.toggle()
         passwordagainTextbox.isSecureTextEntry.toggle()
-        
+//        errorLabel.text = newuserviewmodel.username
       
         
     }
