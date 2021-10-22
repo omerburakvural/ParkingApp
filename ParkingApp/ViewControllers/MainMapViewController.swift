@@ -56,6 +56,7 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
             centerViewUserLocation()
+            locationManager.startUpdatingLocation()
         @unknown default:
             break
         }
@@ -65,14 +66,15 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.dismiss(animated: true, completion: nil)
     }
     
-}
-
-extension MapDetailViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //
+        guard let location = locations.last else { return }
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        mapView?.setRegion(region, animated: true)
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        //
+        checkLocationAuth()
     }
+    
 }
