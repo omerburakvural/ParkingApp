@@ -19,7 +19,7 @@
                                 <rect key="frame" x="-194" y="0.0" width="802" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AO7-mL-xTl">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AO7-mL-xTl">
                                 <rect key="frame" x="18" y="98" width="378" height="764"/>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAZ-Cp-azi">
@@ -48,6 +48,9 @@
                             <constraint firstItem="AO7-mL-xTl" firstAttribute="leading" secondItem="VtT-2a-jtn" secondAttribute="leading" constant="18" id="wCe-Kp-9f0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="AO7-mL-xTl" id="UMJ-ZT-zpy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAs-7d-wbY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
