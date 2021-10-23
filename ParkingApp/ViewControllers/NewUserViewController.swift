@@ -15,12 +15,14 @@ class NewUserViewController: UIViewController {
     
     var newuserviewmodel = NewUserViewModel()
     
+    @IBOutlet weak var navi: UINavigationItem!
     @IBOutlet weak var adLabel: UILabel!
     @IBOutlet weak var soyadLabel: UILabel!
     @IBOutlet weak var epostaLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var passwrdagainLabel: UILabel!
     
+    @IBOutlet weak var solustbuton: UIBarButtonItem!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var kayitButon: UIButton!
     
@@ -32,7 +34,7 @@ class NewUserViewController: UIViewController {
     
     @IBOutlet weak var hideButton: UIButton!
     
-    @IBOutlet weak var hideButton2: UIButton!
+   
     
     @IBAction func hideButton(_ sender: Any) {
         passwordTextbox.isSecureTextEntry.toggle()
@@ -40,7 +42,7 @@ class NewUserViewController: UIViewController {
            if passwordTextbox.isSecureTextEntry && passwordagainTextbox.isSecureTextEntry {
                let image = UIImage(systemName: "eye")
 //                   (sender as AnyObject).setImage(image, for: .normal)
-                   hideButton2.setImage(image, for: .normal)
+                   
                    hideButton.setImage(image, for: .normal)
                    
                }
@@ -49,7 +51,7 @@ class NewUserViewController: UIViewController {
 //                   (sender as AnyObject).setImage(image, for: .normal)
                 let image = UIImage(systemName: "eye.slash.fill")
  //                   (sender as AnyObject).setImage(image, for: .normal)
-                    hideButton2.setImage(image, for: .normal)
+                   
                     hideButton.setImage(image, for: .normal)
                }
            }
@@ -57,6 +59,9 @@ class NewUserViewController: UIViewController {
     
     
     
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func valideteFields()
     {
