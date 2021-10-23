@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 class LoginViewController: UIViewController {
 
+    //deneme
     @IBOutlet weak var girisButton: UIButton!
     @IBOutlet weak var cardView: UIView!
     override func viewDidLoad() {
