@@ -11,6 +11,8 @@ import CoreLocation
 
 class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
+    var viewModel = MainMapViewModel()
+    
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
@@ -91,9 +93,9 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             break
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
+            checkForRegion()
             centerViewUserLocation()
             locationManager.startUpdatingLocation()
-            checkForRegion()
         @unknown default:
             break
         }
