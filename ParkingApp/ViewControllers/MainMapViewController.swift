@@ -15,7 +15,7 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     let locationManager = CLLocationManager()
     let visibleRadiusForUser: Double = 2000.0
-    let regionRadius: Double = 8000.0
+    let regionRadius: Double = 10000.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +76,7 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         case .denied:
             mapView.showsUserLocation = false
             centerGeneralArea()
-            let deniedAlert = UIAlertController(title: "Uyarı!!!", message: "Konum izniniz olmadığı için sadece haritadan kayıtlı otoparkları görüntüleyebilirsiniz.", preferredStyle: .alert)
+            let deniedAlert = UIAlertController(title: "Uyarı!!!", message: "Konum izniniz olmadığı için sadece haritadan kayıtlı otoparkları görüntüleyebiliyoruz. Rota oluşturma ve yakın çevre görüntüleme hizmetlerini ne yazık ki sunamıyoruz.", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Tamam", style: .default, handler: { (action) -> Void in
                  print("Ok button tapped")
               })
