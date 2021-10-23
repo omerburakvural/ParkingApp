@@ -49,7 +49,12 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             setupLocationManager()
             checkLocationAuth()
         }else{
-            // show alert to user for enabling location services
+            let locationServiceAlert = UIAlertController(title: "Uyarı!!!", message: "Konum servisiniz kapalı olduğu için sadece haritadan kayıtlı otoparkları görüntüleyebiliyoruz. Rota oluşturma ve yakın çevre görüntüleme hizmetlerini ne yazık ki sunamıyoruz.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Tamam", style: .default, handler: { (action) -> Void in
+                 print("Ok button tapped")
+              })
+            locationServiceAlert.addAction(ok)
+            self.present(locationServiceAlert, animated: true, completion: nil)
         }
     }
     
@@ -68,7 +73,7 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     func checkLocationAuth(){
         switch CLLocationManager.authorizationStatus(){
-            
+
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
         case .restricted:
@@ -88,8 +93,27 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             mapView.showsUserLocation = true
             centerViewUserLocation()
             locationManager.startUpdatingLocation()
+            checkForRegion()
         @unknown default:
             break
+        }
+    }
+    
+    func checkForRegion(){
+        let location = CLLocationCoordinate2D(latitude: 41.013393, longitude: 29.047944)
+        let region = CLCircularRegion(center: location, radius: regionRadius, identifier: "")
+        if let location = locationManager.location?.coordinate{
+            if (region.contains(location)){
+            
+            }else{
+//                user is out of service area
+                let locationServiceAlert = UIAlertController(title: "Uyarı!!!", message: "Hizmet bölgesi dışındasınız. Haritadan hizmet bölgesi içerisinde bulunan otoparkları seçip rota oluşturabilirsiniz.", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "Tamam", style: .default, handler: { (action) -> Void in
+                     print("Ok button tapped")
+                  })
+                locationServiceAlert.addAction(ok)
+                self.present(locationServiceAlert, animated: true, completion: nil)
+            }
         }
     }
 
