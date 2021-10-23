@@ -14,7 +14,8 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
-    let regionRadius: Double = 2000.0
+    let visibleRadiusForUser: Double = 2000.0
+    let regionRadius: Double = 8000.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,9 +55,15 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     func centerViewUserLocation(){
         if let location = locationManager.location?.coordinate{
-            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: visibleRadiusForUser, longitudinalMeters: visibleRadiusForUser)
             mapView.setRegion(region, animated: true)
         }
+    }
+    
+    func centerGeneralArea(){
+        let location = CLLocationCoordinate2D(latitude: 41.013393, longitude: 29.047944)
+        let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        mapView.setRegion(region, animated: true)
     }
     
     func checkLocationAuth(){
@@ -67,7 +74,14 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         case .restricted:
             break
         case .denied:
-            break
+            mapView.showsUserLocation = false
+            centerGeneralArea()
+            let deniedAlert = UIAlertController(title: "Uyarı!!!", message: "Konum izniniz olmadığı için sadece haritadan kayıtlı otoparkları görüntüleyebilirsiniz.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Tamam", style: .default, handler: { (action) -> Void in
+                 print("Ok button tapped")
+              })
+            deniedAlert.addAction(ok)
+            self.present(deniedAlert, animated: true, completion: nil)
         case .authorizedAlways:
             break
         case .authorizedWhenInUse:
