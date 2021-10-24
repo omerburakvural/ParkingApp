@@ -20,7 +20,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AO7-mL-xTl">
-                                <rect key="frame" x="18" y="98" width="378" height="764"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="806"/>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAZ-Cp-azi">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -31,18 +31,11 @@
                                                 <action selector="backButtonClicked:" destination="Ez9-g6-wpc" id="bVP-7D-g7g"/>
                                             </connections>
                                         </barButtonItem>
-                                        <rightBarButtonItems>
-                                            <barButtonItem title="editProfileButton" image="person.fill" catalog="system" id="ooJ-ad-VbC">
-                                                <connections>
-                                                    <action selector="editProfileButtonClicked:" destination="Ez9-g6-wpc" id="hGE-um-7rG"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="Dummy Pin" id="YWw-5Z-0jU">
-                                                <connections>
-                                                    <action selector="dummyPinButtonClicked:" destination="Ez9-g6-wpc" id="4AM-n4-KQ5"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </rightBarButtonItems>
+                                        <barButtonItem key="rightBarButtonItem" title="editProfileButton" image="person.fill" catalog="system" id="ooJ-ad-VbC">
+                                            <connections>
+                                                <action selector="editProfileButtonClicked:" destination="Ez9-g6-wpc" id="hGE-um-7rG"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -51,12 +44,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KAZ-Cp-azi" firstAttribute="top" secondItem="VtT-2a-jtn" secondAttribute="top" id="JEg-Ej-12y"/>
-                            <constraint firstItem="AO7-mL-xTl" firstAttribute="bottom" secondItem="VtT-2a-jtn" secondAttribute="bottom" id="QKM-aK-9pm"/>
+                            <constraint firstItem="AO7-mL-xTl" firstAttribute="bottom" secondItem="CAZ-aK-Gcy" secondAttribute="bottom" id="QKM-aK-9pm"/>
                             <constraint firstItem="KAZ-Cp-azi" firstAttribute="leading" secondItem="VtT-2a-jtn" secondAttribute="leading" id="cHw-SO-Fsc"/>
-                            <constraint firstItem="VtT-2a-jtn" firstAttribute="trailing" secondItem="AO7-mL-xTl" secondAttribute="trailing" constant="18" id="eDI-6T-yV5"/>
-                            <constraint firstItem="AO7-mL-xTl" firstAttribute="top" secondItem="KAZ-Cp-azi" secondAttribute="bottom" constant="10" id="hMi-jG-mQu"/>
+                            <constraint firstItem="VtT-2a-jtn" firstAttribute="trailing" secondItem="AO7-mL-xTl" secondAttribute="trailing" id="eDI-6T-yV5"/>
+                            <constraint firstItem="AO7-mL-xTl" firstAttribute="top" secondItem="KAZ-Cp-azi" secondAttribute="bottom" constant="2" id="hMi-jG-mQu"/>
                             <constraint firstItem="KAZ-Cp-azi" firstAttribute="trailing" secondItem="VtT-2a-jtn" secondAttribute="trailing" id="w7D-oa-p0A"/>
-                            <constraint firstItem="AO7-mL-xTl" firstAttribute="leading" secondItem="VtT-2a-jtn" secondAttribute="leading" constant="18" id="wCe-Kp-9f0"/>
+                            <constraint firstItem="AO7-mL-xTl" firstAttribute="leading" secondItem="VtT-2a-jtn" secondAttribute="leading" id="wCe-Kp-9f0"/>
                         </constraints>
                     </view>
                     <connections>

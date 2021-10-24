@@ -18,24 +18,53 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     let locationManager = CLLocationManager()
     let visibleRadiusForUser: Double = 2000.0
     let regionRadius: Double = 10000.0
+    let coordinate = CLLocationCoordinate2D(latitude: 41.033393, longitude: 29.047944)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         checkLocationServices()
+        addCustomPin()
     }
     
+    func addCustomPin(){
+        let pin = MKPointAnnotation()
+        pin.coordinate = coordinate
+        pin.title = "Otopark"
+        mapView.addAnnotation(pin)
+    }
     
-    @IBAction func editProfileButtonClicked(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "UserEdit", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "userEdit") as? UserEditViewController {
-            vc.modalPresentationStyle = .fullScreen
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else{
+            return nil
+        }
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "custom")
+        
+        if annotationView == nil {
+            //create view
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+            annotationView?.canShowCallout = true
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }else {
+            annotationView?.annotation = annotation
+        }
+    
+        annotationView?.image = UIImage(named: "mapPin")
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let storyboard = UIStoryboard(name: "MapDetail", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "mapDetail") as? MapDetailViewController {
+            vc.modalPresentationStyle = .popover
             self.present(vc, animated: false, completion: nil)
         }
     }
     
-    @IBAction func dummyPinButtonClicked(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "MapDetail", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "mapDetail") as? MapDetailViewController {
+    @IBAction func editProfileButtonClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "UserEdit", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "userEdit") as? UserEditViewController {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: false, completion: nil)
         }
