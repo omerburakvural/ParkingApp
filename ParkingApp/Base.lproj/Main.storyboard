@@ -177,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lHc-CZ-824" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="459" y="90"/>
+            <point key="canvasLocation" x="457.97101449275368" y="89.732142857142847"/>
         </scene>
         <!--Password Reset Controller-->
         <scene sceneID="zwu-by-vfp">
@@ -203,7 +203,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0i-kt-tlH">
-                                                <rect key="frame" x="18" y="151" width="337" height="34"/>
+                                                <rect key="frame" x="18" y="151" width="337" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="4Oi-lx-s0w"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -212,7 +215,7 @@
                                                 <color key="backgroundColor" red="0.055864840749999999" green="0.41565477849999999" blue="0.59610098600000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Giriş">
+                                                <buttonConfiguration key="configuration" style="plain" title="Gönder">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -272,6 +275,8 @@
                     </view>
                     <connections>
                         <outlet property="emailAddressTextField" destination="v0i-kt-tlH" id="stV-zu-UNM"/>
+                        <outlet property="passwordView" destination="2dz-mW-C6H" id="Wea-gA-hKu"/>
+                        <outlet property="yenileButton" destination="M05-VR-cru" id="TTe-7H-n6y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mp9-g8-72e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
