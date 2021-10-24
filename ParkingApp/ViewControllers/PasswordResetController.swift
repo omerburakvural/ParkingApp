@@ -16,6 +16,9 @@ class PasswordResetController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func sendButtonTapped(_ sender: Any) {
         
         let auth = Auth.auth()
