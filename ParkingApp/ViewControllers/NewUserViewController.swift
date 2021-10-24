@@ -15,12 +15,7 @@ class NewUserViewController: UIViewController {
     
     var newuserviewmodel = NewUserViewModel()
     
-    @IBOutlet weak var navi: UINavigationItem!
-    @IBOutlet weak var adLabel: UILabel!
-    @IBOutlet weak var soyadLabel: UILabel!
-    @IBOutlet weak var epostaLabel: UILabel!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var passwrdagainLabel: UILabel!
+
     
     @IBOutlet weak var solustbuton: UIBarButtonItem!
     @IBOutlet weak var errorLabel: UILabel!
@@ -34,14 +29,14 @@ class NewUserViewController: UIViewController {
     
     @IBOutlet weak var hideButton: UIButton!
     
-   
+    
     
     @IBAction func hideButton(_ sender: Any) {
         passwordTextbox.isSecureTextEntry.toggle()
         passwordagainTextbox.isSecureTextEntry.toggle()
            if passwordTextbox.isSecureTextEntry && passwordagainTextbox.isSecureTextEntry {
                let image = UIImage(systemName: "eye")
-//                   (sender as AnyObject).setImage(image, for: .normal)
+
                    
                    hideButton.setImage(image, for: .normal)
                    
@@ -57,13 +52,12 @@ class NewUserViewController: UIViewController {
            }
         
     
-    
-    
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func valideteFields()
+  func valideteFields() -> String
+//    func valideteFields()
     {
         
         if adTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || soyadTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
@@ -77,24 +71,36 @@ class NewUserViewController: UIViewController {
         else
         {
         errorLabel.text = ""
+            if passwordTextbox.text == passwordagainTextbox.text
+//                password verisinin iki kutucukta da aynı olup olmadığı kontrol edildi
+            {
+                
+                return "problem bulunmuyor"
+            }
+            else
+            {
+                errorLabel.text = "Şifreleriniz aynı olmalıdır"
+               return "problem mevcut"
+            }
         }
         
-        if passwordTextbox.text == passwordagainTextbox.text
-        {
-            return
-        }
-        else
-        {
-            errorLabel.text = "Şifreleriniz aynı olmalıdır"
-        }
-        
-        
-       
-        
+       return "deger"
     }
+    
     @IBAction func kayitButon(_ sender: Any) {
         
-    valideteFields()
+     
+        valideteFields()
+        
+        let durum = valideteFields()
+//        fonksiyondan dönen değer değişkene alındı
+        if durum == "problem mevcut"
+        {
+     
+        }
+        if durum == "problem bulunmuyor"
+//            fonksiyon validasyonu sorunsuz olarak bitirdi ise sign-up işlemi başlatılıyor
+        {
 
         let name = self.adTextbox.text
         let surname = self.soyadTextbox.text
@@ -109,35 +115,77 @@ class NewUserViewController: UIViewController {
 
         
         Auth.auth().createUser(withEmail: newuserviewmodel.email!, password: newuserviewmodel.password!) { (user, error) in
+//email ve password değerleri ile, firebase'e auth kaydı yapılıyor
 
-     //            self.errorLabel.text = email
-                 if let error = error as NSError? {
-                 switch AuthErrorCode(rawValue: error.code) {
-                 case .operationNotAllowed: break
-                   // Error: The given sign-in provider is disabled for this Firebase project. Enable it in the Firebase console, under the sign-in method tab of the Auth section.
-                 case .emailAlreadyInUse: break
-                   // Error: The email address is already in use by another account.
-                 case .invalidEmail: break
-                   // Error: The email address is badly formatted.
-                 case .weakPassword: break
-                   // Error: The password must be 6 characters long or more.
-                 default:
-                     print("Error: \(error.localizedDescription)")
-                 }
-               }
 
-               else {
-                 print("Kayıt başarılı")
-     //            let newUserInfo = Auth.auth().currentUser
-     //            let email = newUserInfo?.email
-               }
+            if let error = error {
+
+                  if let errCode = AuthErrorCode(rawValue: error._code) {
+
+                       alertUser(of: errCode)
+                  }
+              }
+            else
+            {
+               
+//                kayıt başarılı olmuştur
+//                alert verilerek ana sayfaya yönlendirileceği bilgisi aktarıldı
+// karmaşa yaşamaması için 2 saniye burada beklenerek harita sayfasına devam ettirildi.
+                
+                let alert = UIAlertController(title: "Kayıt tamamlandı", message: "İşlem başarılı. 2 saniye içinde ana sayfaya yönlendiriliyorsunuz", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+                self.errorLabel.text = "Kayıt Başarılı. Ana sayfaya yönlendiriliyorsunuz"
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    let storyboard = UIStoryboard(name: "MainMap", bundle: nil)
+                    if let vc = storyboard.instantiateViewController(withIdentifier: "mainMap") as? MainMapViewController {
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: false, completion: nil)
+
+                    }
+                }
+
+            }
+            
+          }
+
+          func alertUser(of errorCode: AuthErrorCode) {
+              
+              switch errorCode {
+                  
+             
+              case .appVerificationUserInteractionFailure:
+                  errorLabel.text = "Uygulamada teknik problem mevcut"
+//                  Uygulamanın Firebase'de doğrulanmaması
+              case .emailAlreadyInUse:
+                  errorLabel.text = "Lütfen başka e-posta adresi ile kaydolunuz"
+//                  E-mail'in yeniden kaydolmaya çalışması
+              case .internalError:
+                  errorLabel.text = "Uygulamada teknik problem mevcut"
+//                  Internal Error
+              case .invalidEmail:
+                  errorLabel.text = "Geçersiz e-mail adresi"
+//                  Yanlış e-mail girişi
+              case .keychainError:
+                  print("Keychain Hatası")
+              case .networkError:
+                  errorLabel.text = "Lütfen internet bağlantınızı kontrol ediniz"
+              case .weakPassword:
+                  errorLabel.text = "Zayıf şifre. Lütfen 6 karakterden fazla şifre giriniz"
+              default:
+                  errorLabel.text = "Bilinmeyen hata"
+              }
+            
+    
              }
              
          }
+        
+        return
     
-  
-
-   
+ }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
