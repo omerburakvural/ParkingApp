@@ -8,9 +8,10 @@
 import UIKit
 import MapKit
 import CoreLocation
+import MaterialComponents
 
 class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-
+    
     var viewModel = MainMapViewModel()
     
     @IBOutlet weak var mapView: MKMapView!
@@ -49,7 +50,7 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }else {
             annotationView?.annotation = annotation
         }
-    
+        
         annotationView?.image = UIImage(named: "mapPin")
         return annotationView
     }
@@ -58,7 +59,8 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         let storyboard = UIStoryboard(name: "MapDetail", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "mapDetail") as? MapDetailViewController {
             vc.modalPresentationStyle = .popover
-            self.present(vc, animated: false, completion: nil)
+            let bottomSheet = MDCBottomSheetController(contentViewController: vc)
+            self.present(bottomSheet, animated: false, completion: nil)
         }
     }
     
@@ -82,8 +84,8 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }else{
             let locationServiceAlert = UIAlertController(title: "Uyarı!!!", message: "Konum servisiniz kapalı olduğu için sadece haritadan kayıtlı otoparkları görüntüleyebiliyoruz. Rota oluşturma ve yakın çevre görüntüleme hizmetlerini ne yazık ki sunamıyoruz.", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Tamam", style: .default, handler: { (action) -> Void in
-                 print("Ok button tapped")
-              })
+                print("Ok button tapped")
+            })
             locationServiceAlert.addAction(ok)
             self.present(locationServiceAlert, animated: true, completion: nil)
         }
@@ -104,7 +106,7 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     func checkLocationAuth(){
         switch CLLocationManager.authorizationStatus(){
-
+            
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
         case .restricted:
@@ -114,8 +116,8 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             centerGeneralArea()
             let deniedAlert = UIAlertController(title: "Uyarı!!!", message: "Konum izniniz olmadığı için sadece haritadan kayıtlı otoparkları görüntüleyebiliyoruz. Rota oluşturma ve yakın çevre görüntüleme hizmetlerini ne yazık ki sunamıyoruz.", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Tamam", style: .default, handler: { (action) -> Void in
-                 print("Ok button tapped")
-              })
+                print("Ok button tapped")
+            })
             deniedAlert.addAction(ok)
             self.present(deniedAlert, animated: true, completion: nil)
         case .authorizedAlways:
@@ -135,19 +137,19 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         let region = CLCircularRegion(center: location, radius: regionRadius, identifier: "")
         if let location = locationManager.location?.coordinate{
             if (region.contains(location)){
-            
+                
             }else{
-//                user is out of service area
+                //                user is out of service area
                 let locationServiceAlert = UIAlertController(title: "Uyarı!!!", message: "Hizmet bölgesi dışındasınız. Haritadan hizmet bölgesi içerisinde bulunan otoparkları seçip rota oluşturabilirsiniz.", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "Tamam", style: .default, handler: { (action) -> Void in
-                     print("Ok button tapped")
-                  })
+                    print("Ok button tapped")
+                })
                 locationServiceAlert.addAction(ok)
                 self.present(locationServiceAlert, animated: true, completion: nil)
             }
         }
     }
-
+    
     @IBAction func backButtonClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
