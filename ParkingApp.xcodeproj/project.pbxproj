@@ -28,6 +28,7 @@
 		0DEF50D8271F34950024225D /* UserEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF50D7271F34950024225D /* UserEdit.storyboard */; };
 		266D263B271DD3BB00409F3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263A271DD3BB00409F3B /* LoginViewController.swift */; };
 		266D263F271DF65700409F3B /* KeyboardConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263E271DF65700409F3B /* KeyboardConstraints.swift */; };
+		266D26412725B26D00409F3B /* PasswordResetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D26402725B26D00409F3B /* PasswordResetController.swift */; };
 		2690C2172722D6EE00982178 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2690C2162722D6EE00982178 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		0DEF50D7271F34950024225D /* UserEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserEdit.storyboard; sourceTree = "<group>"; };
 		266D263A271DD3BB00409F3B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		266D263E271DF65700409F3B /* KeyboardConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConstraints.swift; sourceTree = "<group>"; };
+		266D26402725B26D00409F3B /* PasswordResetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetController.swift; sourceTree = "<group>"; };
 		2690C2162722D6EE00982178 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DFCE72DF5C79F2D9AEB578DA /* Pods-ParkingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingApp.release.xcconfig"; path = "Target Support Files/Pods-ParkingApp/Pods-ParkingApp.release.xcconfig"; sourceTree = "<group>"; };
 		E280B2B4DD782E80C66A25F0 /* Pods_ParkingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 				0D5F0CB82716BE1400E05B01 /* MainMapViewController.swift */,
 				0D5F0CBC2716BE7B00E05B01 /* MapDetailViewController.swift */,
 				0D5F0CC02716BED600E05B01 /* UserEditViewController.swift */,
+				266D26402725B26D00409F3B /* PasswordResetController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -165,7 +168,6 @@
 				F2339727B765E3B98CA3E887 /* Pods-ParkingApp.debug.xcconfig */,
 				DFCE72DF5C79F2D9AEB578DA /* Pods-ParkingApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -291,6 +293,7 @@
 			files = (
 				0D5F0CBB2716BE3200E05B01 /* MainMapViewModel.swift in Sources */,
 				266D263F271DF65700409F3B /* KeyboardConstraints.swift in Sources */,
+				266D26412725B26D00409F3B /* PasswordResetController.swift in Sources */,
 				0D5F0CB92716BE1400E05B01 /* MainMapViewController.swift in Sources */,
 				0DE6794427160CBA002B0234 /* AppDelegate.swift in Sources */,
 				0D5F0CB62716BDCA00E05B01 /* NewUserViewModel.swift in Sources */,

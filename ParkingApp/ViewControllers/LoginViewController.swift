@@ -12,6 +12,8 @@ class LoginViewController: UIViewController {
     //deneme
     @IBOutlet weak var girisButton: UIButton!
     @IBOutlet weak var cardView: UIView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,8 +24,13 @@ class LoginViewController: UIViewController {
         cardView.layer.shadowOffset = CGSize (width: 10, height: 10)
         // girisButton
         girisButton.layer.cornerRadius = 10.0
-    }
 
+        
+    }
+    
+    
+
+    
     @IBAction func newUserButtonClicked(_ sender: Any) {
         let storyboard = UIStoryboard(name: "NewUser", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "newUser") as? NewUserViewController {
@@ -40,5 +47,14 @@ class LoginViewController: UIViewController {
             self.present(vc, animated: false, completion: nil)
         }
     }
+    
+    @IBAction func forgotPasswordClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "passwordMain") as? PasswordResetController {
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
+        }
+    }
+    
 }
 
