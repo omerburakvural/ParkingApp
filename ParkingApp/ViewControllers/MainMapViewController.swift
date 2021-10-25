@@ -58,15 +58,14 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let storyboard = UIStoryboard(name: "MapDetail", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "mapDetail") as? MapDetailViewController {
-            vc.modalPresentationStyle = .popover
             let bottomSheet = MDCBottomSheetController(contentViewController: vc)
-            self.present(bottomSheet, animated: false, completion: nil)
+            self.present(bottomSheet, animated: true, completion: nil)
         }
     }
     
     @IBAction func editProfileButtonClicked(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "UserEdit", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "userEdit") as? UserEditViewController {
+        let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "userDetail") as? UserViewController {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: false, completion: nil)
         }

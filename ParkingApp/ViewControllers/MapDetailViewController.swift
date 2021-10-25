@@ -11,6 +11,7 @@ class MapDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layer.cornerRadius = 15.0
         // Do any additional setup after loading the view.
     }
 

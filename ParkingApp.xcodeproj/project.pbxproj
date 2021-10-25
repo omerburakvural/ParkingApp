@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		06F66AA8033F53B8273821D4 /* Pods_ParkingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E280B2B4DD782E80C66A25F0 /* Pods_ParkingApp.framework */; };
+		0D3F8AF827269BEC0082261C /* UserDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F8AF427269BEB0082261C /* UserDetailCell.swift */; };
+		0D3F8AF927269BEC0082261C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F8AF527269BEC0082261C /* UserViewController.swift */; };
+		0D3F8AFA27269BEC0082261C /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F8AF627269BEC0082261C /* UserDetailViewModel.swift */; };
+		0D3F8AFB27269BEC0082261C /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F8AF727269BEC0082261C /* UserCellViewModel.swift */; };
+		0D3F8AFD27269C060082261C /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3F8AFC27269C050082261C /* UserDetail.storyboard */; };
 		0D5F0CB42716BDA800E05B01 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F0CB32716BDA800E05B01 /* NewUserViewController.swift */; };
 		0D5F0CB62716BDCA00E05B01 /* NewUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F0CB52716BDCA00E05B01 /* NewUserViewModel.swift */; };
 		0D5F0CB92716BE1400E05B01 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F0CB82716BE1400E05B01 /* MainMapViewController.swift */; };
 		0D5F0CBB2716BE3200E05B01 /* MainMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F0CBA2716BE3200E05B01 /* MainMapViewModel.swift */; };
 		0D5F0CBD2716BE7B00E05B01 /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F0CBC2716BE7B00E05B01 /* MapDetailViewController.swift */; };
 		0D5F0CBF2716BE9A00E05B01 /* MapDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F0CBE2716BE9A00E05B01 /* MapDetailViewModel.swift */; };
-		0D5F0CC12716BED600E05B01 /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F0CC02716BED600E05B01 /* UserEditViewController.swift */; };
-		0D5F0CC32716BEF600E05B01 /* UserEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F0CC22716BEF600E05B01 /* UserEditViewModel.swift */; };
 		0DE6794427160CBA002B0234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6794327160CBA002B0234 /* AppDelegate.swift */; };
 		0DE6794627160CBA002B0234 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6794527160CBA002B0234 /* SceneDelegate.swift */; };
 		0DE6794B27160CBA002B0234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6794927160CBA002B0234 /* Main.storyboard */; };
@@ -25,7 +28,6 @@
 		0DEF50D1271F34650024225D /* NewUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF50D0271F34650024225D /* NewUser.storyboard */; };
 		0DEF50D3271F34750024225D /* MainMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF50D2271F34750024225D /* MainMap.storyboard */; };
 		0DEF50D5271F34800024225D /* MapDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF50D4271F34800024225D /* MapDetail.storyboard */; };
-		0DEF50D8271F34950024225D /* UserEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF50D7271F34950024225D /* UserEdit.storyboard */; };
 		266D263B271DD3BB00409F3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263A271DD3BB00409F3B /* LoginViewController.swift */; };
 		266D263F271DF65700409F3B /* KeyboardConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263E271DF65700409F3B /* KeyboardConstraints.swift */; };
 		266D26412725B26D00409F3B /* PasswordResetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D26402725B26D00409F3B /* PasswordResetController.swift */; };
@@ -33,14 +35,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D3F8AF427269BEB0082261C /* UserDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailCell.swift; sourceTree = "<group>"; };
+		0D3F8AF527269BEC0082261C /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		0D3F8AF627269BEC0082261C /* UserDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		0D3F8AF727269BEC0082261C /* UserCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
+		0D3F8AFC27269C050082261C /* UserDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = UserDetail.storyboard; path = ParkingApp/UserDetail.storyboard; sourceTree = SOURCE_ROOT; };
 		0D5F0CB32716BDA800E05B01 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		0D5F0CB52716BDCA00E05B01 /* NewUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewModel.swift; sourceTree = "<group>"; };
 		0D5F0CB82716BE1400E05B01 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		0D5F0CBA2716BE3200E05B01 /* MainMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewModel.swift; sourceTree = "<group>"; };
 		0D5F0CBC2716BE7B00E05B01 /* MapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
 		0D5F0CBE2716BE9A00E05B01 /* MapDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewModel.swift; sourceTree = "<group>"; };
-		0D5F0CC02716BED600E05B01 /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
-		0D5F0CC22716BEF600E05B01 /* UserEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewModel.swift; sourceTree = "<group>"; };
 		0DE6794027160CBA002B0234 /* ParkingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE6794327160CBA002B0234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DE6794527160CBA002B0234 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +57,6 @@
 		0DEF50D0271F34650024225D /* NewUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewUser.storyboard; sourceTree = "<group>"; };
 		0DEF50D2271F34750024225D /* MainMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMap.storyboard; sourceTree = "<group>"; };
 		0DEF50D4271F34800024225D /* MapDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapDetail.storyboard; sourceTree = "<group>"; };
-		0DEF50D7271F34950024225D /* UserEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserEdit.storyboard; sourceTree = "<group>"; };
 		266D263A271DD3BB00409F3B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		266D263E271DF65700409F3B /* KeyboardConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConstraints.swift; sourceTree = "<group>"; };
 		266D26402725B26D00409F3B /* PasswordResetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3F8AFE2726A1730082261C /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				0D3F8AF427269BEB0082261C /* UserDetailCell.swift */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
 		0D5B0B492716116A00453186 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,10 +131,11 @@
 				0DE6794927160CBA002B0234 /* Main.storyboard */,
 				0DEF50D0271F34650024225D /* NewUser.storyboard */,
 				0DEF50D2271F34750024225D /* MainMap.storyboard */,
-				0DEF50D7271F34950024225D /* UserEdit.storyboard */,
 				0DEF50D4271F34800024225D /* MapDetail.storyboard */,
+				0D3F8AFC27269C050082261C /* UserDetail.storyboard */,
 				0DE6795727160E7F002B0234 /* ViewControllers */,
 				0DE6795827160E91002B0234 /* ViewModels */,
+				0D3F8AFE2726A1730082261C /* TableCell */,
 				0D5B0B4A271611E000453186 /* Extensions */,
 				0D5B0B492716116A00453186 /* Other */,
 			);
@@ -135,8 +148,8 @@
 				266D263A271DD3BB00409F3B /* LoginViewController.swift */,
 				0D5F0CB32716BDA800E05B01 /* NewUserViewController.swift */,
 				0D5F0CB82716BE1400E05B01 /* MainMapViewController.swift */,
+				0D3F8AF527269BEC0082261C /* UserViewController.swift */,
 				0D5F0CBC2716BE7B00E05B01 /* MapDetailViewController.swift */,
-				0D5F0CC02716BED600E05B01 /* UserEditViewController.swift */,
 				266D26402725B26D00409F3B /* PasswordResetController.swift */,
 			);
 			path = ViewControllers;
@@ -146,10 +159,11 @@
 			isa = PBXGroup;
 			children = (
 				0DE6795927160EC7002B0234 /* LoginViewModel.swift */,
+				0D3F8AF627269BEC0082261C /* UserDetailViewModel.swift */,
 				0D5F0CB52716BDCA00E05B01 /* NewUserViewModel.swift */,
+				0D3F8AF727269BEC0082261C /* UserCellViewModel.swift */,
 				0D5F0CBA2716BE3200E05B01 /* MainMapViewModel.swift */,
 				0D5F0CBE2716BE9A00E05B01 /* MapDetailViewModel.swift */,
-				0D5F0CC22716BEF600E05B01 /* UserEditViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -231,10 +245,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D3F8AFD27269C060082261C /* UserDetail.storyboard in Resources */,
 				0DE6795027160CBB002B0234 /* LaunchScreen.storyboard in Resources */,
 				2690C2172722D6EE00982178 /* GoogleService-Info.plist in Resources */,
 				0DEF50D3271F34750024225D /* MainMap.storyboard in Resources */,
-				0DEF50D8271F34950024225D /* UserEdit.storyboard in Resources */,
 				0DEF50D5271F34800024225D /* MapDetail.storyboard in Resources */,
 				0DE6794D27160CBB002B0234 /* Assets.xcassets in Resources */,
 				0DEF50D1271F34650024225D /* NewUser.storyboard in Resources */,
@@ -292,18 +306,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5F0CBB2716BE3200E05B01 /* MainMapViewModel.swift in Sources */,
+				0D3F8AF927269BEC0082261C /* UserViewController.swift in Sources */,
 				266D263F271DF65700409F3B /* KeyboardConstraints.swift in Sources */,
 				266D26412725B26D00409F3B /* PasswordResetController.swift in Sources */,
 				0D5F0CB92716BE1400E05B01 /* MainMapViewController.swift in Sources */,
+				0D3F8AFB27269BEC0082261C /* UserCellViewModel.swift in Sources */,
 				0DE6794427160CBA002B0234 /* AppDelegate.swift in Sources */,
 				0D5F0CB62716BDCA00E05B01 /* NewUserViewModel.swift in Sources */,
+				0D3F8AF827269BEC0082261C /* UserDetailCell.swift in Sources */,
 				0D5F0CBD2716BE7B00E05B01 /* MapDetailViewController.swift in Sources */,
+				0D3F8AFA27269BEC0082261C /* UserDetailViewModel.swift in Sources */,
 				0D5F0CB42716BDA800E05B01 /* NewUserViewController.swift in Sources */,
-				0D5F0CC32716BEF600E05B01 /* UserEditViewModel.swift in Sources */,
 				266D263B271DD3BB00409F3B /* LoginViewController.swift in Sources */,
 				0DE6794627160CBA002B0234 /* SceneDelegate.swift in Sources */,
 				0D5F0CBF2716BE9A00E05B01 /* MapDetailViewModel.swift in Sources */,
-				0D5F0CC12716BED600E05B01 /* UserEditViewController.swift in Sources */,
 				0DE6795A27160EC7002B0234 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

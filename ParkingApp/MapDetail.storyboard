@@ -21,11 +21,19 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Rota Çiz"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ne-IU-CM8">
+                                <rect key="frame" x="181" y="44" width="52" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6n9-do-vt2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0ne-IU-CM8" firstAttribute="centerX" secondItem="6n9-do-vt2" secondAttribute="centerX" id="8RO-C1-6UN"/>
                             <constraint firstItem="8hh-7p-228" firstAttribute="centerX" secondItem="6n9-do-vt2" secondAttribute="centerX" id="DBY-Nq-BBW"/>
+                            <constraint firstItem="0ne-IU-CM8" firstAttribute="top" secondItem="6n9-do-vt2" secondAttribute="top" id="G26-9K-Kx4"/>
                             <constraint firstItem="8hh-7p-228" firstAttribute="bottom" secondItem="6n9-do-vt2" secondAttribute="bottom" id="WI1-Ar-SiW"/>
                         </constraints>
                     </view>
