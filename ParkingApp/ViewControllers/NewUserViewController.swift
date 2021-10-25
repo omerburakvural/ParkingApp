@@ -9,13 +9,14 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
+
 
 class NewUserViewController: UIViewController {
 
-    
+    private let database = Database.database().reference()
+   
     var newuserviewmodel = NewUserViewModel()
-    
-
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var solustbuton: UIBarButtonItem!
@@ -129,23 +130,66 @@ class NewUserViewController: UIViewController {
             else
             {
                
-//                kayıt başarılı olmuştur
-//                alert verilerek ana sayfaya yönlendirileceği bilgisi aktarıldı
-// karmaşa yaşamaması için 2 saniye burada beklenerek harita sayfasına devam ettirildi.
+//                KAYIT BAŞARILI
+//                ALERT VERİLDİ VE ANA SAYFAYA YÖNLENDİRECEĞİ BİLGİSİ AKTARILDI.
+// KARMAŞA OLMAMASI İÇİN asyncAfter BÖLÜMÜNDE 2 SANİYE BEKLETİLECEK VE ANA SAYFAYA AKTARILACAK
                 
                 let alert = UIAlertController(title: "Kayıt tamamlandı", message: "İşlem başarılı. 2 saniye içinde ana sayfaya yönlendiriliyorsunuz", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                
                 self.errorLabel.text = "Kayıt Başarılı. Ana sayfaya yönlendiriliyorsunuz"
+               
+               
+                let uid = (Auth.auth().currentUser?.uid)!
+                let object : [String:Any] = [
+                    "Ad": self.newuserviewmodel.name! as NSObject,
+                    "Soyad" : self.newuserviewmodel.usersurname as Any,
+                    "Email" : self.newuserviewmodel.email as Any,
+                    ]
+                
+                self.database.child("User").child(uid).setValue(object)
+//                self.database.child(childverisi).setValue(object)
+//
+//                FİREBASE DATABASE İÇİN KAYIT YAPILDI.
+                
+                
+             
+                    
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+
+                    Auth.auth().signIn(withEmail: self.newuserviewmodel.email!, password: self.newuserviewmodel.password!) { (user, error) in }
+                    let userID = Auth.auth().currentUser?.uid
+                        print("Giriş yaptık" + "\(userID)")
+//                    GEÇERLİ UID BİLGİSİ ALINARAK SIGN-IN OLUNUYOR
+                    
                     let storyboard = UIStoryboard(name: "MainMap", bundle: nil)
                     if let vc = storyboard.instantiateViewController(withIdentifier: "mainMap") as? MainMapViewController {
                         vc.modalPresentationStyle = .fullScreen
                         self.present(vc, animated: false, completion: nil)
-
                     }
+//                      EKRAN YÖNLENDİRME YAPILIYOR.
+                    
+                    
+                    
+                    
+                    
+//                    self.database.child("User").child(uid).observeSingleEvent(of: .value, with: { snapshot in
+//                      // Get user value
+//                      let value = snapshot.value as? NSDictionary
+//                      let emailadresi = value?["Email"] as? String ?? ""
+//                        self.errorLabel.text = "\(emailadresi)"
+//                        print(emailadresi)
+//                        print("Email adresimiz : " + "\(emailadresi)")
+//                    })
+                    
+//                  FİREBASE VERİ ÇEKİMİ KODU
+
+                    
+                    
+                   
+                    
                 }
+// 2 saniye bekleme fonksiyonu burada bitiyor
 
             }
             

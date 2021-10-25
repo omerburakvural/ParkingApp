@@ -7,6 +7,8 @@ target 'ParkingApp' do
 pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'Firebase/Core'
+pod 'Firebase/Database'
 pod 'MaterialComponents/BottomSheet'
   # Pods for ParkingApp
 
