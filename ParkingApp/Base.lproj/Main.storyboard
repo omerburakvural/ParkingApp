@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -162,9 +161,6 @@
                                         <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system">
                                             <color key="baseForegroundColor" name="AccentColor"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="hideButtonClicked:" destination="rN4-t7-Elb" eventType="touchUpInside" id="uwK-hr-rge"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -194,7 +190,6 @@
                     <connections>
                         <outlet property="cardView" destination="C8K-8W-Qnz" id="hYR-rz-7G8"/>
                         <outlet property="girisButton" destination="2RQ-F4-tGf" id="tdZ-FG-JIJ"/>
-                        <outlet property="hideButton" destination="xax-P6-2UM" id="noj-Nk-dWj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lHc-CZ-824" sceneMemberID="firstResponder"/>
