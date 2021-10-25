@@ -11,11 +11,24 @@ import Firebase
 class PasswordResetController: UIViewController {
 
     @IBOutlet weak var emailAddressTextField: UITextField!
+    @IBOutlet weak var passwordView: UIView!
+    @IBOutlet weak var yenileButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        // passwordView
+        passwordView.layer.cornerRadius = 10.0
+        passwordView.layer.shadowOpacity = 0.5
+        passwordView.layer.shadowRadius = 10
+        passwordView.layer.shadowOffset = CGSize (width: 10, height: 10)
+        // yenileButton
+        yenileButton.layer.cornerRadius = 10.0
     }
 
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func sendButtonTapped(_ sender: Any) {
         
         let auth = Auth.auth()
