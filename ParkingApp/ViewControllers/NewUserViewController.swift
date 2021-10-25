@@ -14,6 +14,15 @@ import FirebaseDatabase
 
 class NewUserViewController: UIViewController {
 
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        kayitButon.layer.cornerRadius = 10.0
+        mainView.layer.cornerRadius = 10.0
+        passwordTextbox.isSecureTextEntry.toggle()
+        passwordagainTextbox.isSecureTextEntry.toggle()
+    }
+    
     private let database = Database.database().reference()
    
     var newuserviewmodel = NewUserViewModel()
@@ -41,25 +50,41 @@ class NewUserViewController: UIViewController {
 
                    
                    hideButton.setImage(image, for: .normal)
+               passwordagainTextbox.isHidden = false
                    
                }
             else {
 //               if let image = UIImage(systemName: "eye.slash.fill") {
 //                   (sender as AnyObject).setImage(image, for: .normal)
-                let image = UIImage(systemName: "eye.slash.fill")
+                let image = UIImage(systemName: "eye.slash")
  //                   (sender as AnyObject).setImage(image, for: .normal)
-                   
+                passwordagainTextbox.isHidden = true
                     hideButton.setImage(image, for: .normal)
                }
            }
         
+    @IBAction func passwordTextbox(_ sender: Any) {
+        
+        if passwordTextbox.isSecureTextEntry == false
+        {
+        passwordagainTextbox.text = passwordTextbox.text
+        }
+        else
+        {
+            
+        }
+//        TEXTBOX'IN EDİTİNG CHANGED'INE YAZILDI. EĞER KULLANICI ŞİFRESİNİ GÖREREK YAZMAK İSTERSE, TEKRARLAMA TEXTBOX'I AYNI VERİLERİ ALIYOR VE VALİDASYON KISMINDA TEXTBOX KONTROLÜ SORUNSUZ GEÇİYOR
+    }
+    
+    
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+//    GERİ BUTONU
+    
     
   func valideteFields() -> String
-//    func valideteFields()
     {
         
         if adTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || soyadTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
@@ -74,7 +99,7 @@ class NewUserViewController: UIViewController {
         {
         errorLabel.text = ""
             if passwordTextbox.text == passwordagainTextbox.text
-//                password verisinin iki kutucukta da aynı olup olmadığı kontrol edildi
+//                password verisinin iki textboxta da aynı olup olmadığı kontrol edildi
             {
                 
                 return "problem bulunmuyor"
@@ -148,7 +173,6 @@ class NewUserViewController: UIViewController {
                     ]
                 
                 self.database.child("User").child(uid).setValue(object)
-//                self.database.child(childverisi).setValue(object)
 //
 //                FİREBASE DATABASE İÇİN KAYIT YAPILDI.
                 
@@ -172,21 +196,15 @@ class NewUserViewController: UIViewController {
                     
                     
                     
-                    
 //                    self.database.child("User").child(uid).observeSingleEvent(of: .value, with: { snapshot in
 //                      // Get user value
 //                      let value = snapshot.value as? NSDictionary
 //                      let emailadresi = value?["Email"] as? String ?? ""
-//                        self.errorLabel.text = "\(emailadresi)"
-//                        print(emailadresi)
 //                        print("Email adresimiz : " + "\(emailadresi)")
 //                    })
                     
 //                  FİREBASE VERİ ÇEKİMİ KODU
-
                     
-                    
-                   
                     
                 }
 // 2 saniye bekleme fonksiyonu burada bitiyor
@@ -231,17 +249,7 @@ class NewUserViewController: UIViewController {
     
  }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        kayitButon.layer.cornerRadius = 10.0
-        mainView.layer.cornerRadius = 10.0
-        passwordTextbox.isSecureTextEntry.toggle()
-        passwordagainTextbox.isSecureTextEntry.toggle()
-//        errorLabel.text = newuserviewmodel.username
-      
-        
-    }
+
     
     
 }
