@@ -17,6 +17,7 @@ class NewUserViewController: UIViewController {
     
 
     
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var solustbuton: UIBarButtonItem!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var kayitButon: UIButton!
@@ -189,7 +190,8 @@ class NewUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        kayitButon.layer.cornerRadius = 10.0
+        mainView.layer.cornerRadius = 10.0
         passwordTextbox.isSecureTextEntry.toggle()
         passwordagainTextbox.isSecureTextEntry.toggle()
 //        errorLabel.text = newuserviewmodel.username
