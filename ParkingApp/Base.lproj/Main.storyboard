@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -89,6 +90,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RQ-F4-tGf">
                                                 <rect key="frame" x="18" y="261" width="337" height="39"/>
                                                 <color key="backgroundColor" red="0.18289321659999999" green="0.41205567119999997" blue="0.58041328189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="39" id="4Yo-qh-kZW"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <state key="normal" title="Giriş">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -147,9 +151,26 @@
                                             <constraint firstItem="eQr-k9-fHw" firstAttribute="top" secondItem="MO4-S5-sr2" secondAttribute="bottom" constant="13" id="zkI-IG-OVd"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xax-P6-2UM">
+                                        <rect key="frame" x="323" y="362.5" width="30" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xax-P6-2UM" secondAttribute="height" multiplier="1:1" id="HGm-Sm-pEK"/>
+                                            <constraint firstAttribute="height" constant="30" id="WCE-7w-1Ks"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system">
+                                            <color key="baseForegroundColor" name="AccentColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="hideButtonClicked:" destination="rN4-t7-Elb" eventType="touchUpInside" id="uwK-hr-rge"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="xax-P6-2UM" firstAttribute="centerY" secondItem="MO4-S5-sr2" secondAttribute="centerY" id="3Uv-VW-Xcp"/>
+                                    <constraint firstItem="xax-P6-2UM" firstAttribute="trailing" secondItem="MO4-S5-sr2" secondAttribute="trailing" constant="-2" id="Gze-KN-XFV"/>
                                     <constraint firstItem="C8K-8W-Qnz" firstAttribute="centerY" secondItem="GfF-fl-9FS" secondAttribute="centerY" id="Q9r-JM-YO4"/>
                                     <constraint firstItem="C8K-8W-Qnz" firstAttribute="width" secondItem="GfF-fl-9FS" secondAttribute="width" id="UCN-21-flj"/>
                                     <constraint firstItem="C8K-8W-Qnz" firstAttribute="centerX" secondItem="GfF-fl-9FS" secondAttribute="centerX" id="XhW-N8-Nlz"/>
@@ -173,6 +194,7 @@
                     <connections>
                         <outlet property="cardView" destination="C8K-8W-Qnz" id="hYR-rz-7G8"/>
                         <outlet property="girisButton" destination="2RQ-F4-tGf" id="tdZ-FG-JIJ"/>
+                        <outlet property="hideButton" destination="xax-P6-2UM" id="noj-Nk-dWj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lHc-CZ-824" sceneMemberID="firstResponder"/>
@@ -239,8 +261,11 @@
                                         </constraints>
                                     </view>
                                     <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eyI-aX-vY2">
-                                        <rect key="frame" x="0.0" y="8" width="373" height="44"/>
+                                        <rect key="frame" x="-22" y="8" width="416" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <textAttributes key="titleTextAttributes">
+                                            <color key="textColor" red="0.055864840749999999" green="0.41565477849999999" blue="0.59610098600000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </textAttributes>
                                         <items>
                                             <navigationItem title="Giriş Sayfası" id="mcM-9C-z60">
                                                 <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="fgH-dJ-tcK">
@@ -281,13 +306,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mp9-g8-72e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="90"/>
+            <point key="canvasLocation" x="1147.8260869565217" y="89.732142857142847"/>
         </scene>
     </scenes>
     <resources>
         <image name="ParkersIcon" width="433" height="509"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="eye.slash" catalog="system" width="128" height="86"/>
         <image name="trafik1" width="657.5" height="370"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
