@@ -224,13 +224,13 @@
                                         <rect key="frame" x="0.0" y="222.5" width="373" height="373"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email adresinizi giriniz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVR-3i-BTz">
-                                                <rect key="frame" x="75" y="34" width="223" height="28"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <rect key="frame" x="75" y="34" width="223" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" red="0.055864840749999999" green="0.41565477849999999" blue="0.59610098600000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0i-kt-tlH">
-                                                <rect key="frame" x="18" y="151" width="337" height="40"/>
+                                                <rect key="frame" x="18" y="144.5" width="337" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="4Oi-lx-s0w"/>
                                                 </constraints>
