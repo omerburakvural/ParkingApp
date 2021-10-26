@@ -31,11 +31,18 @@
                                                 <action selector="backButtonClicked:" destination="Ez9-g6-wpc" id="bVP-7D-g7g"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="editProfileButton" image="person.fill" catalog="system" id="ooJ-ad-VbC">
-                                            <connections>
-                                                <action selector="editProfileButtonClicked:" destination="Ez9-g6-wpc" id="hGE-um-7rG"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="editProfileButton" image="person.fill" catalog="system" id="ooJ-ad-VbC">
+                                                <connections>
+                                                    <action selector="editProfileButtonClicked:" destination="Ez9-g6-wpc" id="hGE-um-7rG"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="LoadData" id="ynF-2r-Jvo" userLabel="LoadData">
+                                                <connections>
+                                                    <action selector="loadDataButton:" destination="Ez9-g6-wpc" id="fS0-mI-0GF"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
