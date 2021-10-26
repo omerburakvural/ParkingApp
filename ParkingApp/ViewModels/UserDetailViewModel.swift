@@ -9,6 +9,17 @@
 import Foundation
 import UIKit
 
+public struct Userdetail: Codable {
+    let Name: String
+    let Surname: String
+    let Email: String
+
+}
+
+
+
+
+
 enum SaveResult {
     case updated (UserDetailModel)
     case error
@@ -18,6 +29,7 @@ class UserDetailModel {
     var userName: String = ""
     var email: String = ""
     var plate: String = ""
+    
     
 }
 

@@ -10,13 +10,20 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
-
+import FirebaseFirestore
 
 class NewUserViewController: UIViewController {
 
+    var db: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let settings = FirestoreSettings()
+
+               Firestore.firestore().settings = settings
+               // [END setup]
+               db = Firestore.firestore()
         kayitButon.layer.cornerRadius = 10.0
         mainView.layer.cornerRadius = 10.0
         passwordTextbox.isSecureTextEntry.toggle()
@@ -116,7 +123,22 @@ class NewUserViewController: UIViewController {
     
     @IBAction func kayitButon(_ sender: Any) {
         
-     
+//        var ref: DocumentReference? = nil
+//              ref = db.collection("users").addDocument(data: [
+//                  "Name": "FireTest1",
+//                  "Surname": "FireTest2",
+//
+//              ]) { err in
+//                  if let err = err {
+//                      print("Error adding document: \(err)")
+//                  } else {
+//                      print("Document added with ID: \(ref!.documentID)")
+//                  }
+//              }
+        
+       
+        
+       
         valideteFields()
         
         let durum = valideteFields()
@@ -166,13 +188,28 @@ class NewUserViewController: UIViewController {
                
                
                 let uid = (Auth.auth().currentUser?.uid)!
-                let object : [String:Any] = [
-                    "Ad": self.newuserviewmodel.name! as NSObject,
-                    "Soyad" : self.newuserviewmodel.usersurname as Any,
-                    "Email" : self.newuserviewmodel.email as Any,
-                    ]
+//                let object : [String:Any] = [
+//                    "Ad": self.newuserviewmodel.name! as NSObject,
+//                    "Soyad" : self.newuserviewmodel.usersurname as Any,
+//                    "Email" : self.newuserviewmodel.email as Any,
+//                    ]
+//
+//                self.database.child("User").child(uid).setValue(object)
                 
-                self.database.child("User").child(uid).setValue(object)
+                
+                self.db.collection("users").document(uid).setData([
+                    "Name Surname": self.newuserviewmodel.name! + " " + self.newuserviewmodel.usersurname! as Any,
+//                    "Surname": self.newuserviewmodel.usersurname as Any,
+                    "Email": self.newuserviewmodel.email! as Any,
+                    
+                ]) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                    }
+                }
+
 //
 //                FİREBASE DATABASE İÇİN KAYIT YAPILDI.
                 
