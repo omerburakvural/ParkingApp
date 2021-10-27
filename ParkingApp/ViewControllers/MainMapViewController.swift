@@ -30,7 +30,7 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         super.viewDidLoad()
         mapView.delegate = self
         checkLocationServices()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0 ) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 ) {
             self.addPinToTheMap()
         }
     }

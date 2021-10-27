@@ -15,25 +15,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" image="trafik1" translatesAutoresizingMaskIntoConstraints="NO" id="aob-5v-uyT">
-                                <rect key="frame" x="-194" y="0.0" width="802" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AO7-mL-xTl">
-                                <rect key="frame" x="0.0" y="90" width="414" height="806"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </mapView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAZ-Cp-azi">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0z-TC-1Rh">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Parking App" id="1zs-T1-trI">
-                                        <barButtonItem key="leftBarButtonItem" title="backButton" image="chevron.backward" catalog="system" id="wLl-xJ-EK4">
+                                    <navigationItem title="Parking App" id="aPg-3z-xfn">
+                                        <barButtonItem key="leftBarButtonItem" title="backButton" image="chevron.backward" catalog="system" id="hLR-1t-fYf">
                                             <connections>
-                                                <action selector="backButtonClicked:" destination="Ez9-g6-wpc" id="bVP-7D-g7g"/>
+                                                <action selector="backButtonClicked:" destination="Ez9-g6-wpc" id="EGY-De-iU6"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="editProfileButton" image="person.fill" catalog="system" id="ooJ-ad-VbC">
+                                        <barButtonItem key="rightBarButtonItem" title="editProfileButton" image="person.fill" catalog="system" id="rAI-N1-WxM">
                                             <connections>
-                                                <action selector="editProfileButtonClicked:" destination="Ez9-g6-wpc" id="hGE-um-7rG"/>
+                                                <action selector="editProfileButtonClicked:" destination="Ez9-g6-wpc" id="fMz-r4-6zf"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -43,12 +39,12 @@
                         <viewLayoutGuide key="safeArea" id="VtT-2a-jtn"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KAZ-Cp-azi" firstAttribute="top" secondItem="VtT-2a-jtn" secondAttribute="top" id="JEg-Ej-12y"/>
+                            <constraint firstItem="y0z-TC-1Rh" firstAttribute="leading" secondItem="VtT-2a-jtn" secondAttribute="leading" id="CXn-jf-yIF"/>
+                            <constraint firstItem="y0z-TC-1Rh" firstAttribute="top" secondItem="VtT-2a-jtn" secondAttribute="top" id="Egh-2H-dR7"/>
                             <constraint firstItem="AO7-mL-xTl" firstAttribute="bottom" secondItem="CAZ-aK-Gcy" secondAttribute="bottom" id="QKM-aK-9pm"/>
-                            <constraint firstItem="KAZ-Cp-azi" firstAttribute="leading" secondItem="VtT-2a-jtn" secondAttribute="leading" id="cHw-SO-Fsc"/>
                             <constraint firstItem="VtT-2a-jtn" firstAttribute="trailing" secondItem="AO7-mL-xTl" secondAttribute="trailing" id="eDI-6T-yV5"/>
-                            <constraint firstItem="AO7-mL-xTl" firstAttribute="top" secondItem="KAZ-Cp-azi" secondAttribute="bottom" constant="2" id="hMi-jG-mQu"/>
-                            <constraint firstItem="KAZ-Cp-azi" firstAttribute="trailing" secondItem="VtT-2a-jtn" secondAttribute="trailing" id="w7D-oa-p0A"/>
+                            <constraint firstItem="y0z-TC-1Rh" firstAttribute="trailing" secondItem="VtT-2a-jtn" secondAttribute="trailing" id="it8-PK-fml"/>
+                            <constraint firstItem="AO7-mL-xTl" firstAttribute="top" secondItem="y0z-TC-1Rh" secondAttribute="bottom" id="lMq-d7-2o5"/>
                             <constraint firstItem="AO7-mL-xTl" firstAttribute="leading" secondItem="VtT-2a-jtn" secondAttribute="leading" id="wCe-Kp-9f0"/>
                         </constraints>
                     </view>
@@ -57,8 +53,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAs-7d-wbY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="trafik1" id="aob-5v-uyT">
+                    <rect key="frame" x="0.0" y="0.0" width="802" height="896"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </objects>
-            <point key="canvasLocation" x="73.913043478260875" y="-28.125"/>
+            <point key="canvasLocation" x="984.05797101449286" y="-28.125"/>
         </scene>
     </scenes>
     <resources>
