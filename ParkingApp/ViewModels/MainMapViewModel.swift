@@ -8,12 +8,8 @@
 import UIKit
 import FirebaseDatabase
 import Firebase
-
-struct Pin{
-    var lat: Double
-    var long: Double
-    var name: String
-}
+import FirebaseFirestore
+import Foundation
 
 class MainMapViewModel {
     
@@ -22,69 +18,58 @@ class MainMapViewModel {
     var lat: Double = 0.0
     var long: Double = 0.0
     var numberOfParks = 0
+    var db = Firestore.firestore()
+    var parkModelPins = [ParkModel]()
     
-    func loadPin(withIndex: Int) {
-        let index = String(withIndex)
-        let childRef = ref.child(index)
-        
-        childRef.child("lat").observeSingleEvent(of: .value, with: {(snapshot) in
-            self.setLat(withCoordinate: snapshot.value as! Double)
-        })
-        childRef.child("long").observeSingleEvent(of: .value, with: {(snapshot) in
-            self.setLong(withCoordinate: snapshot.value as! Double)
-        })
-        childRef.child("park_name").observeSingleEvent(of: .value, with: {(snapshot) in
-            self.setName(withName: snapshot.value as! String)
-        })
-        ref.observe(.value, with: { snapshot in
-            self.setNumberOfParks(withNumber: Int(snapshot.childrenCount))
-        })
-    }
-    
-    func setLat(withCoordinate: Double){
-        lat = withCoordinate
-    }
-    
-    func setLong(withCoordinate: Double){
-        long = withCoordinate
-    }
-    func setName(withName: String){
-        name = withName
-    }
-    
-    func setNumberOfParks(withNumber: Int){
-        numberOfParks = withNumber
-    }
-    
-    
-    func getName() -> String {
-        return name
-    }
-    
-    func getLat() -> Double {
-        return lat
-    }
-    
-    func getLong() -> Double {
-        return long
-    }
-    
-    func getNumberOfParks() -> Int {
-        return numberOfParks
+    init(){
+        db.collection("Parks")
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        //print("\(document.documentID) => \(document.data())")
+                        let capacity = document.data()["capacity"] as? Int
+                        let has_vale = document.data()["has_vale"] as? Bool
+                        let long = document.data()["long"] as? Double
+                        let lat = document.data()["lat"] as? Double
+                        let lpg_availability = document.data()["lpg_availability"] as? Bool
+                        let park_name = document.data()["park_name"] as? String
+                        let park_type = document.data()["park_type"] as? String
+                        let payment_type = document.data()["payment_type"] as? String
+                        let price = document.data()["price"] as? Int
+                        
+                        let pin = ParkModel.init(capacity:capacity!, has_vale:has_vale!, long:long!, lat:lat!, lpg_availability:lpg_availability!, park_name:park_name!, park_type:park_type!, payment_type:payment_type!, price:price!)
+                        self.parkModelPins.append(pin)
+                    }
+                }
+            }
     }
 }
 
-//class ParkModel: Codable {
-//    var capacity: Int = 0
-//    var has_vale: String = ""
-//    var lat: Double = 0.0
-//    var long: Double = 0.0
-//    var lpg_availability: String = ""
-//    var park_name: String = ""
-//    var park_type: String = ""
-//    var payment_type: String = ""
-//    var price: Int = 0
-//}
+public class ParkModel: Codable {
+    var capacity: Int
+    var has_vale: Bool
+    var lat: Double
+    var long: Double
+    var lpg_availability: Bool
+    public var park_name: String
+    var park_type: String
+    var payment_type: String
+    var price: Int
+    
+    init(capacity: Int,has_vale:Bool,long:Double,lat:Double,lpg_availability:Bool,park_name:String,park_type:String,payment_type:String,price:Int){
+        self.capacity = capacity
+        self.has_vale = has_vale
+        self.long = long
+        self.lat = lat
+        self.lpg_availability = lpg_availability
+        self.park_name = park_name
+        self.park_type = park_type
+        self.payment_type = payment_type
+        self.price = price
+    }
+}
 
 
 

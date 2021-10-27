@@ -30,49 +30,21 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         super.viewDidLoad()
         mapView.delegate = self
         checkLocationServices()
-        addPinToTheMap()
-        manualPinAdd()
-    }
-    
-    
-    
-    func manualPinAdd(){
-        let annotationsArray = [
-            ["name": "Özel Acıbadem Hastanesi Otoparkı","lat": 41.007812,"long": 29.042895],
-            ["name": "Akasya AVM Kapalı Otoparkı","lat": 41.004,"long": 29.0546],
-            ["name": "Kopuz Otopark","lat": 41.024303,"long": 29.045468],
-            ["name": "İspark Otopark","lat": 40.996772,"long": 29.022098],
-            ["name": "On Park Kaya Otopark","lat": 40.992152,"long": 29.025879],
-            ["name": "Özel Kuşdili Otopark","lat": 40.989621,"long": 29.032697]
-        ]
-        createManuelAnnotations(locations: annotationsArray)
-    }
-    
-    func createManuelAnnotations(locations: [[String: Any]]){
-        for location in locations{
-            let annotations = MKPointAnnotation()
-            annotations.title = location["name"] as? String
-            annotations.coordinate = CLLocationCoordinate2D(latitude: location["lat"] as! CLLocationDegrees, longitude: location["long"] as! CLLocationDegrees)
-            mapView.addAnnotation(annotations)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0 ) {
+            self.addPinToTheMap()
         }
-        
     }
     
     func addPinToTheMap(){
         var pinArray: [MKPointAnnotation] = []
-        for i in 0...20 {
-            viewModel.loadPin(withIndex: i)
+        let count = viewModel.parkModelPins.count
+        for i in 0..<count {
             let pin = MKPointAnnotation()
-            pin.coordinate = CLLocationCoordinate2D(latitude: viewModel.getLat(), longitude: viewModel.getLong())
-            pin.title = viewModel.getName()
+            pin.coordinate = CLLocationCoordinate2D(latitude: viewModel.parkModelPins[i].lat, longitude: viewModel.parkModelPins[i].long)
+            pin.title = viewModel.parkModelPins[i].park_name
             pinArray.append(pin)
         }
         mapView.addAnnotations(pinArray)
-    }
-    
-    @IBAction func loadDataButton(_ sender: Any) {
-        addPinToTheMap()
-        print(viewModel.getName())
     }
     
     @IBAction func editProfileButtonClicked(_ sender: Any) {
