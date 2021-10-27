@@ -17,10 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trafik1" translatesAutoresizingMaskIntoConstraints="NO" id="GzC-XP-O1W">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hli-Hn-gJU">
                                 <rect key="frame" x="28" y="201" width="359" height="525"/>
                                 <subviews>
@@ -98,7 +94,6 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Bg-Yh-HAa">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="Yeni Üye" id="E2U-He-ZPK">
                                         <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="ICC-HA-hCv">
@@ -112,6 +107,7 @@
                             </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PbW-o1-pA9"/>
+                        <color key="backgroundColor" red="0.015686274509803921" green="0.62352941176470589" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="hli-Hn-gJU" firstAttribute="top" secondItem="PbW-o1-pA9" secondAttribute="top" constant="157" id="Ax1-Aq-E5s"/>
                             <constraint firstItem="I6A-ev-UJY" firstAttribute="bottom" secondItem="eXq-At-1GD" secondAttribute="bottom" id="aMc-Ly-o7Q"/>

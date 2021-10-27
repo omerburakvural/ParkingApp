@@ -18,6 +18,20 @@ class NewUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
+        
+//        DARK TEMA UYUMU YAPILDI.
+        if traitCollection.userInterfaceStyle == .dark
+        {
+            view.backgroundColor = .systemGray
+            kayitButon.backgroundColor = .systemGray
+        }
+        else
+        {
+            view.backgroundColor = UIColor(red: 4/255.0, green: 159/255.0, blue: 217/255.0, alpha: 1)
+        }
+        
         
         let settings = FirestoreSettings()
 
@@ -179,7 +193,7 @@ class NewUserViewController: UIViewController {
                
 //                KAYIT BAŞARILI
 //                ALERT VERİLDİ VE ANA SAYFAYA YÖNLENDİRECEĞİ BİLGİSİ AKTARILDI.
-// KARMAŞA OLMAMASI İÇİN asyncAfter BÖLÜMÜNDE 2 SANİYE BEKLETİLECEK VE ANA SAYFAYA AKTARILACAK
+
                 
                 let alert = UIAlertController(title: "Kayıt tamamlandı", message: "İşlem başarılı. 2 saniye içinde ana sayfaya yönlendiriliyorsunuz", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -188,6 +202,7 @@ class NewUserViewController: UIViewController {
                
                
                 let uid = (Auth.auth().currentUser?.uid)!
+//                GEÇERLİ OTURUMUN UID BİLGİSİ ALINDI
 //                let object : [String:Any] = [
 //                    "Ad": self.newuserviewmodel.name! as NSObject,
 //                    "Soyad" : self.newuserviewmodel.usersurname as Any,
@@ -215,7 +230,7 @@ class NewUserViewController: UIViewController {
                 
                 
              
-                    
+        // KARMAŞA OLMAMASI İÇİN asyncAfter BÖLÜMÜNDE 2 SANİYE BEKLETİLECEK VE ANA SAYFAYA AKTARILACAK
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
 
                     Auth.auth().signIn(withEmail: self.newuserviewmodel.email!, password: self.newuserviewmodel.password!) { (user, error) in }
