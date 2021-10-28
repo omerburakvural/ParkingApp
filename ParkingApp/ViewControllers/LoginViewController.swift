@@ -20,13 +20,69 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     //deneme
+    @IBOutlet weak var keyboardViewi: UIView!
     @IBOutlet weak var girisButton: UIButton!
     @IBOutlet weak var cardView: UIView!
-
+    
+    @IBOutlet weak var benihatirlaLabel: UILabel!
+    @IBOutlet weak var forgotPasswordClicked: UIButton!
+    
+    @IBOutlet weak var noUserButtonClicked: UIButton!
+    @IBOutlet weak var newUserButtonClicked: UIButton!
     let defaults = UserDefaults.standard
+    
+    @IBOutlet weak var hideButton: UIButton!
+    
+    @IBAction func hideButton(_ sender: Any) {
+        
+        txtPassword.isSecureTextEntry.toggle()
+        
+           if txtPassword.isSecureTextEntry {
+               let image = UIImage(systemName: "eye")
+
+                   hideButton.setImage(image, for: .normal)
+               }
+            else {
+
+                let image = UIImage(systemName: "eye.slash")
+               
+                    hideButton.setImage(image, for: .normal)
+               }
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        txtPassword.isSecureTextEntry.toggle()
+        
+        if traitCollection.userInterfaceStyle == .dark
+        {
+            view.backgroundColor = .systemGray
+
+            txtEmail.textColor = .systemGray
+            txtPassword.textColor = .systemGray
+            switchRememberMe.onTintColor = .black
+            
+            forgotPasswordClicked.setTitleColor(.black, for: .normal)
+            benihatirlaLabel.textColor = .black
+            
+            cardView.backgroundColor = .systemGray
+//            girisButton.backgroundColor = .black
+            girisButton.backgroundColor = .black
+            keyboardViewi.backgroundColor = .systemGray
+            newUserButtonClicked.setTitleColor(.black, for: .normal)
+            noUserButtonClicked.setTitleColor(.black, for: .normal)
+            hideButton.backgroundColor =  .systemGray
+           
+           
+        }
+        else
+        {
+            view.backgroundColor = UIColor(red: 4/255.0, green: 159/255.0, blue: 217/255.0, alpha: 1)
+            
+        }
         
         // cardView
         cardView.layer.cornerRadius = 10.0

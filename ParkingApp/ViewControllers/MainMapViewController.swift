@@ -19,6 +19,7 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     var viewModel = MainMapViewModel()
     
+    @IBOutlet weak var editProfileButtonClicked: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
@@ -30,6 +31,18 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         super.viewDidLoad()
         mapView.delegate = self
         checkLocationServices()
+        
+        if traitCollection.userInterfaceStyle == .dark
+        {
+            view.backgroundColor = .systemGray
+            editProfileButtonClicked.tintColor = .systemGray
+        }
+        else
+        {
+            view.backgroundColor = UIColor(red: 4/255.0, green: 159/255.0, blue: 217/255.0, alpha: 1)
+        }
+        
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 ) {
             self.addPinToTheMap()
         }

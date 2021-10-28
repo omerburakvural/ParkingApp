@@ -49,6 +49,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="editProfileButtonClicked" destination="rAI-N1-WxM" id="WcJ-Hj-9X2"/>
                         <outlet property="mapView" destination="AO7-mL-xTl" id="UMJ-ZT-zpy"/>
                     </connections>
                 </viewController>
