@@ -102,7 +102,6 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cbv-yX-eX1">
                                                 <rect key="frame" x="306" y="210" width="51" height="31"/>
                                                 <connections>
-                                                    <action selector="loginButtonClicked:" destination="rN4-t7-Elb" eventType="valueChanged" id="pyQ-QH-bZy"/>
                                                     <action selector="rememberMeSwitchChanged:" destination="rN4-t7-Elb" eventType="valueChanged" id="IkD-Cc-0Eh"/>
                                                 </connections>
                                             </switch>
