@@ -20,7 +20,7 @@ class NewUserViewController: UIViewController {
         super.viewDidLoad()
        
         
-        
+        hideButton.maximumContentSizeCategory = .small
 //        DARK TEMA UYUMU YAPILDI.
         if traitCollection.userInterfaceStyle == .dark
         {

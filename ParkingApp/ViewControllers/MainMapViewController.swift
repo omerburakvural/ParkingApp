@@ -177,6 +177,8 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }
         
         annotationView?.image = UIImage(named: "mapPin")
+
+        
         return annotationView
     }
     

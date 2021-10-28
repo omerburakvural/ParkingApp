@@ -55,6 +55,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hideButton.maximumContentSizeCategory = .small
         txtPassword.isSecureTextEntry.toggle()
         
         if traitCollection.userInterfaceStyle == .dark
@@ -75,6 +76,7 @@ class LoginViewController: UIViewController {
             newUserButtonClicked.setTitleColor(.black, for: .normal)
             noUserButtonClicked.setTitleColor(.black, for: .normal)
             hideButton.backgroundColor =  .systemGray
+            
            
            
         }
