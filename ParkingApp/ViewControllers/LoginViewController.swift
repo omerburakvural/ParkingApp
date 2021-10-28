@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
             keyboardViewi.backgroundColor = .systemGray
             newUserButtonClicked.setTitleColor(.black, for: .normal)
             noUserButtonClicked.setTitleColor(.black, for: .normal)
-            hideButton.backgroundColor =  .systemGray
+            hideButton.backgroundColor =  .black
             
            
            

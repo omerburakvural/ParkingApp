@@ -84,7 +84,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6A-ev-UJY">
-                                <rect key="frame" x="333" y="542" width="51" height="31"/>
+                                <rect key="frame" x="323" y="540.5" width="51" height="31"/>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
@@ -111,12 +111,11 @@
                         <color key="backgroundColor" red="0.015686274509803921" green="0.62352941176470589" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="I6A-ev-UJY" firstAttribute="centerY" secondItem="eXq-At-1GD" secondAttribute="centerY" id="Afd-dI-yeQ"/>
                             <constraint firstItem="hli-Hn-gJU" firstAttribute="top" secondItem="PbW-o1-pA9" secondAttribute="top" constant="157" id="Ax1-Aq-E5s"/>
-                            <constraint firstItem="I6A-ev-UJY" firstAttribute="bottom" secondItem="eXq-At-1GD" secondAttribute="bottom" id="aMc-Ly-o7Q"/>
+                            <constraint firstItem="PbW-o1-pA9" firstAttribute="trailing" secondItem="I6A-ev-UJY" secondAttribute="trailing" constant="40" id="T8r-6T-gt0"/>
                             <constraint firstItem="hli-Hn-gJU" firstAttribute="leading" secondItem="PbW-o1-pA9" secondAttribute="leading" constant="28" id="bkV-Pb-spl"/>
-                            <constraint firstItem="I6A-ev-UJY" firstAttribute="width" secondItem="eXq-At-1GD" secondAttribute="width" multiplier="0.15" id="fs8-G3-6Gq"/>
                             <constraint firstItem="PbW-o1-pA9" firstAttribute="bottom" secondItem="hli-Hn-gJU" secondAttribute="bottom" constant="136" id="ttq-vv-q6d"/>
-                            <constraint firstItem="I6A-ev-UJY" firstAttribute="leading" secondItem="eXq-At-1GD" secondAttribute="trailing" constant="-43" id="w7O-Wg-b4R"/>
                             <constraint firstItem="PbW-o1-pA9" firstAttribute="trailing" secondItem="hli-Hn-gJU" secondAttribute="trailing" constant="27" id="zOC-aB-FKh"/>
                         </constraints>
                     </view>
