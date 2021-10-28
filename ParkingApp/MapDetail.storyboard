@@ -22,25 +22,109 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Rota Çiz"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ne-IU-CM8">
-                                <rect key="frame" x="181" y="44" width="52" height="27"/>
+                                <rect key="frame" x="181" y="44" width="52" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Phj-Qe-7fJ">
+                                <rect key="frame" x="29" y="125.5" width="150.5" height="247.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fiyat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tic-3s-qQs">
+                                        <rect key="frame" x="0.0" y="0.0" width="150.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ödeme Şekli" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bk1-TS-6on">
+                                        <rect key="frame" x="0.0" y="55.5" width="150.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LPG Müsaitliği" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSl-b4-THH">
+                                        <rect key="frame" x="0.0" y="111" width="150.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Otopark Tipi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w39-F7-tip">
+                                        <rect key="frame" x="0.0" y="166.5" width="150.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toplam Kapasite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwl-Wt-ec1">
+                                        <rect key="frame" x="0.0" y="222" width="150.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="5hn-06-ijo">
+                                <rect key="frame" x="222" y="125" width="154.5" height="247"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 TL - Günlük" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m23-M8-9XB">
+                                        <rect key="frame" x="0.0" y="0.0" width="154.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nakit &amp; Kredi Kartı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zD-GI-Qj8">
+                                        <rect key="frame" x="0.0" y="56" width="154.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hayır" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcu-z0-VWY">
+                                        <rect key="frame" x="0.0" y="112" width="154.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kapalı Otopark" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcB-vw-eW0">
+                                        <rect key="frame" x="0.0" y="168" width="154.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrx-ii-zkK">
+                                        <rect key="frame" x="0.0" y="224" width="154.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6n9-do-vt2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6n9-do-vt2" firstAttribute="trailing" secondItem="5hn-06-ijo" secondAttribute="trailing" constant="37.5" id="6IW-Aa-4LB"/>
+                            <constraint firstItem="Phj-Qe-7fJ" firstAttribute="top" secondItem="0ne-IU-CM8" secondAttribute="bottom" constant="55" id="7id-1P-52B"/>
                             <constraint firstItem="0ne-IU-CM8" firstAttribute="centerX" secondItem="6n9-do-vt2" secondAttribute="centerX" id="8RO-C1-6UN"/>
                             <constraint firstItem="8hh-7p-228" firstAttribute="centerX" secondItem="6n9-do-vt2" secondAttribute="centerX" id="DBY-Nq-BBW"/>
                             <constraint firstItem="0ne-IU-CM8" firstAttribute="top" secondItem="6n9-do-vt2" secondAttribute="top" id="G26-9K-Kx4"/>
                             <constraint firstItem="8hh-7p-228" firstAttribute="bottom" secondItem="6n9-do-vt2" secondAttribute="bottom" id="WI1-Ar-SiW"/>
+                            <constraint firstItem="Phj-Qe-7fJ" firstAttribute="leading" secondItem="6n9-do-vt2" secondAttribute="leading" constant="29" id="gHp-Z2-aFb"/>
+                            <constraint firstItem="5hn-06-ijo" firstAttribute="top" secondItem="0ne-IU-CM8" secondAttribute="top" constant="81" id="uvX-pm-ghm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fiyatLabel" destination="m23-M8-9XB" id="KiV-mV-FyI"/>
+                        <outlet property="kapasiteLabel" destination="mrx-ii-zkK" id="7pg-s0-BdV"/>
+                        <outlet property="lpgkabulLabel" destination="fcu-z0-VWY" id="Tfn-eI-a2e"/>
+                        <outlet property="odemeKabulLabel" destination="8zD-GI-Qj8" id="yaK-Be-yc1"/>
+                        <outlet property="otoparkTipiLabel" destination="KcB-vw-eW0" id="BdB-Ef-woc"/>
+                        <outlet property="rotaCizButon" destination="8hh-7p-228" id="ulV-TB-JUU"/>
+                        <outlet property="stackViewSagVeriler" destination="5hn-06-ijo" id="m2V-8K-T06"/>
+                        <outlet property="stackViewSolListe" destination="Phj-Qe-7fJ" id="hgn-a0-k89"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sth-Q3-xwe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="100"/>
+            <point key="canvasLocation" x="-213.04347826086959" y="99.776785714285708"/>
         </scene>
     </scenes>
     <resources>
