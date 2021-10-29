@@ -15,9 +15,9 @@ import Firebase
 import FirebaseAnalytics
 
 
-class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    var viewModel = MainMapViewModel()
+    var viewModel = MapViewModel()
     
     @IBOutlet weak var editProfileButtonClicked: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
@@ -51,7 +51,7 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     @IBAction func editProfileButtonClicked(_ sender: Any) {
         let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "userDetail") as? UserViewController {
+        if let vc = storyboard.instantiateViewController(withIdentifier: "userDetail") as? UserDetailViewController {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: false, completion: nil)
         }
@@ -173,7 +173,7 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let storyboard = UIStoryboard(name: "MapDetail", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "mapDetail") as? MapDetailViewController {
+        if let vc = storyboard.instantiateViewController(withIdentifier: "mapDetail") as? ParkDetailViewController {
             vc.pin = viewModel.parkModelPins[view.tag]
             let bottomSheet = MDCBottomSheetController(contentViewController: vc)
             self.present(bottomSheet, animated: true, completion: nil)

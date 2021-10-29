@@ -11,7 +11,7 @@ import Firebase
 import FirebaseFirestore
 import Foundation
 
-class MainMapViewModel {
+class MapViewModel {
     var db = Firestore.firestore()
     var parkModelPins = [ParkModel]()
     

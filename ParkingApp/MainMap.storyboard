@@ -10,7 +10,7 @@
         <!--MainMap View Controller-->
         <scene sceneID="HW2-b2-Tnh">
             <objects>
-                <viewController storyboardIdentifier="mainMap" id="Ez9-g6-wpc" userLabel="MainMap View Controller" customClass="MainMapViewController" customModule="ParkingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainMap" id="Ez9-g6-wpc" userLabel="MainMap View Controller" customClass="MapViewController" customModule="ParkingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CAZ-aK-Gcy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

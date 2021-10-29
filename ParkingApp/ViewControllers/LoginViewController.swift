@@ -135,7 +135,7 @@ class LoginViewController: UIViewController {
                         self.present(alert, animated: true, completion: nil)
                     }else{
                         let storyboard = UIStoryboard(name: "MainMap", bundle: nil)
-                        if let vc = storyboard.instantiateViewController(withIdentifier: "mainMap") as? MainMapViewController {
+                        if let vc = storyboard.instantiateViewController(withIdentifier: "mainMap") as? MapViewController {
                             vc.modalPresentationStyle = .fullScreen
                             self.present(vc, animated: false, completion: nil)
                             }
@@ -166,7 +166,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func noUserButtonClicked(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MainMap", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "mainMap") as? MainMapViewController {
+        if let vc = storyboard.instantiateViewController(withIdentifier: "mainMap") as? MapViewController {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: false, completion: nil)
         }

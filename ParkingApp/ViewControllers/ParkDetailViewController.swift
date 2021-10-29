@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class MapDetailViewController: UIViewController {
+class ParkDetailViewController: UIViewController {
 
     @IBOutlet weak var stackViewSolListe: UIStackView!
     @IBOutlet weak var fiyatLabel: UILabel!

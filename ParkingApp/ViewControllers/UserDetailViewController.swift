@@ -14,7 +14,7 @@ import FirebaseDatabase
 import FirebaseFirestore
 
 
-class UserViewController: UIViewController {
+class UserDetailViewController: UIViewController {
     var db: Firestore!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var cameraButton: UIButton!
@@ -88,7 +88,7 @@ class UserViewController: UIViewController {
     }
 }
 
-extension UserViewController: UITableViewDataSource {
+extension UserDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.list.count
