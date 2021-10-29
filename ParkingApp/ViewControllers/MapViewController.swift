@@ -9,12 +9,9 @@ import UIKit
 import MapKit
 import CoreLocation
 import MaterialComponents
-import FirebaseDatabase
 import FirebaseFirestore
 import Firebase
 import FirebaseAuth
-import FirebaseAnalytics
-
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -33,7 +30,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.viewDidLoad()
         mapView.delegate = self
         checkLocationServices()
-        
+        print(uid)
         if (uid == ""){
             editProfileButton.isEnabled = false
         }else{

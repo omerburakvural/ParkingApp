@@ -8,7 +8,6 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-import FirebaseDatabase
 import FirebaseFirestore
 
 class PasswordResetViewController: UIViewController{
@@ -32,6 +31,7 @@ class PasswordResetViewController: UIViewController{
         mevcutSifre.isSecureTextEntry.toggle()
         yeniSifre.isSecureTextEntry.toggle()
         yeniSifreTekrar.isSecureTextEntry.toggle()
+        view.layer.cornerRadius = 15.0
         
                Firestore.firestore().settings = settings
                // [END setup]

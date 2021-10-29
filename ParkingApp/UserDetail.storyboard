@@ -45,16 +45,17 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hey-HJ-hGX">
-                                        <rect key="frame" x="95" y="100" width="224" height="30"/>
+                                        <rect key="frame" x="176" y="100" width="62" height="30"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ahmet Furkan Aytekin" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wuj-GV-82h">
-                                                <rect key="frame" x="0.0" y="3.5" width="200" height="23"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="İsim" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wuj-GV-82h">
+                                                <rect key="frame" x="0.0" y="3.5" width="38" height="23"/>
+                                                <color key="backgroundColor" red="0.027450980392156862" green="0.33725490196078434" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7q-6S-xj6">
-                                                <rect key="frame" x="200" y="3" width="24" height="24"/>
+                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7q-6S-xj6">
+                                                <rect key="frame" x="38" y="3" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="1CZ-Ka-QFy"/>
                                                     <constraint firstAttribute="width" constant="24" id="KpM-vh-18R"/>
@@ -100,6 +101,9 @@
                                                 <buttonConfiguration key="configuration" style="plain">
                                                     <imageReference key="image" image="pencil.circle" catalog="system" symbolScale="large"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="emailBtnClicked:" destination="G07-rM-Xxr" eventType="touchUpInside" id="Wb6-PF-zML"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -128,6 +132,9 @@
                                                 <buttonConfiguration key="configuration" style="plain">
                                                     <imageReference key="image" image="pencil.circle" catalog="system" symbolScale="large"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="plateBtnClicked:" destination="G07-rM-Xxr" eventType="touchUpInside" id="2Bg-kt-W8h"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -204,37 +211,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NYv-RS-SzO">
-                                <rect key="frame" x="34.5" y="361" width="345" height="184"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NYv-RS-SzO" userLabel="Main Stack View">
+                                <rect key="frame" x="18" y="333" width="378" height="240"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="An0-OS-pBE">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="An0-OS-pBE">
+                                        <rect key="frame" x="0.0" y="0.0" width="378" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mevcut Şifre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si4-qx-oVm" userLabel="Yeni Şifre:">
-                                                <rect key="frame" x="0.0" y="2.5" width="172.5" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="9.5" width="156.5" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mevcut Şifreniz" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cqj-7b-hA8">
-                                                <rect key="frame" x="172.5" y="3.5" width="172.5" height="24.5"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mevcut Şifreniz" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cqj-7b-hA8">
+                                                <rect key="frame" x="156.5" y="10.5" width="176.5" height="24.5"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCm-xh-Juk">
+                                                <rect key="frame" x="333" y="0.0" width="45" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="cCm-xh-Juk" secondAttribute="height" multiplier="1:1" id="fN3-Ah-3Dc"/>
+                                                    <constraint firstAttribute="width" constant="45" id="sW9-Xn-xcZ"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
+                                                <connections>
+                                                    <action selector="hidemevcutsifre:" destination="emq-3D-hfL" eventType="touchUpInside" id="DDu-AH-PTT"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DlG-n7-yaL">
-                                        <rect key="frame" x="0.0" y="51" width="345" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DlG-n7-yaL">
+                                        <rect key="frame" x="0.0" y="65" width="378" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeni Şifre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkK-Pj-pXV" userLabel="Yeni Şifre:">
-                                                <rect key="frame" x="0.0" y="2.5" width="172.5" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="9.5" width="146.5" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Yeni Şifreniz" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xL-tw-8zO">
-                                                <rect key="frame" x="172.5" y="3.5" width="172.5" height="24.5"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Yeni Şifreniz" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xL-tw-8zO">
+                                                <rect key="frame" x="146.5" y="10.5" width="186.5" height="24.5"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -242,19 +261,31 @@
                                                     <action selector="yeniSifre:" destination="emq-3D-hfL" eventType="editingChanged" id="9VI-zu-4gd"/>
                                                 </connections>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWh-Ng-LJm">
+                                                <rect key="frame" x="333" y="0.0" width="45" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="gWh-Ng-LJm" secondAttribute="height" multiplier="1:1" id="k0m-5r-CPy"/>
+                                                    <constraint firstAttribute="width" constant="45" id="pNY-8C-2LS"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
+                                                <connections>
+                                                    <action selector="hideYeniSifre:" destination="emq-3D-hfL" eventType="touchUpInside" id="1nW-oc-Fn7"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mbm-Wq-G4B">
-                                        <rect key="frame" x="0.0" y="102" width="345" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mbm-Wq-G4B">
+                                        <rect key="frame" x="0.0" y="130" width="378" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeni Şifre Tekrar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ji-SU-Kmx">
-                                                <rect key="frame" x="0.0" y="2.5" width="172.5" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="9.5" width="203.5" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Yeni Şifre Tekrar" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DNf-kP-iLM">
-                                                <rect key="frame" x="172.5" y="3.5" width="172.5" height="24.5"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Yeni Şifre Tekrar" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DNf-kP-iLM">
+                                                <rect key="frame" x="203.5" y="10.5" width="174.5" height="24.5"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -262,7 +293,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmR-Yi-PUp">
-                                        <rect key="frame" x="0.0" y="153" width="345" height="31"/>
+                                        <rect key="frame" x="0.0" y="195" width="378" height="45"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Kaydet"/>
                                         <connections>
@@ -271,33 +302,14 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCm-xh-Juk">
-                                <rect key="frame" x="363" y="361" width="51" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
-                                <connections>
-                                    <action selector="hidemevcutsifre:" destination="emq-3D-hfL" eventType="touchUpInside" id="DDu-AH-PTT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWh-Ng-LJm">
-                                <rect key="frame" x="363" y="412" width="51" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
-                                <connections>
-                                    <action selector="hideYeniSifre:" destination="emq-3D-hfL" eventType="touchUpInside" id="1nW-oc-Fn7"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1ja-TK-D9J"/>
                         <color key="backgroundColor" red="0.18350580329999999" green="0.41160207989999997" blue="0.58041334150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="1ja-TK-D9J" firstAttribute="trailing" secondItem="An0-OS-pBE" secondAttribute="trailing" constant="34.5" id="AGS-uw-cO1"/>
-                            <constraint firstItem="NYv-RS-SzO" firstAttribute="leading" secondItem="1ja-TK-D9J" secondAttribute="leading" constant="34.5" id="E4R-kS-6yt"/>
+                            <constraint firstItem="NYv-RS-SzO" firstAttribute="leading" secondItem="1ja-TK-D9J" secondAttribute="leading" constant="18" id="E4R-kS-6yt"/>
                             <constraint firstItem="NYv-RS-SzO" firstAttribute="centerY" secondItem="1ja-TK-D9J" secondAttribute="centerY" id="Fpj-bD-wF1"/>
-                            <constraint firstItem="cCm-xh-Juk" firstAttribute="leading" secondItem="Cqj-7b-hA8" secondAttribute="trailing" constant="-16.5" id="L3k-1y-c76"/>
-                            <constraint firstItem="cCm-xh-Juk" firstAttribute="centerY" secondItem="Cqj-7b-hA8" secondAttribute="centerY" id="Ow6-io-Fnl"/>
-                            <constraint firstItem="gWh-Ng-LJm" firstAttribute="centerY" secondItem="7xL-tw-8zO" secondAttribute="centerY" id="eX8-gN-qxz"/>
-                            <constraint firstItem="gWh-Ng-LJm" firstAttribute="leading" secondItem="7xL-tw-8zO" secondAttribute="trailing" constant="-16.5" id="v6D-LC-W0k"/>
+                            <constraint firstItem="1ja-TK-D9J" firstAttribute="trailing" secondItem="NYv-RS-SzO" secondAttribute="trailing" constant="18" id="d9h-et-Sfl"/>
+                            <constraint firstItem="NYv-RS-SzO" firstAttribute="centerX" secondItem="1ja-TK-D9J" secondAttribute="centerX" id="zfJ-x8-UZ1"/>
                         </constraints>
                     </view>
                     <connections>
