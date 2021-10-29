@@ -15,7 +15,7 @@ struct UserRemember{
 }
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var switchRememberMe: UISwitch!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -37,20 +37,19 @@ class LoginViewController: UIViewController {
         
         txtPassword.isSecureTextEntry.toggle()
         
-           if txtPassword.isSecureTextEntry {
-               let image = UIImage(systemName: "eye")
-
-                   hideButton.setImage(image, for: .normal)
-               }
-            else {
-
-                let image = UIImage(systemName: "eye.slash")
-               
-                    hideButton.setImage(image, for: .normal)
-               }
+        if txtPassword.isSecureTextEntry {
+            let image = UIImage(systemName: "eye")
+            
+            hideButton.setImage(image, for: .normal)
+        }
+        else {
+            
+            let image = UIImage(systemName: "eye.slash")
+            
+            hideButton.setImage(image, for: .normal)
+        }
         
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +60,7 @@ class LoginViewController: UIViewController {
         if traitCollection.userInterfaceStyle == .dark
         {
             view.backgroundColor = .systemGray
-
+            
             txtEmail.textColor = .systemGray
             txtPassword.textColor = .systemGray
             switchRememberMe.onTintColor = .black
@@ -70,18 +69,14 @@ class LoginViewController: UIViewController {
             benihatirlaLabel.textColor = .black
             
             cardView.backgroundColor = .systemGray
-//            girisButton.backgroundColor = .black
+            //            girisButton.backgroundColor = .black
             girisButton.backgroundColor = .black
             keyboardViewi.backgroundColor = .systemGray
             newUserButtonClicked.setTitleColor(.black, for: .normal)
             noUserButtonClicked.setTitleColor(.black, for: .normal)
             hideButton.backgroundColor =  .black
-            
-           
-           
         }
-        else
-        {
+        else{
             view.backgroundColor = UIColor(red: 4/255.0, green: 159/255.0, blue: 217/255.0, alpha: 1)
             
         }
@@ -138,7 +133,7 @@ class LoginViewController: UIViewController {
                         if let vc = storyboard.instantiateViewController(withIdentifier: "mainMap") as? MapViewController {
                             vc.modalPresentationStyle = .fullScreen
                             self.present(vc, animated: false, completion: nil)
-                            }
+                        }
                     }
                 }
             }

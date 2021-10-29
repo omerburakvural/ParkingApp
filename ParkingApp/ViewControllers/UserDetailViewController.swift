@@ -27,12 +27,12 @@ class UserDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
         let settings = FirestoreSettings()
-
-               Firestore.firestore().settings = settings
-               // [END setup]
-               db = Firestore.firestore()
+        
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
         
         tableView.dataSource = self
         //tableView.delegate = self
@@ -41,19 +41,19 @@ class UserDetailViewController: UIViewController {
         if let name = viewModel.user?.userName{
             self.nameTextField.text = name
         } else {
-//            loading bekle
+            //            loading bekle
             let uid = (Auth.auth().currentUser?.uid)!
             
             let docRef = db.collection("users").document(uid)
-
+            
             docRef.getDocument { (document, error) in
                 if let document = document, document.exists {
                     let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                     print(dataDescription)
-                   let name = document["Name Surname"] as? String
-//                    let surname = document["Surname"] as? String
-                 
-                     let isimsoyisim = "\(name!)"
+                    let name = document["Name Surname"] as? String
+                    //                    let surname = document["Surname"] as? String
+                    
+                    let isimsoyisim = "\(name!)"
                     self.nameTextField.text = String(isimsoyisim)
                     
                     print("Document data: \(dataDescription)")
@@ -72,7 +72,7 @@ class UserDetailViewController: UIViewController {
         self.nameTextField.isEnabled = false
         
     }
-
+    
     @IBAction func pressEditBtn(_ sender: Any) {
         self.nameTextField.isSelected = true
         self.nameTextField.isEnabled = true

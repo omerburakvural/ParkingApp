@@ -10,16 +10,9 @@ import Foundation
 class NewUserViewModel
 
 {
-    
-        var name:String?
-        var username:String?
-        var usersurname:String?
-        var email:String?
-        var password:String?
-    
-     
-   
-    
+    var name:String?
+    var username:String?
+    var usersurname:String?
+    var email:String?
+    var password:String?
 }
-
-

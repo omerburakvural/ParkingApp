@@ -38,6 +38,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VtT-2a-jtn"/>
                         <color key="backgroundColor" red="0.057914189990000003" green="0.62749528880000005" blue="0.89792615180000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="y0z-TC-1Rh" firstAttribute="leading" secondItem="VtT-2a-jtn" secondAttribute="leading" id="CXn-jf-yIF"/>
                             <constraint firstItem="y0z-TC-1Rh" firstAttribute="top" secondItem="VtT-2a-jtn" secondAttribute="top" id="Egh-2H-dR7"/>

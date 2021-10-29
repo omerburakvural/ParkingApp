@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 
 class ParkDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var stackViewSolListe: UIStackView!
     @IBOutlet weak var fiyatLabel: UILabel!
     @IBOutlet weak var odemeKabulLabel: UILabel!

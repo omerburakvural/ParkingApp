@@ -51,7 +51,7 @@ public class KeyboardConstraints: NSLayoutConstraint {
                         UIApplication.shared.keyWindow?.layoutIfNeeded()
                         return
                     }, completion: { finished in
-                })
+                    })
             default:
                 
                 break
@@ -80,7 +80,7 @@ public class KeyboardConstraints: NSLayoutConstraint {
                         UIApplication.shared.keyWindow?.layoutIfNeeded()
                         return
                     }, completion: { finished in
-                })
+                    })
             default:
                 break
             }

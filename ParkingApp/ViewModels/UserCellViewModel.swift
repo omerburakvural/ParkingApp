@@ -9,9 +9,9 @@
 import Foundation
 
 /*class Detail{
-    var key: String = ""
-    var value: String = ""
-}*/
+ var key: String = ""
+ var value: String = ""
+ }*/
 class UserCellDetail {
     internal init(key: String, value: String) {
         self.key = key
@@ -20,7 +20,6 @@ class UserCellDetail {
     
     var key: String
     var value: String
-    
 }
 
 class UserCellViewModel {
@@ -30,5 +29,4 @@ class UserCellViewModel {
     init (user: UserCellDetail? = nil) {
         self.user = user
     }
-    
 }

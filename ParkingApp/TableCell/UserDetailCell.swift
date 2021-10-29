@@ -14,14 +14,11 @@ class UserDetailCell : UITableViewCell {
     @IBOutlet weak var keyLbl: UILabel!
     @IBOutlet weak var valueLbl: UILabel!
     
-    
-
-    
     var viewModel: UserCellViewModel! {
         didSet {
             keyLbl.text = viewModel.user?.key
             valueLbl.text = viewModel.user?.value
-            }
         }
     }
+}
 

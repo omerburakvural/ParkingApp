@@ -9,16 +9,16 @@ import UIKit
 import Firebase
 
 class PasswordResetController: UIViewController {
-
+    
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var yenileButton: UIButton!
     
     @IBOutlet weak var NavBar: UINavigationBar!
     @IBOutlet weak var emailAdresi: UILabel!
-  
+    
     @IBOutlet weak var keyboardViewi: UIView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,15 +33,15 @@ class PasswordResetController: UIViewController {
             NavBar.tintColor = .black
             NavBar.barTintColor = .black
             NavBar.backgroundColor = .white
-           
+            
             let textColor = [NSAttributedString.Key.foregroundColor:UIColor.white]
-               UINavigationBar.appearance().titleTextAttributes = textColor
-         
+            UINavigationBar.appearance().titleTextAttributes = textColor
             
             
             
-           
-           
+            
+            
+            
         }
         else
         {
@@ -59,7 +59,7 @@ class PasswordResetController: UIViewController {
         // yenileButton
         yenileButton.layer.cornerRadius = 10.0
     }
-
+    
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -67,21 +67,21 @@ class PasswordResetController: UIViewController {
         
         let auth = Auth.auth()
         auth.sendPasswordReset(withEmail: emailAddressTextField.text!){(error) in
-        
+            
             if let error = error{
                 let alert = UIAlertController(title:"Uyarı",message:error.localizedDescription, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "Tamam", style: .default, handler: { (action) -> Void in
-                     print("Ok button tapped")
-                  })
+                    print("Ok button tapped")
+                })
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
                 return
             }
-
+            
             let alert = UIAlertController(title: "Bilgi", message: "Şifre resetlemek için mail adresinize mail yollanmıştır.", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Tamam", style: .default, handler: { (action) -> Void in
-                 print("Ok button tapped")
-              })
+                print("Ok button tapped")
+            })
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)
             

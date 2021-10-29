@@ -59,11 +59,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     @IBAction func editProfileButtonClicked(_ sender: Any) {
-            let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
-            if let vc = storyboard.instantiateViewController(withIdentifier: "userDetail") as? UserDetailViewController {
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: false, completion: nil)
-            }
+        let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "userDetail") as? UserDetailViewController {
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
+        }
     }
     
     func checkLocationServices(){
