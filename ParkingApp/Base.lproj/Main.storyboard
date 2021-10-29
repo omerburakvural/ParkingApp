@@ -80,7 +80,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKa-2s-c7a">
-                                                <rect key="frame" x="18" y="330" width="51" height="33"/>
+                                                <rect key="frame" x="18" y="320" width="51" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Üye Ol">
                                                     <color key="titleColor" red="0.18289321659999999" green="0.41205567119999997" blue="0.58041328189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -90,7 +90,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pou-mR-xp0">
-                                                <rect key="frame" x="175" y="330" width="180" height="33"/>
+                                                <rect key="frame" x="175" y="320" width="180" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Üye Olmadan Devam Et">
                                                     <color key="titleColor" red="0.18289321659999999" green="0.41205567119999997" blue="0.58041328189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -110,7 +110,7 @@
                                         <constraints>
                                             <constraint firstItem="2RQ-F4-tGf" firstAttribute="top" secondItem="Cbv-yX-eX1" secondAttribute="bottom" constant="20" id="2lq-3m-sdv"/>
                                             <constraint firstAttribute="width" secondItem="C8K-8W-Qnz" secondAttribute="height" multiplier="1:1" id="4zY-0U-gW6"/>
-                                            <constraint firstItem="YKa-2s-c7a" firstAttribute="top" secondItem="2RQ-F4-tGf" secondAttribute="bottom" constant="30" id="Asm-Id-J3b"/>
+                                            <constraint firstItem="YKa-2s-c7a" firstAttribute="top" secondItem="2RQ-F4-tGf" secondAttribute="bottom" constant="20" id="Asm-Id-J3b"/>
                                             <constraint firstItem="eQr-k9-fHw" firstAttribute="height" secondItem="8Dc-SH-0bq" secondAttribute="height" multiplier="0.939394" id="Ize-Qe-lIU"/>
                                             <constraint firstItem="YKa-2s-c7a" firstAttribute="leading" secondItem="C8K-8W-Qnz" secondAttribute="leading" constant="18" id="J7j-QY-ol7"/>
                                             <constraint firstItem="2RQ-F4-tGf" firstAttribute="top" secondItem="8Dc-SH-0bq" secondAttribute="bottom" constant="20" id="KmU-i4-CQu"/>
@@ -121,7 +121,7 @@
                                             <constraint firstItem="2RQ-F4-tGf" firstAttribute="leading" secondItem="C8K-8W-Qnz" secondAttribute="leading" constant="18" id="Zc4-H5-s4p"/>
                                             <constraint firstAttribute="bottom" secondItem="YKa-2s-c7a" secondAttribute="bottom" constant="10" id="ZuQ-gG-v5U"/>
                                             <constraint firstItem="Cbv-yX-eX1" firstAttribute="leading" secondItem="eQr-k9-fHw" secondAttribute="trailing" constant="10" id="aTN-Eu-bVg"/>
-                                            <constraint firstItem="pou-mR-xp0" firstAttribute="top" secondItem="2RQ-F4-tGf" secondAttribute="bottom" constant="30" id="b6j-gA-a7r"/>
+                                            <constraint firstItem="pou-mR-xp0" firstAttribute="top" secondItem="2RQ-F4-tGf" secondAttribute="bottom" constant="20" id="b6j-gA-a7r"/>
                                             <constraint firstAttribute="trailing" secondItem="OW0-Hd-9i7" secondAttribute="trailing" constant="18" id="djT-D5-6nl"/>
                                             <constraint firstItem="K6y-Ft-jII" firstAttribute="leading" secondItem="C8K-8W-Qnz" secondAttribute="leading" id="eih-Zx-1jj"/>
                                             <constraint firstAttribute="trailing" secondItem="2RQ-F4-tGf" secondAttribute="trailing" constant="18" id="g8Y-Gi-bFJ"/>
