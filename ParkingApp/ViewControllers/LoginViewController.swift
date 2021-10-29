@@ -102,6 +102,23 @@ class LoginViewController: UIViewController {
         
     }
     
+    func userAuth(withEmail: String,andWithPassword: String){
+        Auth.auth().signIn(withEmail: withEmail, password: andWithPassword){
+            (result,error) in
+            if error != nil
+            {
+                let alert = UIAlertController(title: "Uyarı", message: "Girdiğiniz kullanıcı bilgileri hatalıdır. Lütfen kontrol ediniz.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Kapat", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }else{
+                let storyboard = UIStoryboard(name: "MainMap", bundle: nil)
+                if let vc = storyboard.instantiateViewController(withIdentifier: "mainMap") as? MapViewController {
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: false, completion: nil)
+                }
+            }
+        }
+    }
     
     @IBAction func loginButtonClicked(_ sender: Any) {
         
@@ -120,22 +137,9 @@ class LoginViewController: UIViewController {
                 defaults.set(email, forKey: UserRemember.emailKey)
                 defaults.set(password, forKey: UserRemember.passwordKey)
                 defaults.set(true, forKey: UserRemember.rememberMeKey)
-                
-                Auth.auth().signIn(withEmail: email!, password: password!){
-                    (result,error) in
-                    if error != nil
-                    {
-                        let alert = UIAlertController(title: "Uyarı", message: "Girdiğiniz kullanıcı bilgileri hatalıdır. Lütfen kontrol ediniz.", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Kapat", style: .default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                    }else{
-                        let storyboard = UIStoryboard(name: "MainMap", bundle: nil)
-                        if let vc = storyboard.instantiateViewController(withIdentifier: "mainMap") as? MapViewController {
-                            vc.modalPresentationStyle = .fullScreen
-                            self.present(vc, animated: false, completion: nil)
-                        }
-                    }
-                }
+                userAuth(withEmail: email!, andWithPassword: password!)
+            }else{
+                userAuth(withEmail: email!, andWithPassword: password!)
             }
         }
     }

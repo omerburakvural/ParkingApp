@@ -149,7 +149,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.015686274509803921" green="0.62352941176470589" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.18350580329999999" green="0.41160207989999997" blue="0.58041334150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="xax-P6-2UM" firstAttribute="centerY" secondItem="MO4-S5-sr2" secondAttribute="centerY" id="3Uv-VW-Xcp"/>
                                     <constraint firstItem="xax-P6-2UM" firstAttribute="trailing" secondItem="MO4-S5-sr2" secondAttribute="trailing" constant="-2" id="Gze-KN-XFV"/>
@@ -160,7 +160,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r7P-eb-kfs"/>
-                        <color key="backgroundColor" red="0.18289321659999999" green="0.41205567119999997" blue="0.58041328189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.18350580329999999" green="0.41160207989999997" blue="0.58041334150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GfF-fl-9FS" firstAttribute="centerX" secondItem="r7P-eb-kfs" secondAttribute="centerX" id="Gfr-I3-Xaf"/>
@@ -260,7 +260,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.015686274509803921" green="0.62352941176470589" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.18350580329999999" green="0.41160207989999997" blue="0.58041334150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="2dz-mW-C6H" firstAttribute="width" secondItem="23B-Zf-0Ie" secondAttribute="width" id="6Ki-NL-19c"/>
                                     <constraint firstItem="2dz-mW-C6H" firstAttribute="centerX" secondItem="23B-Zf-0Ie" secondAttribute="centerX" id="CHd-Lc-9wm"/>
@@ -269,7 +269,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9BM-kb-qyz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.18350580329999999" green="0.41160207989999997" blue="0.58041334150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="23B-Zf-0Ie" firstAttribute="centerX" secondItem="9BM-kb-qyz" secondAttribute="centerX" id="7YR-wy-S9g"/>
                             <constraint firstItem="23B-Zf-0Ie" firstAttribute="top" secondItem="9BM-kb-qyz" secondAttribute="top" id="eyI-dM-oNi"/>
@@ -297,9 +297,6 @@
         <image name="eye.slash" catalog="system" width="128" height="86"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
