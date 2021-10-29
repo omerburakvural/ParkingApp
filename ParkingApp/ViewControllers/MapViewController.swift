@@ -12,6 +12,7 @@ import MaterialComponents
 import FirebaseDatabase
 import FirebaseFirestore
 import Firebase
+import FirebaseAuth
 import FirebaseAnalytics
 
 
@@ -19,18 +20,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var viewModel = MapViewModel()
     
-    @IBOutlet weak var editProfileButtonClicked: UIBarButtonItem!
+    @IBOutlet weak var editProfileButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
     let visibleRadiusForUser: Double = 2000.0
     let regionRadius: Double = 10000.0
     let coordinate = CLLocationCoordinate2D(latitude: 41.033393, longitude: 29.047944)
+    let uid = (Auth.auth().currentUser?.uid)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         checkLocationServices()
+        
+        if (uid == ""){
+            editProfileButton.isEnabled = false
+        }else{
+            editProfileButton.isEnabled = true
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 ) {
             self.addPinToTheMap()
         }
@@ -50,11 +59,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     @IBAction func editProfileButtonClicked(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "userDetail") as? UserDetailViewController {
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: false, completion: nil)
-        }
+            let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
+            if let vc = storyboard.instantiateViewController(withIdentifier: "userDetail") as? UserDetailViewController {
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: false, completion: nil)
+            }
     }
     
     func checkLocationServices(){
@@ -167,7 +176,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             annotationView?.tag = (annotation as! CustomPointAnnotation).tag
         }
         annotationView?.image = UIImage(named: "mapPin")
-
+        
         return annotationView
     }
     
