@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -86,7 +85,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text Field" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tzm-h9-Akw">
                                                 <rect key="frame" x="151.5" y="0.0" width="186.5" height="31"/>
-                                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                                <color key="backgroundColor" red="0.18350580329999999" green="0.41160207989999997" blue="0.58041334150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -184,9 +183,12 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="X9f-9S-37P" id="x4l-TU-Ejz"/>
+                        <outlet property="emailLbl" destination="6Xf-dD-LGL" id="upP-fg-WRt"/>
+                        <outlet property="emailTxtField" destination="tzm-h9-Akw" id="kdn-b9-bPb"/>
                         <outlet property="nameEditbtn" destination="L7q-6S-xj6" id="gyL-9e-pf4"/>
                         <outlet property="nameTextField" destination="Wuj-GV-82h" id="920-VE-Sau"/>
                         <outlet property="passwordEditButton" destination="a57-sk-xks" id="cUJ-xk-Mbp"/>
+                        <outlet property="plakaTxtField" destination="gSr-Qg-eeq" id="SPK-uu-1KT"/>
                         <outlet property="saveButton" destination="hjc-pM-4PX" id="hIy-Tz-33N"/>
                     </connections>
                 </viewController>
@@ -317,8 +319,5 @@
         <image name="eye.slash" catalog="system" width="128" height="86"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="personIcon" width="80" height="80"/>
-        <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
