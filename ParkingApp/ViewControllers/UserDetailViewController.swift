@@ -26,12 +26,12 @@ class UserDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0 ) {
+        self.emailTxtField.text = ""
+        self.plakaTxtField.text = ""
+        self.nameTextField.text = ""
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
         self.loadUser()
         }
-        self.nameTextField.text = user.userName
-        self.emailTxtField.text = user.userEmail
-        self.plakaTxtField.text = user.userPlate
     }
 
     @IBAction func nameEditBtnClicked(_ sender: Any) {
@@ -56,13 +56,10 @@ class UserDetailViewController: UIViewController {
     func loadUser(){
         
         for i in 0..<viewModel.users.count {
-            if (self.user.userEmail == viewModel.users[i].userEmail){
-                print("hello")
-                self.user.userEmail = viewModel.users[i].userEmail
-                self.user.userPlate = viewModel.users[i].userPlate
-                self.user.userName = viewModel.users[i].userName
-                self.user.userID = viewModel.users[i].userID
-                print(viewModel.users[i].userEmail)
+            if (self.userEmail == viewModel.users[i].userEmail){
+                self.emailTxtField.text = viewModel.users[i].userEmail
+                self.plakaTxtField.text = viewModel.users[i].userPlate
+                self.nameTextField.text = viewModel.users[i].userName
             }
         }
     }
