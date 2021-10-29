@@ -1,5 +1,5 @@
 //
-//  PasswordResetController.swift
+//  ForgotPasswordViewController.swift
 //  ParkingApp
 //
 //  Created by PCMACEGITIM on 24.10.2021.
@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class PasswordResetController: UIViewController {
+class ForgotPasswordViewController: UIViewController {
     
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var passwordView: UIView!

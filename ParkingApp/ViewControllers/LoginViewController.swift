@@ -149,7 +149,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func forgotPasswordClicked(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "passwordMain") as? PasswordResetController {
+        if let vc = storyboard.instantiateViewController(withIdentifier: "passwordMain") as? ForgotPasswordViewController {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: false, completion: nil)
         }
