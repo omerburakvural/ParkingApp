@@ -40,9 +40,10 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         var pinArray: [MKPointAnnotation] = []
         let count = viewModel.parkModelPins.count
         for i in 0..<count {
-            let pin = MKPointAnnotation()
+            let pin = CustomPointAnnotation()
             pin.coordinate = CLLocationCoordinate2D(latitude: viewModel.parkModelPins[i].lat, longitude: viewModel.parkModelPins[i].long)
             pin.title = viewModel.parkModelPins[i].park_name
+            pin.tag = i
             pinArray.append(pin)
         }
         mapView.addAnnotations(pinArray)
@@ -160,21 +161,26 @@ class MainMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
             annotationView?.canShowCallout = true
             annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            annotationView?.tag = (annotation as! CustomPointAnnotation).tag
         }else {
             annotationView?.annotation = annotation
+            annotationView?.tag = (annotation as! CustomPointAnnotation).tag
         }
-        
         annotationView?.image = UIImage(named: "mapPin")
 
-        
         return annotationView
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let storyboard = UIStoryboard(name: "MapDetail", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "mapDetail") as? MapDetailViewController {
+            vc.pin = viewModel.parkModelPins[view.tag]
             let bottomSheet = MDCBottomSheetController(contentViewController: vc)
             self.present(bottomSheet, animated: true, completion: nil)
         }
     }
+}
+
+class CustomPointAnnotation: MKPointAnnotation {
+    var tag: Int!
 }
