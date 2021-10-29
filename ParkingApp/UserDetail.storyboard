@@ -203,19 +203,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NYv-RS-SzO">
-                                <rect key="frame" x="32.5" y="361" width="349" height="184"/>
+                                <rect key="frame" x="34.5" y="361" width="345" height="184"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="An0-OS-pBE">
-                                        <rect key="frame" x="0.0" y="0.0" width="349" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mevcut Şifre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si4-qx-oVm" userLabel="Yeni Şifre:">
-                                                <rect key="frame" x="0.0" y="2.5" width="174.5" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="2.5" width="172.5" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mevcut Şifreniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cqj-7b-hA8">
-                                                <rect key="frame" x="174.5" y="3.5" width="174.5" height="24.5"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mevcut Şifreniz" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cqj-7b-hA8">
+                                                <rect key="frame" x="172.5" y="3.5" width="172.5" height="24.5"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -223,16 +223,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DlG-n7-yaL">
-                                        <rect key="frame" x="0.0" y="51" width="349" height="31"/>
+                                        <rect key="frame" x="0.0" y="51" width="345" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeni Şifre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkK-Pj-pXV" userLabel="Yeni Şifre:">
-                                                <rect key="frame" x="0.0" y="2.5" width="174.5" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="2.5" width="172.5" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Yeni Şifreniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xL-tw-8zO">
-                                                <rect key="frame" x="174.5" y="3.5" width="174.5" height="24.5"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Yeni Şifreniz" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xL-tw-8zO">
+                                                <rect key="frame" x="172.5" y="3.5" width="172.5" height="24.5"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -240,16 +240,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mbm-Wq-G4B">
-                                        <rect key="frame" x="0.0" y="102" width="349" height="31"/>
+                                        <rect key="frame" x="0.0" y="102" width="345" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeni Şifre Tekrar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ji-SU-Kmx">
-                                                <rect key="frame" x="0.0" y="2.5" width="174.5" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="2.5" width="172.5" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Yeni Şifreniz Tekrar" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DNf-kP-iLM">
-                                                <rect key="frame" x="174.5" y="3.5" width="174.5" height="24.5"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Yeni Şifre Tekrar" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DNf-kP-iLM">
+                                                <rect key="frame" x="172.5" y="3.5" width="172.5" height="24.5"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -257,7 +257,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmR-Yi-PUp">
-                                        <rect key="frame" x="0.0" y="153" width="349" height="31"/>
+                                        <rect key="frame" x="0.0" y="153" width="345" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Kaydet"/>
                                         <connections>
@@ -266,15 +266,39 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCm-xh-Juk">
+                                <rect key="frame" x="363" y="361" width="51" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWh-Ng-LJm">
+                                <rect key="frame" x="363" y="412" width="51" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4N-jy-7j3">
+                                <rect key="frame" x="362.5" y="463" width="51" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1ja-TK-D9J"/>
                         <color key="backgroundColor" red="0.18350580329999999" green="0.41160207989999997" blue="0.58041334150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="NYv-RS-SzO" firstAttribute="centerX" secondItem="1ja-TK-D9J" secondAttribute="centerX" id="DWe-aj-88U"/>
                             <constraint firstItem="NYv-RS-SzO" firstAttribute="centerY" secondItem="1ja-TK-D9J" secondAttribute="centerY" id="Fpj-bD-wF1"/>
+                            <constraint firstItem="cCm-xh-Juk" firstAttribute="leading" secondItem="Cqj-7b-hA8" secondAttribute="trailing" constant="-16.5" id="L3k-1y-c76"/>
+                            <constraint firstItem="cCm-xh-Juk" firstAttribute="centerY" secondItem="Cqj-7b-hA8" secondAttribute="centerY" id="Ow6-io-Fnl"/>
+                            <constraint firstItem="gWh-Ng-LJm" firstAttribute="centerY" secondItem="7xL-tw-8zO" secondAttribute="centerY" id="eX8-gN-qxz"/>
+                            <constraint firstItem="D4N-jy-7j3" firstAttribute="centerY" secondItem="DNf-kP-iLM" secondAttribute="centerY" id="tv4-cr-HBd"/>
+                            <constraint firstItem="gWh-Ng-LJm" firstAttribute="leading" secondItem="7xL-tw-8zO" secondAttribute="trailing" constant="-16.5" id="v6D-LC-W0k"/>
+                            <constraint firstItem="D4N-jy-7j3" firstAttribute="leading" secondItem="DNf-kP-iLM" secondAttribute="trailing" constant="-17" id="zkE-1X-T0M"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="hideYeniSifre" destination="gWh-Ng-LJm" id="c1f-cM-68r"/>
+                        <outlet property="hideYeniSifreTekrar" destination="D4N-jy-7j3" id="FUN-dU-Dnc"/>
+                        <outlet property="hidemevcutsifre" destination="cCm-xh-Juk" id="9GN-pM-SQZ"/>
                         <outlet property="mevcutSifre" destination="Cqj-7b-hA8" id="lqp-p6-mw8"/>
                         <outlet property="yeniSifre" destination="7xL-tw-8zO" id="vP9-Ie-LUM"/>
                         <outlet property="yeniSifreTekrar" destination="DNf-kP-iLM" id="rxq-i8-EVx"/>
@@ -282,11 +306,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJE-eU-KwN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248" y="-1122"/>
+            <point key="canvasLocation" x="1246.376811594203" y="-1122.3214285714284"/>
         </scene>
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="eye.slash" catalog="system" width="128" height="86"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="personIcon" width="80" height="80"/>
         <systemColor name="separatorColor">

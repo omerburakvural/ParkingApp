@@ -16,6 +16,11 @@ class PasswordResetViewController: UIViewController{
     @IBOutlet weak var mevcutSifre: UITextField!
     @IBOutlet weak var yeniSifre: UITextField!
     @IBOutlet weak var yeniSifreTekrar: UITextField!
+    
+    @IBOutlet weak var hidemevcutsifre: UIButton!
+    @IBOutlet weak var hideYeniSifre: UIButton!
+    @IBOutlet weak var hideYeniSifreTekrar: UIButton!
+    
     var passwordmodel = PasswordChangeModel()
     var usermodeli = NewUserViewModel()
     var db: Firestore!
