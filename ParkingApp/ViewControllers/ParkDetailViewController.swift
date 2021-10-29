@@ -35,4 +35,21 @@ class ParkDetailViewController: UIViewController {
         kapasiteLabel.text = "\(pin.capacity)"
         otoparkTipiLabel.text = pin.park_type
     }
+    
+    @IBAction func rotaCizButtonClicked(_ sender: Any) {
+        let lat: CLLocationDegrees = pin.lat
+        let long: CLLocationDegrees = pin.long
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(lat, long)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = pin.park_name
+        mapItem.openInMaps(launchOptions: options)
+    }
+    
 }

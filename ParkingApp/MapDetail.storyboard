@@ -28,6 +28,9 @@
                                 <state key="normal" title="Rota Çiz">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="rotaCizButtonClicked:" destination="mcA-4h-JuF" eventType="touchUpInside" id="3ew-1e-Exf"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Phj-Qe-7fJ" userLabel="Main Stack View">
                                 <rect key="frame" x="20" y="44" width="374" height="788"/>
