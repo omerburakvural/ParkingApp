@@ -125,7 +125,7 @@ class NewUserViewController: UIViewController {
     @IBAction func kayitButon(_ sender: Any) {
         
         //        var ref: DocumentReference? = nil
-        //              ref = db.collection("users").addDocument(data: [
+        //              ref = db.collection("Users").addDocument(data: [
         //                  "Name": "FireTest1",
         //                  "Surname": "FireTest2",
         //

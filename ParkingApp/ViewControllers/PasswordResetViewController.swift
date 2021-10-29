@@ -37,7 +37,7 @@ class PasswordResetViewController: UIViewController{
                // [END setup]
                db = Firestore.firestore()
                 let uid = (Auth.auth().currentUser?.uid)!
-                let docRef = db.collection("users").document(uid)
+                let docRef = db.collection("Users").document(uid)
                 docRef.getDocument { (document, error) in
                 if let document = document, document.exists {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
