@@ -20,6 +20,9 @@
                                 <rect key="frame" x="146" y="831" width="122.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Oturumu Kapat" cornerStyle="medium"/>
+                                <connections>
+                                    <action selector="signoutButton:" destination="G07-rM-Xxr" eventType="touchUpInside" id="8c1-oY-9jA"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXG-nl-zq4">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -190,6 +193,7 @@
                         <outlet property="passwordEditButton" destination="a57-sk-xks" id="cUJ-xk-Mbp"/>
                         <outlet property="plakaTxtField" destination="gSr-Qg-eeq" id="SPK-uu-1KT"/>
                         <outlet property="saveButton" destination="hjc-pM-4PX" id="hIy-Tz-33N"/>
+                        <outlet property="signoutButton" destination="FL1-gg-7v8" id="GSh-5l-aQ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81c-Uh-0WM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

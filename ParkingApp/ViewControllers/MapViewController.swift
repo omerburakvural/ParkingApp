@@ -33,11 +33,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.viewDidLoad()
         mapView.delegate = self
         checkLocationServices()
-        
+        print(uid)
         if (uid == ""){
             editProfileButton.isEnabled = false
+           
+          
         }else{
             editProfileButton.isEnabled = true
+           
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 ) {

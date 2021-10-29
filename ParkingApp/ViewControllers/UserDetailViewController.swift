@@ -19,6 +19,7 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var plakaTxtField: UITextField!
     @IBOutlet weak var emailLbl: UILabel!
     
+    @IBOutlet weak var signoutButton: UIButton!
     
     var viewModel = UserDetailViewModel()
     let userEmail = (Auth.auth().currentUser?.email)
@@ -26,6 +27,15 @@ class UserDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let uid = (Auth.auth().currentUser?.uid)
+       
+        if (uid == nil)
+        {
+           
+//                KULLANICININ GİRİŞ YAPMADIĞINI BÖYLE YAKALAYABİLİYORUZ. BURADA BİR ÇÖZÜM ÜRETİRSEK, KULLANICIYI İÇERİ ALMAYABİLİRİZ
+//             REMOVE FROM PARENT DENEDİM AMA HİYERARŞİ HATASINA YÜRÜDÜ. BURADA BİR ÇÖZÜM BULABİLİR MİYİZ ?
+        }
+        
         self.emailTxtField.text = ""
         self.plakaTxtField.text = ""
         self.nameTextField.text = ""
@@ -45,6 +55,22 @@ class UserDetailViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func signoutButton(_ sender: Any) {
+        
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            let alert = UIAlertController(title: "Başarılı", message: "Oturumunuz başarıyla kapatıldı", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (_) in
+                self.dismiss(animated: true, completion: nil)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+//            KULLANICININ OTORUMU KAPATIP, ALERT VERDİK
+            
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
+    }
     @IBAction func passwordEditButtonClicked(_ sender: Any) {
         let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "passwordReset") as? PasswordResetViewController {
