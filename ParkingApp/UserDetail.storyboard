@@ -236,6 +236,9 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="yeniSifre:" destination="emq-3D-hfL" eventType="editingChanged" id="9VI-zu-4gd"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -270,38 +273,38 @@
                                 <rect key="frame" x="363" y="361" width="51" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
+                                <connections>
+                                    <action selector="hidemevcutsifre:" destination="emq-3D-hfL" eventType="touchUpInside" id="DDu-AH-PTT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWh-Ng-LJm">
                                 <rect key="frame" x="363" y="412" width="51" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4N-jy-7j3">
-                                <rect key="frame" x="362.5" y="463" width="51" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
+                                <connections>
+                                    <action selector="hideYeniSifre:" destination="emq-3D-hfL" eventType="touchUpInside" id="1nW-oc-Fn7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1ja-TK-D9J"/>
                         <color key="backgroundColor" red="0.18350580329999999" green="0.41160207989999997" blue="0.58041334150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="NYv-RS-SzO" firstAttribute="centerX" secondItem="1ja-TK-D9J" secondAttribute="centerX" id="DWe-aj-88U"/>
+                            <constraint firstItem="1ja-TK-D9J" firstAttribute="trailing" secondItem="An0-OS-pBE" secondAttribute="trailing" constant="34.5" id="AGS-uw-cO1"/>
+                            <constraint firstItem="NYv-RS-SzO" firstAttribute="leading" secondItem="1ja-TK-D9J" secondAttribute="leading" constant="34.5" id="E4R-kS-6yt"/>
                             <constraint firstItem="NYv-RS-SzO" firstAttribute="centerY" secondItem="1ja-TK-D9J" secondAttribute="centerY" id="Fpj-bD-wF1"/>
                             <constraint firstItem="cCm-xh-Juk" firstAttribute="leading" secondItem="Cqj-7b-hA8" secondAttribute="trailing" constant="-16.5" id="L3k-1y-c76"/>
                             <constraint firstItem="cCm-xh-Juk" firstAttribute="centerY" secondItem="Cqj-7b-hA8" secondAttribute="centerY" id="Ow6-io-Fnl"/>
                             <constraint firstItem="gWh-Ng-LJm" firstAttribute="centerY" secondItem="7xL-tw-8zO" secondAttribute="centerY" id="eX8-gN-qxz"/>
-                            <constraint firstItem="D4N-jy-7j3" firstAttribute="centerY" secondItem="DNf-kP-iLM" secondAttribute="centerY" id="tv4-cr-HBd"/>
                             <constraint firstItem="gWh-Ng-LJm" firstAttribute="leading" secondItem="7xL-tw-8zO" secondAttribute="trailing" constant="-16.5" id="v6D-LC-W0k"/>
-                            <constraint firstItem="D4N-jy-7j3" firstAttribute="leading" secondItem="DNf-kP-iLM" secondAttribute="trailing" constant="-17" id="zkE-1X-T0M"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="hideYeniSifre" destination="gWh-Ng-LJm" id="c1f-cM-68r"/>
-                        <outlet property="hideYeniSifreTekrar" destination="D4N-jy-7j3" id="FUN-dU-Dnc"/>
                         <outlet property="hidemevcutsifre" destination="cCm-xh-Juk" id="9GN-pM-SQZ"/>
                         <outlet property="mevcutSifre" destination="Cqj-7b-hA8" id="lqp-p6-mw8"/>
                         <outlet property="yeniSifre" destination="7xL-tw-8zO" id="vP9-Ie-LUM"/>
                         <outlet property="yeniSifreTekrar" destination="DNf-kP-iLM" id="rxq-i8-EVx"/>
+                        <outlet property="yeniSifreTekrarLabel" destination="3ji-SU-Kmx" id="yvJ-ZG-EWv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJE-eU-KwN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

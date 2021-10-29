@@ -17,40 +17,92 @@ class PasswordResetViewController: UIViewController{
     @IBOutlet weak var yeniSifre: UITextField!
     @IBOutlet weak var yeniSifreTekrar: UITextField!
     
+  
+    @IBOutlet weak var yeniSifreTekrarLabel: UILabel!
     @IBOutlet weak var hidemevcutsifre: UIButton!
     @IBOutlet weak var hideYeniSifre: UIButton!
-    @IBOutlet weak var hideYeniSifreTekrar: UIButton!
     
     var passwordmodel = PasswordChangeModel()
     var usermodeli = NewUserViewModel()
     var db: Firestore!
     
-  
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let settings = FirestoreSettings()
-               
+        mevcutSifre.isSecureTextEntry.toggle()
+        yeniSifre.isSecureTextEntry.toggle()
+        yeniSifreTekrar.isSecureTextEntry.toggle()
+        
                Firestore.firestore().settings = settings
                // [END setup]
                db = Firestore.firestore()
                 let uid = (Auth.auth().currentUser?.uid)!
                 let docRef = db.collection("users").document(uid)
                 docRef.getDocument { (document, error) in
-                      if let document = document, document.exists {
-                          let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                          print(dataDescription)
-                          let email = document["Email"] as? String
-                          self.usermodeli.email = "\(email!)"
-                          print(self.usermodeli.email!)
-                          print("Document data: \(dataDescription)")
-                      } else {
-                          print("Docu bulunamadı")
-                      }
+                if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print(dataDescription)
+                let email = document["Email"] as? String
+                self.usermodeli.email = "\(email!)"
+                print(self.usermodeli.email!)
+                print("Document data: \(dataDescription)")
+                } else {
+                print("Docu bulunamadı")
+                }
                     
-                  }
+                }
     }
+    
+    @IBAction func hidemevcutsifre(_ sender: Any) {
+        mevcutSifre.isSecureTextEntry.toggle()
+        if mevcutSifre.isSecureTextEntry {
+            let image = UIImage(systemName: "eye.slash")
+            hidemevcutsifre.setImage(image, for: .normal)
+        }
+        else {
+
+            let image = UIImage(systemName: "eye")
+            hidemevcutsifre.setImage(image, for: .normal)
+        }
+    }
+    
+    
+   
+    @IBAction func yeniSifre(_ sender: Any) {
+        
+        if yeniSifre.isSecureTextEntry == false
+        {
+            yeniSifreTekrar.text = yeniSifre.text
+        }
+        else
+        {
+            
+        }
+    }
+    @IBAction func hideYeniSifre(_ sender: Any) {
+        yeniSifre.isSecureTextEntry.toggle()
+        if yeniSifre.isSecureTextEntry {
+            let image = UIImage(systemName: "eye.slash")
+            hideYeniSifre.setImage(image, for: .normal)
+            yeniSifreTekrar.isHidden = false
+            yeniSifreTekrarLabel.isHidden = false
+        }
+        else {
+
+            let image = UIImage(systemName: "eye")
+            hideYeniSifre.setImage(image, for: .normal)
+            yeniSifreTekrar.isHidden = true
+            yeniSifreTekrarLabel.isHidden = true
+        }
+        
+        
+    }
+    
+    
+  
+    
+    
+  
     func sifredegistir(email: String, currentPassword: String, newPassword: String, completion:(Error?)->Void ){
         
         let credential = EmailAuthProvider.credential(withEmail: email, password: currentPassword)
