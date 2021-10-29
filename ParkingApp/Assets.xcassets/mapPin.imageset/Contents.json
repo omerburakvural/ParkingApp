@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "ParkersIcon-21.png",
       "idiom" : "iphone",
       "scale" : "1x"
     },
@@ -23,89 +24,6 @@
       "filename" : "ParkersIcon-20@2x.png",
       "idiom" : "ipad",
       "scale" : "2x"
-    },
-    {
-      "filename" : "ParkersIcon-1024.png",
-      "idiom" : "ios-marketing",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "ParkersIcon-29@2x.png",
-      "idiom" : "iphone",
-      "scale" : "2x",
-      "unassigned" : true
-    },
-    {
-      "filename" : "ParkersIcon-40@2x.png",
-      "idiom" : "iphone",
-      "scale" : "2x",
-      "unassigned" : true
-    },
-    {
-      "filename" : "ParkersIcon-60@2x.png",
-      "idiom" : "iphone",
-      "scale" : "2x",
-      "unassigned" : true
-    },
-    {
-      "filename" : "ParkersIcon-29@3x.png",
-      "idiom" : "iphone",
-      "scale" : "3x",
-      "unassigned" : true
-    },
-    {
-      "filename" : "ParkersIcon-40@3x.png",
-      "idiom" : "iphone",
-      "scale" : "3x",
-      "unassigned" : true
-    },
-    {
-      "filename" : "ParkersIcon-60@3x.png",
-      "idiom" : "iphone",
-      "scale" : "3x",
-      "unassigned" : true
-    },
-    {
-      "filename" : "ParkersIcon-29.png",
-      "idiom" : "ipad",
-      "scale" : "1x",
-      "unassigned" : true
-    },
-    {
-      "filename" : "ParkersIcon-40.png",
-      "idiom" : "ipad",
-      "scale" : "1x",
-      "unassigned" : true
-    },
-    {
-      "filename" : "ParkersIcon-76.png",
-      "idiom" : "ipad",
-      "scale" : "1x",
-      "unassigned" : true
-    },
-    {
-      "filename" : "ParkersIcon-29@2x.png",
-      "idiom" : "ipad",
-      "scale" : "2x",
-      "unassigned" : true
-    },
-    {
-      "filename" : "ParkersIcon-40@2x.png",
-      "idiom" : "ipad",
-      "scale" : "2x",
-      "unassigned" : true
-    },
-    {
-      "filename" : "ParkersIcon-76@2x.png",
-      "idiom" : "ipad",
-      "scale" : "2x",
-      "unassigned" : true
-    },
-    {
-      "filename" : "ParkersIcon-83.5@2x.png",
-      "idiom" : "ipad",
-      "scale" : "2x",
-      "unassigned" : true
     }
   ],
   "info" : {
