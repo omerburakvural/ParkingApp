@@ -29,6 +29,7 @@
 		0DEF50D3271F34750024225D /* MainMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF50D2271F34750024225D /* MainMap.storyboard */; };
 		0DEF50D5271F34800024225D /* MapDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF50D4271F34800024225D /* MapDetail.storyboard */; };
 		0DFA4379272C441300F65E6D /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA4378272C441300F65E6D /* PasswordResetViewController.swift */; };
+		266A4358272C577C004360E3 /* PasswordChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266A4357272C577C004360E3 /* PasswordChangeModel.swift */; };
 		266D263B271DD3BB00409F3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263A271DD3BB00409F3B /* LoginViewController.swift */; };
 		266D263F271DF65700409F3B /* KeyboardConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263E271DF65700409F3B /* KeyboardConstraints.swift */; };
 		266D26412725B26D00409F3B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D26402725B26D00409F3B /* ForgotPasswordViewController.swift */; };
@@ -70,6 +71,7 @@
 		0DEF50D4271F34800024225D /* MapDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapDetail.storyboard; sourceTree = "<group>"; };
 		0DFA4378272C441300F65E6D /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		264FE114272B359000CA5C50 /* ParkingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		266A4357272C577C004360E3 /* PasswordChangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeModel.swift; sourceTree = "<group>"; };
 		266D263A271DD3BB00409F3B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		266D263E271DF65700409F3B /* KeyboardConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConstraints.swift; sourceTree = "<group>"; };
 		266D26402725B26D00409F3B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				0D3F8AF727269BEC0082261C /* UserCellViewModel.swift */,
 				0D5F0CBA2716BE3200E05B01 /* MapViewModel.swift */,
 				0D5F0CBE2716BE9A00E05B01 /* ParkDetailViewModel.swift */,
+				266A4357272C577C004360E3 /* PasswordChangeModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266A4358272C577C004360E3 /* PasswordChangeModel.swift in Sources */,
 				0D5F0CBB2716BE3200E05B01 /* MapViewModel.swift in Sources */,
 				0DFA4379272C441300F65E6D /* PasswordResetViewController.swift in Sources */,
 				0D3F8AF927269BEC0082261C /* UserDetailViewController.swift in Sources */,

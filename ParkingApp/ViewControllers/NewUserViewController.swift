@@ -156,11 +156,13 @@ class NewUserViewController: UIViewController {
             let surname = self.soyadTextbox.text
             let email = self.epostaTextbox.text
             let password = self.passwordTextbox.text
+            let plaka = ""
             
             newuserviewmodel.email = email
             newuserviewmodel.password = password
             newuserviewmodel.name = name
             newuserviewmodel.usersurname = surname
+            newuserviewmodel.plaka = plaka
             
             
             
@@ -171,8 +173,7 @@ class NewUserViewController: UIViewController {
                 if let error = error {
                     
                     if let errCode = AuthErrorCode(rawValue: error._code) {
-                        
-                        alertUser(of: errCode)
+                    alertUser(of: errCode)
                     }
                 }
                 else
@@ -199,10 +200,11 @@ class NewUserViewController: UIViewController {
                     //                self.database.child("User").child(uid).setValue(object)
                     
                     
-                    self.db.collection("users").document(uid).setData([
+                    self.db.collection("Users").document(uid).setData([
                         "Name Surname": self.newuserviewmodel.name! + " " + self.newuserviewmodel.usersurname! as Any,
                         //                    "Surname": self.newuserviewmodel.usersurname as Any,
                         "Email": self.newuserviewmodel.email! as Any,
+                        "Plaka" : self.newuserviewmodel.plaka as Any,
                         
                     ]) { err in
                         if let err = err {
@@ -278,8 +280,6 @@ class NewUserViewController: UIViewController {
                 default:
                     errorLabel.text = "Bilinmeyen hata"
                 }
-                
-                
             }
             
         }

@@ -15,4 +15,6 @@ class NewUserViewModel
     var usersurname:String?
     var email:String?
     var password:String?
+    var namesurname:String?
+    var plaka:String?
 }
