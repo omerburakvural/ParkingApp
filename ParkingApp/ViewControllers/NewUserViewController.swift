@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-import FirebaseDatabase
 import FirebaseFirestore
 
 class NewUserViewController: UIViewController {
@@ -202,7 +201,6 @@ class NewUserViewController: UIViewController {
                     
                     self.db.collection("Users").document(uid).setData([
                         "Name Surname": self.newuserviewmodel.name! + " " + self.newuserviewmodel.usersurname! as Any,
-                        //                    "Surname": self.newuserviewmodel.usersurname as Any,
                         "Email": self.newuserviewmodel.email! as Any,
                         "Plaka" : self.newuserviewmodel.plaka as Any,
                         

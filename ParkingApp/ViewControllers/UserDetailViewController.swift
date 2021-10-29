@@ -9,7 +9,7 @@ import FirebaseAuth
 import MaterialComponents
 
 class UserDetailViewController: UIViewController {
-    var db: Firestore!
+
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nameEditbtn: UIButton!
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -38,17 +38,61 @@ class UserDetailViewController: UIViewController {
         
         self.emailTxtField.text = ""
         self.plakaTxtField.text = ""
+        self.plakaTxtField.placeholder = "Plakanızı girebilirsiniz"
         self.nameTextField.text = ""
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
         self.loadUser()
         }
+        self.nameTextField.isEnabled = false
+        self.emailTxtField.isEnabled = false
+        self.plakaTxtField.isEnabled = false
+        self.nameTextField.backgroundColor = UIColor(named:"#07567A")
+        self.emailTxtField.backgroundColor = UIColor(named:"#07567A")
+        self.plakaTxtField.backgroundColor = UIColor(named:"#07567A")
     }
 
-    @IBAction func nameEditBtnClicked(_ sender: Any) {
+    @IBAction func nameEditBtnClicked(_ sender: UIButton) {
         self.nameTextField.isSelected = true
         self.nameTextField.isEnabled = true
         self.nameTextField.becomeFirstResponder()
+        self.user.userName = self.nameTextField.text!
         
+        if (self.nameTextField.backgroundColor == .separator) {
+            self.nameTextField.backgroundColor = UIColor(named:"#07567A")
+        }
+        if (self.nameTextField.backgroundColor == UIColor(named:"#07567A")) {
+            self.nameTextField.backgroundColor = .separator
+        }
+    }
+    
+    @IBAction func emailBtnClicked(_ sender: Any) {
+        self.emailTxtField.isSelected = true
+        self.emailTxtField.isEnabled = true
+        self.emailTxtField.becomeFirstResponder()
+        self.emailTxtField.background?.withTintColor(.opaqueSeparator)
+        self.user.userEmail = self.emailTxtField.text!
+        
+        if (self.emailTxtField.backgroundColor == .separator) {
+            self.emailTxtField.backgroundColor = UIColor(named:"#07567A")
+        }
+        if (self.emailTxtField.backgroundColor == UIColor(named:"#07567A")) {
+            self.emailTxtField.backgroundColor = .separator
+        }
+    }
+    
+    @IBAction func plateBtnClicked(_ sender: Any) {
+        self.plakaTxtField.isSelected = true
+        self.plakaTxtField.isEnabled = true
+        self.plakaTxtField.becomeFirstResponder()
+        self.plakaTxtField.background?.withTintColor(.opaqueSeparator)
+        self.user.userPlate = self.plakaTxtField.text!
+        
+        if (self.plakaTxtField.backgroundColor == .separator) {
+            self.plakaTxtField.backgroundColor = UIColor(named:"#07567A")
+        }
+        if (self.plakaTxtField.backgroundColor == UIColor(named:"#07567A")) {
+            self.plakaTxtField.backgroundColor = .separator
+        }
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
@@ -80,7 +124,6 @@ class UserDetailViewController: UIViewController {
     }
     
     func loadUser(){
-        
         for i in 0..<viewModel.users.count {
             if (self.userEmail == viewModel.users[i].userEmail){
                 self.emailTxtField.text = viewModel.users[i].userEmail

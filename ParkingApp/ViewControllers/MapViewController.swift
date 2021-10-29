@@ -9,12 +9,9 @@ import UIKit
 import MapKit
 import CoreLocation
 import MaterialComponents
-import FirebaseDatabase
 import FirebaseFirestore
 import Firebase
 import FirebaseAuth
-import FirebaseAnalytics
-
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     

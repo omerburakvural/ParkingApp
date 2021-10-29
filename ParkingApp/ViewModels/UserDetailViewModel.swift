@@ -4,12 +4,8 @@
 
 import Foundation
 import UIKit
-import FirebaseDatabase
 import Firebase
 import FirebaseFirestore
-
-
-
 
 class UserDetailViewModel {
     var db = Firestore.firestore()
