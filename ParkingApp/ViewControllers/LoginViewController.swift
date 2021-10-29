@@ -57,30 +57,6 @@ class LoginViewController: UIViewController {
         hideButton.maximumContentSizeCategory = .small
         txtPassword.isSecureTextEntry.toggle()
         
-        if traitCollection.userInterfaceStyle == .dark
-        {
-            view.backgroundColor = .systemGray
-            
-            txtEmail.textColor = .systemGray
-            txtPassword.textColor = .systemGray
-            switchRememberMe.onTintColor = .black
-            
-            forgotPasswordClicked.setTitleColor(.black, for: .normal)
-            benihatirlaLabel.textColor = .black
-            
-            cardView.backgroundColor = .systemGray
-            //            girisButton.backgroundColor = .black
-            girisButton.backgroundColor = .black
-            keyboardViewi.backgroundColor = .systemGray
-            newUserButtonClicked.setTitleColor(.black, for: .normal)
-            noUserButtonClicked.setTitleColor(.black, for: .normal)
-            hideButton.backgroundColor =  .black
-        }
-        else{
-            view.backgroundColor = UIColor(red: 4/255.0, green: 159/255.0, blue: 217/255.0, alpha: 1)
-            
-        }
-        
         // cardView
         cardView.layer.cornerRadius = 10.0
         cardView.layer.shadowOpacity = 0.5

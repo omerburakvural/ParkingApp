@@ -21,35 +21,6 @@ class PasswordResetController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        if traitCollection.userInterfaceStyle == .dark
-        {
-            view.backgroundColor = .systemGray
-            keyboardViewi.backgroundColor = .systemGray
-            yenileButton.backgroundColor = .systemGray
-            emailAdresi.textColor = .systemGray
-            navigationItem.titleView?.backgroundColor = .black
-            NavBar.tintColor = .black
-            NavBar.barTintColor = .black
-            NavBar.backgroundColor = .white
-            
-            let textColor = [NSAttributedString.Key.foregroundColor:UIColor.white]
-            UINavigationBar.appearance().titleTextAttributes = textColor
-            
-            
-            
-            
-            
-            
-        }
-        else
-        {
-            view.backgroundColor = UIColor(red: 4/255.0, green: 159/255.0, blue: 217/255.0, alpha: 1)
-        }
-        
-        
-        
         // Do any additional setup after loading the view.
         // passwordView
         passwordView.layer.cornerRadius = 10.0

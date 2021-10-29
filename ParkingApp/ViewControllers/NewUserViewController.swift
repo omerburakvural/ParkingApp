@@ -21,20 +21,7 @@ class NewUserViewController: UIViewController {
         
         
         hideButton.maximumContentSizeCategory = .small
-        //        DARK TEMA UYUMU YAPILDI.
-        if traitCollection.userInterfaceStyle == .dark
-        {
-            view.backgroundColor = .systemGray
-            kayitButon.backgroundColor = .systemGray
-        }
-        else
-        {
-            view.backgroundColor = UIColor(red: 4/255.0, green: 159/255.0, blue: 217/255.0, alpha: 1)
-        }
-        
-        
         let settings = FirestoreSettings()
-        
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
