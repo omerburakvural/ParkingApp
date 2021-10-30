@@ -33,7 +33,11 @@
                                                 <action selector="backButtonClicked:" destination="G07-rM-Xxr" id="IvV-V0-G7L"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Kaydet" id="hjc-pM-4PX"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Kaydet" id="hjc-pM-4PX">
+                                            <connections>
+                                                <action selector="kaydetButtonClicked:" destination="G07-rM-Xxr" id="SBq-mu-tqT"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

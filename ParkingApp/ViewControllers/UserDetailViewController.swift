@@ -24,6 +24,7 @@ class UserDetailViewController: UIViewController {
     var viewModel = UserDetailViewModel()
     let userEmail = (Auth.auth().currentUser?.email)
     var user = UserModel.init(name: "", email: "", plate: "", id: "")
+    var userID = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,17 @@ class UserDetailViewController: UIViewController {
         self.emailTxtField.backgroundColor = UIColor(named:"#07567A")
         self.plakaTxtField.backgroundColor = UIColor(named:"#07567A")
     }
-
+    
+    @IBAction func kaydetButtonClicked(_ sender: Any) {
+        user.userName = self.nameTextField.text ?? ""
+        user.userEmail = self.emailTxtField.text ?? ""
+        user.userPlate = self.plakaTxtField.text ?? ""
+        user.userID = self.userID
+        
+        viewModel.updateUser(withUser: user)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func nameEditBtnClicked(_ sender: UIButton) {
         self.nameTextField.isSelected = true
         self.nameTextField.isEnabled = true
@@ -126,6 +137,7 @@ class UserDetailViewController: UIViewController {
                 self.emailTxtField.text = viewModel.users[i].userEmail
                 self.plakaTxtField.text = viewModel.users[i].userPlate
                 self.nameTextField.text = viewModel.users[i].userName
+                self.userID = viewModel.users[i].userID
             }
         }
     }
