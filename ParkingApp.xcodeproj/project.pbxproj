@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		06F66AA8033F53B8273821D4 /* Pods_ParkingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E280B2B4DD782E80C66A25F0 /* Pods_ParkingApp.framework */; };
-		0D3F8AF827269BEC0082261C /* UserDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F8AF427269BEB0082261C /* UserDetailCell.swift */; };
 		0D3F8AF927269BEC0082261C /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F8AF527269BEC0082261C /* UserDetailViewController.swift */; };
 		0D3F8AFA27269BEC0082261C /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F8AF627269BEC0082261C /* UserDetailViewModel.swift */; };
 		0D3F8AFB27269BEC0082261C /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F8AF727269BEC0082261C /* UserCellViewModel.swift */; };
@@ -47,7 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D3F8AF427269BEB0082261C /* UserDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailCell.swift; sourceTree = "<group>"; };
 		0D3F8AF527269BEC0082261C /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		0D3F8AF627269BEC0082261C /* UserDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		0D3F8AF727269BEC0082261C /* UserCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
@@ -100,14 +98,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D3F8AFE2726A1730082261C /* TableCell */ = {
-			isa = PBXGroup;
-			children = (
-				0D3F8AF427269BEB0082261C /* UserDetailCell.swift */,
-			);
-			path = TableCell;
-			sourceTree = "<group>";
-		};
 		0D5B0B492716116A00453186 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +148,6 @@
 				0D3F8AFC27269C050082261C /* UserDetail.storyboard */,
 				0DE6795727160E7F002B0234 /* ViewControllers */,
 				0DE6795827160E91002B0234 /* ViewModels */,
-				0D3F8AFE2726A1730082261C /* TableCell */,
 				0D5B0B4A271611E000453186 /* Extensions */,
 				0D5B0B492716116A00453186 /* Other */,
 			);
@@ -370,7 +359,6 @@
 				0D3F8AFB27269BEC0082261C /* UserCellViewModel.swift in Sources */,
 				0DE6794427160CBA002B0234 /* AppDelegate.swift in Sources */,
 				0D5F0CB62716BDCA00E05B01 /* NewUserViewModel.swift in Sources */,
-				0D3F8AF827269BEC0082261C /* UserDetailCell.swift in Sources */,
 				0D5F0CBD2716BE7B00E05B01 /* ParkDetailViewController.swift in Sources */,
 				0D3F8AFA27269BEC0082261C /* UserDetailViewModel.swift in Sources */,
 				0D5F0CB42716BDA800E05B01 /* NewUserViewController.swift in Sources */,
