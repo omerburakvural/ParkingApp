@@ -13,7 +13,7 @@ import FirebaseFirestore
 import Firebase
 import FirebaseAuth
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController {
     
     var viewModel = MapViewModel()
     
@@ -146,7 +146,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBAction func backButtonClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+}
+
+extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
@@ -157,7 +159,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuth()
     }
-    
+}
+
+extension MapViewController: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else{
             return nil
@@ -182,7 +186,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let storyboard = UIStoryboard(name: "MapDetail", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "mapDetail") as? ParkDetailViewController {
+        if let vc = storyboard.instantiateViewController(withIdentifier: "mapDetail") as? ParkViewController {
             vc.pin = viewModel.parkModelPins[view.tag]
             let bottomSheet = MDCBottomSheetController(contentViewController: vc)
             self.present(bottomSheet, animated: true, completion: nil)

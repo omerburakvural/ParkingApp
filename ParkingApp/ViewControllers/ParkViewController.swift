@@ -8,9 +8,9 @@
 import UIKit
 import MapKit
 
-class ParkDetailViewController: UIViewController {
+class ParkViewController: UIViewController {
     
-    @IBOutlet weak var stackViewSolListe: UIStackView!
+    @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var fiyatLabel: UILabel!
     @IBOutlet weak var odemeKabulLabel: UILabel!
     @IBOutlet weak var lpgkabulLabel: UILabel!
@@ -18,7 +18,6 @@ class ParkDetailViewController: UIViewController {
     @IBOutlet weak var kapasiteLabel: UILabel!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
-    
     @IBOutlet weak var rotaCizButon: UIButton!
     
     var pin = ParkModel.init(id:"", capacity: 0, has_vale: true, long: 0.0, lat: 0.0, lpg_availability: true, park_name: "", park_type: "", payment_type: "", price: 0)

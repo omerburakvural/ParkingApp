@@ -11,7 +11,7 @@
         <!--MapDetail View Controller-->
         <scene sceneID="30O-cE-N9m">
             <objects>
-                <viewController storyboardIdentifier="mapDetail" id="mcA-4h-JuF" userLabel="MapDetail View Controller" customClass="ParkDetailViewController" customModule="ParkingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapDetail" id="mcA-4h-JuF" userLabel="MapDetail View Controller" customClass="ParkViewController" customModule="ParkingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7e1-cb-k8P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,12 +152,12 @@
                         <outlet property="fiyatLabel" destination="m23-M8-9XB" id="KiV-mV-FyI"/>
                         <outlet property="kapasiteLabel" destination="mrx-ii-zkK" id="7pg-s0-BdV"/>
                         <outlet property="lpgkabulLabel" destination="fcu-z0-VWY" id="Tfn-eI-a2e"/>
+                        <outlet property="mainStackView" destination="Phj-Qe-7fJ" id="hgn-a0-k89"/>
                         <outlet property="navBar" destination="HFW-js-c3g" id="gEg-9Y-Y8D"/>
                         <outlet property="navBarTitle" destination="ZlQ-je-2Jg" id="k2o-hv-7vH"/>
                         <outlet property="odemeKabulLabel" destination="8zD-GI-Qj8" id="yaK-Be-yc1"/>
                         <outlet property="otoparkTipiLabel" destination="KcB-vw-eW0" id="BdB-Ef-woc"/>
                         <outlet property="rotaCizButon" destination="8hh-7p-228" id="ulV-TB-JUU"/>
-                        <outlet property="stackViewSolListe" destination="Phj-Qe-7fJ" id="hgn-a0-k89"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sth-Q3-xwe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
