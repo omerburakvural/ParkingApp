@@ -3,7 +3,7 @@
 //  ParkingApp
 //
 //  Created by Adem Er on 13.10.2021.
-//test
+//
 //
 
 import UIKit
@@ -18,7 +18,6 @@ class NewUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         hideButton.maximumContentSizeCategory = .small
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
@@ -31,14 +30,11 @@ class NewUserViewController: UIViewController {
     }
     
     private let database = Database.database().reference()
-    
     var newuserviewmodel = NewUserViewModel()
-    
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var solustbuton: UIBarButtonItem!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var kayitButon: UIButton!
-    
     @IBOutlet weak var adTextbox: UITextField!
     @IBOutlet weak var soyadTextbox: UITextField!
     @IBOutlet weak var epostaTextbox: UITextField!
@@ -47,18 +43,13 @@ class NewUserViewController: UIViewController {
     
     @IBOutlet weak var hideButton: UIButton!
     
-    
-    
     @IBAction func hideButton(_ sender: Any) {
         passwordTextbox.isSecureTextEntry.toggle()
         passwordagainTextbox.isSecureTextEntry.toggle()
         if passwordTextbox.isSecureTextEntry && passwordagainTextbox.isSecureTextEntry {
             let image = UIImage(systemName: "eye")
-            
-            
             hideButton.setImage(image, for: .normal)
             passwordagainTextbox.isHidden = false
-            
         }
         else {
             //               if let image = UIImage(systemName: "eye.slash.fill") {
@@ -83,17 +74,13 @@ class NewUserViewController: UIViewController {
         //        TEXTBOX'IN EDİTİNG CHANGED'INE YAZILDI. EĞER KULLANICI ŞİFRESİNİ GÖREREK YAZMAK İSTERSE, TEKRARLAMA TEXTBOX'I AYNI VERİLERİ ALIYOR VE VALİDASYON KISMINDA TEXTBOX KONTROLÜ SORUNSUZ GEÇİYOR
     }
     
-    
-    
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     //    GERİ BUTONU
     
-    
     func valideteFields() -> String
     {
-        
         if adTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || soyadTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             epostaTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
@@ -117,27 +104,10 @@ class NewUserViewController: UIViewController {
                 return "problem mevcut"
             }
         }
-        
         return "deger"
     }
     
     @IBAction func kayitButon(_ sender: Any) {
-        
-        //        var ref: DocumentReference? = nil
-        //              ref = db.collection("Users").addDocument(data: [
-        //                  "Name": "FireTest1",
-        //                  "Surname": "FireTest2",
-        //
-        //              ]) { err in
-        //                  if let err = err {
-        //                      print("Error adding document: \(err)")
-        //                  } else {
-        //                      print("Document added with ID: \(ref!.documentID)")
-        //                  }
-        //              }
-        
-        
-        
         
         valideteFields()
         
@@ -163,16 +133,12 @@ class NewUserViewController: UIViewController {
             newuserviewmodel.usersurname = surname
             newuserviewmodel.plaka = plaka
             
-            
-            
             Auth.auth().createUser(withEmail: newuserviewmodel.email!, password: newuserviewmodel.password!) { (user, error) in
                 //email ve password değerleri ile, firebase'e auth kaydı yapılıyor
                 
-                
                 if let error = error {
-                    
                     if let errCode = AuthErrorCode(rawValue: error._code) {
-                    alertUser(of: errCode)
+                        alertUser(of: errCode)
                     }
                 }
                 else
@@ -190,13 +156,6 @@ class NewUserViewController: UIViewController {
                     
                     let uid = (Auth.auth().currentUser?.uid)!
                     //                GEÇERLİ OTURUMUN UID BİLGİSİ ALINDI
-                    //                let object : [String:Any] = [
-                    //                    "Ad": self.newuserviewmodel.name! as NSObject,
-                    //                    "Soyad" : self.newuserviewmodel.usersurname as Any,
-                    //                    "Email" : self.newuserviewmodel.email as Any,
-                    //                    ]
-                    //
-                    //                self.database.child("User").child(uid).setValue(object)
                     
                     
                     self.db.collection("Users").document(uid).setData([
@@ -216,7 +175,6 @@ class NewUserViewController: UIViewController {
                     //                FİREBASE DATABASE İÇİN KAYIT YAPILDI.
                     
                     
-                    
                     // KARMAŞA OLMAMASI İÇİN asyncAfter BÖLÜMÜNDE 2 SANİYE BEKLETİLECEK VE ANA SAYFAYA AKTARILACAK
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         
@@ -234,29 +192,16 @@ class NewUserViewController: UIViewController {
                         
                         
                         
-                        
-                        //                    self.database.child("User").child(uid).observeSingleEvent(of: .value, with: { snapshot in
-                        //                      // Get user value
-                        //                      let value = snapshot.value as? NSDictionary
-                        //                      let emailadresi = value?["Email"] as? String ?? ""
-                        //                        print("Email adresimiz : " + "\(emailadresi)")
-                        //                    })
-                        
                         //                  FİREBASE VERİ ÇEKİMİ KODU
-                        
                         
                     }
                     // 2 saniye bekleme fonksiyonu burada bitiyor
-                    
                 }
-                
             }
             
             func alertUser(of errorCode: AuthErrorCode) {
                 
                 switch errorCode {
-                    
-                    
                 case .appVerificationUserInteractionFailure:
                     errorLabel.text = "Uygulamada teknik problem mevcut"
                     //                  Uygulamanın Firebase'de doğrulanmaması
@@ -290,8 +235,4 @@ class NewUserViewController: UIViewController {
     
     
 }
-
-
-
-
 

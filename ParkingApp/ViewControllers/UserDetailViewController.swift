@@ -9,7 +9,7 @@ import FirebaseAuth
 import MaterialComponents
 
 class UserDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nameEditbtn: UIButton!
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -34,7 +34,7 @@ class UserDetailViewController: UIViewController {
         self.plakaTxtField.placeholder = "Plakanızı girebilirsiniz"
         self.nameTextField.text = ""
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
-        self.loadUser()
+            self.loadUser()
         }
         self.nameTextField.isEnabled = false
         self.emailTxtField.isEnabled = false
@@ -106,20 +106,20 @@ class UserDetailViewController: UIViewController {
         
         let firebaseAuth = Auth.auth()
         do {
-          try firebaseAuth.signOut()
+            try firebaseAuth.signOut()
             let alert = UIAlertController(title: "Başarılı", message: "Oturumunuz başarıyla kapatıldı", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (_) in
                 self.dismiss(animated: true, completion: nil)
-                    }))
-                    self.present(alert, animated: true, completion: nil)
-//            KULLANICININ OTORUMU KAPATIP, ALERT VERDİK
+            }))
+            self.present(alert, animated: true, completion: nil)
+            //            KULLANICININ OTORUMU KAPATIP, ALERT VERDİK
             let storyboardLogin = UIStoryboard(name: "Main", bundle: nil)
             let signInPage = storyboardLogin.instantiateViewController(withIdentifier: "main") as! LoginViewController
             let appDelegate = UIApplication.shared.delegate
             appDelegate?.window??.rootViewController = signInPage
             
         } catch let signOutError as NSError {
-          print("Error signing out: %@", signOutError)
+            print("Error signing out: %@", signOutError)
         }
     }
     

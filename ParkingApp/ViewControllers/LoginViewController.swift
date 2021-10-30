@@ -81,7 +81,7 @@ class LoginViewController: UIViewController {
     func isUserLoggedIn(){
         let uid = (Auth.auth().currentUser?.uid)
         let appDelegate = UIApplication.shared.delegate
-
+        
         let storyboardMap = UIStoryboard(name: "MainMap", bundle: nil)
         let MapViewController = storyboardMap.instantiateViewController(withIdentifier: "mainMap") as! MapViewController
         

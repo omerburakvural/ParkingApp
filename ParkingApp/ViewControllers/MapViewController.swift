@@ -31,7 +31,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.viewDidLoad()
         mapView.delegate = self
         checkLocationServices()
- 
+        
         if ((uid?.isEmpty) != nil){
             editProfileButton.isEnabled = true
             backButton.isEnabled = false
@@ -39,7 +39,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             editProfileButton.isEnabled = false
             backButton.isEnabled = true
         }
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 ) {
             self.addPinToTheMap()
         }
