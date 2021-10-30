@@ -1,14 +1,15 @@
 //
-//  NewUserTest.swift
-//  
+//  ParkingAppTest.swift
+//  ParkingAppTest
 //
-//  Created by PCMACEGITIM on 28.10.2021.
+//  Created by PCMACEGITIM on 30.10.2021.
 //
 
 import XCTest
 
-class NewUserTest: XCTestCase {
 
+class ParkingAppTest: XCTestCase {
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -24,7 +25,7 @@ class NewUserTest: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
