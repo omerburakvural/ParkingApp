@@ -19,6 +19,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     @IBOutlet weak var editProfileButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var backButton: UIBarButtonItem!
     
     let locationManager = CLLocationManager()
     let visibleRadiusForUser: Double = 2000.0
@@ -30,20 +31,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.viewDidLoad()
         mapView.delegate = self
         checkLocationServices()
-
+ 
         if ((uid?.isEmpty) != nil){
             editProfileButton.isEnabled = true
+            backButton.isEnabled = false
         }else{
             editProfileButton.isEnabled = false
+            backButton.isEnabled = true
         }
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 ) {
             self.addPinToTheMap()
         }
-    }
-    
-    func userEditButtonSet(){
-        
     }
     
     func addPinToTheMap(){

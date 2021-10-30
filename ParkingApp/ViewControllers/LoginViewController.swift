@@ -83,10 +83,10 @@ class LoginViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate
 
         let storyboardMap = UIStoryboard(name: "MainMap", bundle: nil)
-        let homeViewController = storyboardMap.instantiateViewController(withIdentifier: "mainMap") as! MapViewController
+        let MapViewController = storyboardMap.instantiateViewController(withIdentifier: "mainMap") as! MapViewController
         
         if ((uid?.isEmpty) != nil){
-            appDelegate?.window??.rootViewController = homeViewController
+            appDelegate?.window??.rootViewController = MapViewController
         }
     }
     
