@@ -54,6 +54,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        isUserLoggedIn()
         hideButton.maximumContentSizeCategory = .small
         txtPassword.isSecureTextEntry.toggle()
         
@@ -76,6 +77,17 @@ class LoginViewController: UIViewController {
             txtPassword.self.insertText(password ?? "")
         }
         
+    }
+    func isUserLoggedIn(){
+        let uid = (Auth.auth().currentUser?.uid)
+        let appDelegate = UIApplication.shared.delegate
+
+        let storyboardMap = UIStoryboard(name: "MainMap", bundle: nil)
+        let homeViewController = storyboardMap.instantiateViewController(withIdentifier: "mainMap") as! MapViewController
+        
+        if ((uid?.isEmpty) != nil){
+            appDelegate?.window??.rootViewController = homeViewController
+        }
     }
     
     func userAuth(withEmail: String,andWithPassword: String){

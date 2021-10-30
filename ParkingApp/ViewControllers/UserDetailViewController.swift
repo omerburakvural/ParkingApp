@@ -27,14 +27,6 @@ class UserDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let uid = (Auth.auth().currentUser?.uid)
-       
-        if (uid == nil)
-        {
-           
-//                KULLANICININ GİRİŞ YAPMADIĞINI BÖYLE YAKALAYABİLİYORUZ. BURADA BİR ÇÖZÜM ÜRETİRSEK, KULLANICIYI İÇERİ ALMAYABİLİRİZ
-//             REMOVE FROM PARENT DENEDİM AMA HİYERARŞİ HATASINA YÜRÜDÜ. BURADA BİR ÇÖZÜM BULABİLİR MİYİZ ?
-        }
         
         self.emailTxtField.text = ""
         self.plakaTxtField.text = ""
@@ -110,11 +102,16 @@ class UserDetailViewController: UIViewController {
                     }))
                     self.present(alert, animated: true, completion: nil)
 //            KULLANICININ OTORUMU KAPATIP, ALERT VERDİK
+            let storyboardLogin = UIStoryboard(name: "Main", bundle: nil)
+            let signInPage = storyboardLogin.instantiateViewController(withIdentifier: "main") as! LoginViewController
+            let appDelegate = UIApplication.shared.delegate
+            appDelegate?.window??.rootViewController = signInPage
             
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
         }
     }
+    
     @IBAction func passwordEditButtonClicked(_ sender: Any) {
         let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "passwordReset") as? PasswordResetViewController {
