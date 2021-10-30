@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-import FirebaseDatabase
 import FirebaseFirestore
 
 class NewUserViewController: UIViewController {
@@ -31,7 +30,6 @@ class NewUserViewController: UIViewController {
     }
     
     private let database = Database.database().reference()
-   
     var newuserviewmodel = NewUserViewModel()
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var solustbuton: UIBarButtonItem!
