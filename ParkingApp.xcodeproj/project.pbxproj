@@ -25,6 +25,8 @@
 		0DEF50D1271F34650024225D /* NewUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF50D0271F34650024225D /* NewUser.storyboard */; };
 		0DEF50D3271F34750024225D /* MainMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF50D2271F34750024225D /* MainMap.storyboard */; };
 		0DEF50D5271F34800024225D /* MapDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DEF50D4271F34800024225D /* MapDetail.storyboard */; };
+		0DEFA617272F3502000B0010 /* ParkingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEFA616272F3502000B0010 /* ParkingAppUITests.swift */; };
+		0DEFA619272F3502000B0010 /* ParkingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEFA618272F3502000B0010 /* ParkingAppUITestsLaunchTests.swift */; };
 		0DFA4379272C441300F65E6D /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA4378272C441300F65E6D /* PasswordResetViewController.swift */; };
 		266A4358272C577C004360E3 /* PasswordChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266A4357272C577C004360E3 /* PasswordChangeModel.swift */; };
 		266D263B271DD3BB00409F3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263A271DD3BB00409F3B /* LoginViewController.swift */; };
@@ -33,9 +35,17 @@
 		2690C2172722D6EE00982178 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2690C2162722D6EE00982178 /* GoogleService-Info.plist */; };
 		26A606BA272D8475008CBAB8 /* NewUserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A606B9272D8475008CBAB8 /* NewUserTest.swift */; };
 		26AD0EDE272D65D30008F225 /* ParkingAppTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD0EDD272D65D30008F225 /* ParkingAppTest.swift */; };
+		3B91FCB4F12D135E429BB79A /* Pods_ParkingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E280B2B4DD782E80C66A25F0 /* Pods_ParkingApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0DEFA61A272F3502000B0010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DE6793827160CBA002B0234 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DE6793F27160CBA002B0234;
+			remoteInfo = ParkingApp;
+		};
 		26AD0EDF272D65D30008F225 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DE6793827160CBA002B0234 /* Project object */;
@@ -66,6 +76,9 @@
 		0DEF50D0271F34650024225D /* NewUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewUser.storyboard; sourceTree = "<group>"; };
 		0DEF50D2271F34750024225D /* MainMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMap.storyboard; sourceTree = "<group>"; };
 		0DEF50D4271F34800024225D /* MapDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapDetail.storyboard; sourceTree = "<group>"; };
+		0DEFA614272F3502000B0010 /* ParkingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DEFA616272F3502000B0010 /* ParkingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAppUITests.swift; sourceTree = "<group>"; };
+		0DEFA618272F3502000B0010 /* ParkingAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0DFA4378272C441300F65E6D /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		266A4357272C577C004360E3 /* PasswordChangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeModel.swift; sourceTree = "<group>"; };
 		266D263A271DD3BB00409F3B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +95,14 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		0DE6793D27160CBA002B0234 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B91FCB4F12D135E429BB79A /* Pods_ParkingApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DEFA611272F3502000B0010 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -120,6 +141,7 @@
 			children = (
 				0DE6794227160CBA002B0234 /* ParkingApp */,
 				26AD0EDC272D65D30008F225 /* ParkingAppTest */,
+				0DEFA615272F3502000B0010 /* ParkingAppUITests */,
 				0DE6794127160CBA002B0234 /* Products */,
 				B4830CD7F58D358359FF612F /* Pods */,
 				85FBADBA338CE696FE17299F /* Frameworks */,
@@ -131,6 +153,7 @@
 			children = (
 				0DE6794027160CBA002B0234 /* ParkingApp.app */,
 				26AD0EDB272D65D30008F225 /* ParkingAppTest.xctest */,
+				0DEFA614272F3502000B0010 /* ParkingAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +205,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		0DEFA615272F3502000B0010 /* ParkingAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0DEFA616272F3502000B0010 /* ParkingAppUITests.swift */,
+				0DEFA618272F3502000B0010 /* ParkingAppUITestsLaunchTests.swift */,
+			);
+			path = ParkingAppUITests;
+			sourceTree = "<group>";
+		};
 		26AD0EDC272D65D30008F225 /* ParkingAppTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +262,24 @@
 			productReference = 0DE6794027160CBA002B0234 /* ParkingApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0DEFA613272F3502000B0010 /* ParkingAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DEFA61C272F3502000B0010 /* Build configuration list for PBXNativeTarget "ParkingAppUITests" */;
+			buildPhases = (
+				0DEFA610272F3502000B0010 /* Sources */,
+				0DEFA611272F3502000B0010 /* Frameworks */,
+				0DEFA612272F3502000B0010 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0DEFA61B272F3502000B0010 /* PBXTargetDependency */,
+			);
+			name = ParkingAppUITests;
+			productName = ParkingAppUITests;
+			productReference = 0DEFA614272F3502000B0010 /* ParkingAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		26AD0EDA272D65D30008F225 /* ParkingAppTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26AD0EE3272D65D30008F225 /* Build configuration list for PBXNativeTarget "ParkingAppTest" */;
@@ -261,6 +311,10 @@
 					0DE6793F27160CBA002B0234 = {
 						CreatedOnToolsVersion = 13.0;
 					};
+					0DEFA613272F3502000B0010 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 0DE6793F27160CBA002B0234;
+					};
 					26AD0EDA272D65D30008F225 = {
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = 0DE6793F27160CBA002B0234;
@@ -282,6 +336,7 @@
 			targets = (
 				0DE6793F27160CBA002B0234 /* ParkingApp */,
 				26AD0EDA272D65D30008F225 /* ParkingAppTest */,
+				0DEFA613272F3502000B0010 /* ParkingAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -299,6 +354,13 @@
 				0DE6794D27160CBB002B0234 /* Assets.xcassets in Resources */,
 				0DEF50D1271F34650024225D /* NewUser.storyboard in Resources */,
 				0DE6794B27160CBA002B0234 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DEFA612272F3502000B0010 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +439,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0DEFA610272F3502000B0010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DEFA617272F3502000B0010 /* ParkingAppUITests.swift in Sources */,
+				0DEFA619272F3502000B0010 /* ParkingAppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		26AD0ED7272D65D30008F225 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -389,6 +460,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0DEFA61B272F3502000B0010 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0DE6793F27160CBA002B0234 /* ParkingApp */;
+			targetProxy = 0DEFA61A272F3502000B0010 /* PBXContainerItemProxy */;
+		};
 		26AD0EE0272D65D30008F225 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0DE6793F27160CBA002B0234 /* ParkingApp */;
@@ -514,6 +590,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -590,6 +667,48 @@
 			};
 			name = Release;
 		};
+		0DEFA61D272F3502000B0010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.obv.ParkingAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ParkingApp;
+			};
+			name = Debug;
+		};
+		0DEFA61E272F3502000B0010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.obv.ParkingAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ParkingApp;
+			};
+			name = Release;
+		};
 		26AD0EE1272D65D30008F225 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -653,6 +772,15 @@
 			buildConfigurations = (
 				0DE6795527160CBB002B0234 /* Debug */,
 				0DE6795627160CBB002B0234 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DEFA61C272F3502000B0010 /* Build configuration list for PBXNativeTarget "ParkingAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DEFA61D272F3502000B0010 /* Debug */,
+				0DEFA61E272F3502000B0010 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
