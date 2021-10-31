@@ -33,7 +33,7 @@ class UserDetailViewController: UIViewController {
         self.plakaTxtField.text = ""
         self.plakaTxtField.placeholder = "Plakanızı girebilirsiniz"
         self.nameTextField.text = ""
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0 ) {
             self.loadUser()
         }
         self.nameTextField.isEnabled = false

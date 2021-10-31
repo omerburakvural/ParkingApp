@@ -7,9 +7,6 @@
 
 import Foundation
 import UIKit
-import FirebaseDatabase
-import Firebase
-import FirebaseFirestore
 
 class ParkModel: Codable {
     var capacity: Int
