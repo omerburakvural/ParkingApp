@@ -9,13 +9,15 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import Foundation
+import MapKit
 
 class MapViewModel {
     var db = Firestore.firestore()
     var parkModelPins = [ParkModel]()
+    var collectionName = "Parks"
     
     init(){
-        db.collection("Parks")
+        db.collection(collectionName)
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
@@ -37,4 +39,22 @@ class MapViewModel {
                 }
             }
     }
+    
+    func loadPinArray() -> [MKPointAnnotation] {
+        var pinArray: [MKPointAnnotation] = []
+        let count = parkModelPins.count
+        for i in 0..<count {
+            let pin = CustomPointAnnotation()
+            pin.coordinate = CLLocationCoordinate2D(latitude: parkModelPins[i].lat, longitude: parkModelPins[i].long)
+            pin.title = parkModelPins[i].park_name
+            pin.tag = i
+            pinArray.append(pin)
+        }
+        
+        return pinArray
+    }
+}
+
+class CustomPointAnnotation: MKPointAnnotation {
+    var tag: Int!
 }

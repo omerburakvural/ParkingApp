@@ -43,23 +43,10 @@ class MapViewController: UIViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0 ) {
-            self.addPinToTheMap()
+            self.mapView.addAnnotations(self.viewModel.loadPinArray())
         }
     }
-    
-    func addPinToTheMap(){
-        var pinArray: [MKPointAnnotation] = []
-        let count = viewModel.parkModelPins.count
-        for i in 0..<count {
-            let pin = CustomPointAnnotation()
-            pin.coordinate = CLLocationCoordinate2D(latitude: viewModel.parkModelPins[i].lat, longitude: viewModel.parkModelPins[i].long)
-            pin.title = viewModel.parkModelPins[i].park_name
-            pin.tag = i
-            pinArray.append(pin)
-        }
-        mapView.addAnnotations(pinArray)
-    }
-    
+
     @IBAction func arrowButtonClicked(_ sender: Any) {
         centerViewUserLocation()
     }
@@ -198,8 +185,4 @@ extension MapViewController: MKMapViewDelegate{
             self.present(bottomSheet, animated: true, completion: nil)
         }
     }
-}
-
-class CustomPointAnnotation: MKPointAnnotation {
-    var tag: Int!
 }

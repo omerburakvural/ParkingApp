@@ -48,6 +48,11 @@
                BlueprintName = "ParkingAppTest"
                ReferencedContainer = "container:ParkingApp.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "ParkingAppTest">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
