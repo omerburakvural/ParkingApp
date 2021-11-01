@@ -38,14 +38,31 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C0-w0-sET">
+                                <rect key="frame" x="320" y="123" width="59" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="rmm-xV-07j"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="location.north.fill" catalog="system" title="">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="19" scale="large" weight="bold"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="arrowButtonClicked:" destination="Ez9-g6-wpc" eventType="touchUpInside" id="6lC-la-C2g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VtT-2a-jtn"/>
                         <color key="backgroundColor" red="0.18350580329999999" green="0.41160207989999997" blue="0.58041334150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="y0z-TC-1Rh" firstAttribute="leading" secondItem="VtT-2a-jtn" secondAttribute="leading" id="CXn-jf-yIF"/>
+                            <constraint firstItem="7C0-w0-sET" firstAttribute="top" secondItem="AO7-mL-xTl" secondAttribute="top" constant="35" id="Deb-VQ-lrA"/>
                             <constraint firstItem="y0z-TC-1Rh" firstAttribute="top" secondItem="VtT-2a-jtn" secondAttribute="top" id="Egh-2H-dR7"/>
+                            <constraint firstItem="7C0-w0-sET" firstAttribute="trailing" secondItem="AO7-mL-xTl" secondAttribute="trailing" constant="-35" id="Kyy-NT-zSI"/>
                             <constraint firstItem="AO7-mL-xTl" firstAttribute="bottom" secondItem="CAZ-aK-Gcy" secondAttribute="bottom" id="QKM-aK-9pm"/>
+                            <constraint firstItem="7C0-w0-sET" firstAttribute="leading" secondItem="AO7-mL-xTl" secondAttribute="leading" constant="320" id="Uzu-8M-cW2"/>
                             <constraint firstItem="VtT-2a-jtn" firstAttribute="trailing" secondItem="AO7-mL-xTl" secondAttribute="trailing" id="eDI-6T-yV5"/>
                             <constraint firstItem="y0z-TC-1Rh" firstAttribute="trailing" secondItem="VtT-2a-jtn" secondAttribute="trailing" id="it8-PK-fml"/>
                             <constraint firstItem="AO7-mL-xTl" firstAttribute="top" secondItem="y0z-TC-1Rh" secondAttribute="bottom" id="lMq-d7-2o5"/>
@@ -53,6 +70,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="arrowButton" destination="7C0-w0-sET" id="VeB-Pg-Dln"/>
                         <outlet property="backButton" destination="hLR-1t-fYf" id="8FU-rz-msv"/>
                         <outlet property="editProfileButton" destination="rAI-N1-WxM" id="WcJ-Hj-9X2"/>
                         <outlet property="mapView" destination="AO7-mL-xTl" id="UMJ-ZT-zpy"/>
@@ -65,6 +83,7 @@
     </scenes>
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="location.north.fill" catalog="system" width="108" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

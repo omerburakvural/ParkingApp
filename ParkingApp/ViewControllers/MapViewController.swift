@@ -20,6 +20,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var editProfileButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var arrowButton: UIButton!
     
     let locationManager = CLLocationManager()
     let visibleRadiusForUser: Double = 2000.0
@@ -31,6 +32,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         mapView.delegate = self
         checkLocationServices()
+        arrowButton.layer.cornerRadius = 30.0
         
         if ((uid?.isEmpty) != nil){
             editProfileButton.isEnabled = true
@@ -56,6 +58,10 @@ class MapViewController: UIViewController {
             pinArray.append(pin)
         }
         mapView.addAnnotations(pinArray)
+    }
+    
+    @IBAction func arrowButtonClicked(_ sender: Any) {
+        centerViewUserLocation()
     }
     
     @IBAction func editProfileButtonClicked(_ sender: Any) {
