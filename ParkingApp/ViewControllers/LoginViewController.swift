@@ -8,12 +8,6 @@
 import UIKit
 import Firebase
 
-struct UserRemember{
-    static let emailKey = "email"
-    static let passwordKey = "password"
-    static let rememberMeKey = "rememberMe"
-}
-
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var switchRememberMe: UISwitch!
@@ -32,6 +26,8 @@ class LoginViewController: UIViewController {
     let defaults = UserDefaults.standard
     
     @IBOutlet weak var hideButton: UIButton!
+    
+    var viewModel = LoginViewModel()
     
     @IBAction func hideButton(_ sender: Any) {
         
@@ -110,25 +106,16 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonClicked(_ sender: Any) {
         
-        let email = txtEmail.self.text
-        let password = txtPassword.self.text
+        let email = txtEmail.self.text ?? ""
+        let password = txtPassword.self.text ?? ""
         
-        if (email?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || password?.trimmingCharacters(in: .whitespacesAndNewlines) == "")
-        {
+        
+        if viewModel.userAuthCheck(withEmail: email, andWithPassword: password, andWithSwitch: switchRememberMe.isOn){
+            userAuth(withEmail: email, andWithPassword: password)
+        }else{
             let alert = UIAlertController(title: "Uyarı", message: "Email ve şifre alanı boş bırakılamaz.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Kapat", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        }else
-        {
-            if switchRememberMe.isOn
-            {
-                defaults.set(email, forKey: UserRemember.emailKey)
-                defaults.set(password, forKey: UserRemember.passwordKey)
-                defaults.set(true, forKey: UserRemember.rememberMeKey)
-                userAuth(withEmail: email!, andWithPassword: password!)
-            }else{
-                userAuth(withEmail: email!, andWithPassword: password!)
-            }
         }
     }
     

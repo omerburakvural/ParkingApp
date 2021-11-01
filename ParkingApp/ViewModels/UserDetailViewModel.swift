@@ -29,41 +29,43 @@ class UserDetailViewModel {
             }
     }
     
-    func updateUser(withUser: UserModel) {
+    func updateUser(withUser: UserModel) -> Bool {
         let updatedUserRef = db.collection("Users").document(withUser.userID)
+        
+        var errorCheck: Bool = false
         
         updatedUserRef.updateData(["Name Surname": withUser.userName]){ error in
             if let error = error {
-                print("Error updating Name: \(error)")
+                errorCheck = true
             } else {
-                print("Name successfully updated")
+                errorCheck = false
             }
         }
         updatedUserRef.updateData(["Email" : withUser.userEmail]){ error in
             if let error = error {
-                print("Error updating Email: \(error)")
+                errorCheck = true
             } else {
-                print("Email successfully updated")
+                errorCheck = false
             }
         }
         updatedUserRef.updateData(["Plaka" : withUser.userPlate]){ error in
             if let error = error {
-                print("Error updating Plaka: \(error)")
+                errorCheck = true
             } else {
-                print("Plaka successfully updated")
+                errorCheck = false
             }
         }
+        return errorCheck
     }
-    
 }
 
-public class UserModel: Codable {
+public class UserModel {
     var userName: String
     var userEmail: String
     var userPlate: String
     var userID: String
     
-    init(name: String, email: String, plate: String, id: String){
+   public init(name: String, email: String, plate: String, id: String){
         self.userName = name
         self.userEmail = email
         self.userPlate = plate
