@@ -7,8 +7,11 @@
 
 import XCTest
 
-class ParkingAppUITests: XCTestCase {
 
+
+class ParkingAppUITests: XCTestCase {
+    
+   
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -26,6 +29,9 @@ class ParkingAppUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        
+        
+        //        XCTAssertEqual(emailTextField.textContentType, UITextContentType.username, "Email address UITextField does not have an Email Address Content Type set")
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
