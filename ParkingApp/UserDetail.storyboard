@@ -97,7 +97,7 @@
                                                 <color key="backgroundColor" red="0.18350580329999999" green="0.41160207989999997" blue="0.58041334150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPY-OJ-rTb">
                                                 <rect key="frame" x="338" y="0.0" width="40" height="31"/>
@@ -128,7 +128,7 @@
                                                 <rect key="frame" x="122" y="0.0" width="216" height="31"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="address-level3"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U13-bO-e0n">
                                                 <rect key="frame" x="338" y="0.0" width="40" height="31"/>
@@ -198,12 +198,14 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="X9f-9S-37P" id="x4l-TU-Ejz"/>
+                        <outlet property="emailBtnClicked" destination="VPY-OJ-rTb" id="pQv-ab-NIW"/>
                         <outlet property="emailLbl" destination="6Xf-dD-LGL" id="upP-fg-WRt"/>
                         <outlet property="emailTxtField" destination="tzm-h9-Akw" id="kdn-b9-bPb"/>
                         <outlet property="nameEditbtn" destination="L7q-6S-xj6" id="gyL-9e-pf4"/>
                         <outlet property="nameTextField" destination="Wuj-GV-82h" id="920-VE-Sau"/>
                         <outlet property="passwordEditButton" destination="a57-sk-xks" id="cUJ-xk-Mbp"/>
                         <outlet property="plakaTxtField" destination="gSr-Qg-eeq" id="SPK-uu-1KT"/>
+                        <outlet property="plateBtnClicked" destination="U13-bO-e0n" id="49g-VW-I9r"/>
                         <outlet property="saveButton" destination="hjc-pM-4PX" id="hIy-Tz-33N"/>
                         <outlet property="signoutButton" destination="FL1-gg-7v8" id="GSh-5l-aQ9"/>
                     </connections>

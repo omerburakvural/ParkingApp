@@ -19,6 +19,8 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var plakaTxtField: UITextField!
     @IBOutlet weak var emailLbl: UILabel!
     
+    @IBOutlet weak var emailBtnClicked: UIButton!
+    @IBOutlet weak var plateBtnClicked: UIButton!
     @IBOutlet weak var signoutButton: UIButton!
     
     var viewModel = UserDetailViewModel()
