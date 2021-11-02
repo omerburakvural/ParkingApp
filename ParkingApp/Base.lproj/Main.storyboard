@@ -25,7 +25,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OW0-Hd-9i7">
                                                 <rect key="frame" x="18" y="97" width="337" height="100"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3o-Mj-IZH" userLabel="Email">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3o-Mj-IZH" userLabel="Email">
                                                         <rect key="frame" x="0.0" y="0.0" width="337" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="xhu-0i-YbP"/>
