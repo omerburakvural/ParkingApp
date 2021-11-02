@@ -22,6 +22,7 @@ class UserDetailViewModel {
                         let email = document.data()["Email"] as? String
                         let plate = document.data()["Plaka"] as? String
                         let id = document.documentID
+                    
                         let user = UserModel.init(name: name!, email: email!, plate: plate ?? "", id: id)
                         self.users.append(user)
                     }
@@ -57,6 +58,8 @@ class UserDetailViewModel {
         }
         return errorCheck
     }
+    
+
 }
 
 public class UserModel {

@@ -23,6 +23,10 @@ class NewUserTest: XCTestCase {
         let storyboard = UIStoryboard(name: "NewUser", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: "newUser") as? NewUserViewController
         sut.loadViewIfNeeded()
+        XCTAssertNotNil(sut)
+        let adtextbox = try XCTUnwrap(sut.adTextbox, "Ad Girişi")
+        let nameValue = "Name"
+        XCTAssertEqual(adtextbox.placeholder!, nameValue)
         
     }
     override func setUpWithError() throws {
@@ -95,11 +99,6 @@ class NewUserTest: XCTestCase {
         XCTAssertTrue(sut.passwordagainTextbox!.text != nil)
         
         
-    }
-    
-
-    func testvalidateerisim() throws{
-
     }
     
     func testvalideteFields() throws {

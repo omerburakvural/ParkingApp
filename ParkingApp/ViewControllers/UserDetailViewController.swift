@@ -28,7 +28,6 @@ class UserDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.emailTxtField.text = ""
         self.plakaTxtField.text = ""
         self.plakaTxtField.placeholder = "Plakanızı girebilirsiniz"
