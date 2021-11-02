@@ -20,6 +20,8 @@
 		0DAB24B927300BB600A50E6E /* testUserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB24B827300BB600A50E6E /* testUserDetailViewModel.swift */; };
 		0DAB24BB27309F2A00A50E6E /* MapViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB24BA27309F2A00A50E6E /* MapViewModelTest.swift */; };
 		0DAB24BD2730A69200A50E6E /* ParkViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB24BC2730A69200A50E6E /* ParkViewModelTest.swift */; };
+		0DAB24BF2730AFC200A50E6E /* MapViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB24BE2730AFC200A50E6E /* MapViewControllerTest.swift */; };
+		0DAB24C12730B02200A50E6E /* ParkViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB24C02730B02200A50E6E /* ParkViewControllerTest.swift */; };
 		0DE6794427160CBA002B0234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6794327160CBA002B0234 /* AppDelegate.swift */; };
 		0DE6794627160CBA002B0234 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6794527160CBA002B0234 /* SceneDelegate.swift */; };
 		0DE6794B27160CBA002B0234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6794927160CBA002B0234 /* Main.storyboard */; };
@@ -73,6 +75,8 @@
 		0DAB24B827300BB600A50E6E /* testUserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testUserDetailViewModel.swift; sourceTree = "<group>"; };
 		0DAB24BA27309F2A00A50E6E /* MapViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTest.swift; sourceTree = "<group>"; };
 		0DAB24BC2730A69200A50E6E /* ParkViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkViewModelTest.swift; sourceTree = "<group>"; };
+		0DAB24BE2730AFC200A50E6E /* MapViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerTest.swift; sourceTree = "<group>"; };
+		0DAB24C02730B02200A50E6E /* ParkViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkViewControllerTest.swift; sourceTree = "<group>"; };
 		0DE6794027160CBA002B0234 /* ParkingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE6794327160CBA002B0234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DE6794527160CBA002B0234 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 		26AD0EDC272D65D30008F225 /* ParkingAppTest */ = {
 			isa = PBXGroup;
 			children = (
+				0DAB24C02730B02200A50E6E /* ParkViewControllerTest.swift */,
+				0DAB24BE2730AFC200A50E6E /* MapViewControllerTest.swift */,
 				0DAB24BC2730A69200A50E6E /* ParkViewModelTest.swift */,
 				0DAB24BA27309F2A00A50E6E /* MapViewModelTest.swift */,
 				0DAB24B827300BB600A50E6E /* testUserDetailViewModel.swift */,
@@ -465,8 +471,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DAB24BD2730A69200A50E6E /* ParkViewModelTest.swift in Sources */,
+				0DAB24BF2730AFC200A50E6E /* MapViewControllerTest.swift in Sources */,
 				0DAB24BB27309F2A00A50E6E /* MapViewModelTest.swift in Sources */,
 				26AD0EDE272D65D30008F225 /* ParkingAppTest.swift in Sources */,
+				0DAB24C12730B02200A50E6E /* ParkViewControllerTest.swift in Sources */,
 				0DAB24B7273007FC00A50E6E /* LoginViewModelTest.swift in Sources */,
 				0DAB24B927300BB600A50E6E /* testUserDetailViewModel.swift in Sources */,
 				26A606BA272D8475008CBAB8 /* NewUserTest.swift in Sources */,

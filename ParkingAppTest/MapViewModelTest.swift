@@ -15,10 +15,7 @@ class MapViewModelTest: XCTestCase {
     func testMapViewModelInit() throws{
         
         XCTAssertNoThrow(MapViewModel.init())
-        
         XCTAssertNotNil(vm.parkModelPins)
-        XCTAssertEqual(vm.parkModelPins.count, 0)
-        
     }
     
     func testLoadPinArray() throws {
