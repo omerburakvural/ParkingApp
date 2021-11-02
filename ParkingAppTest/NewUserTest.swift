@@ -97,14 +97,24 @@ class NewUserTest: XCTestCase {
         
     }
     
+
     func testvalidateerisim() throws{
+
+    }
+    
+    func testvalideteFields() throws {
+        
+
         let storyboard = UIStoryboard(name: "NewUser", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: "newUser") as? NewUserViewController
         sut.loadViewIfNeeded()
         
+
         func datafilledtest() {
             
         }
+
+
         sut.adTextbox!.text! = "Park"
         sut.soyadTextbox!.text! = "Testuyg"
         sut.epostaTextbox!.text! = "parkapp@gmail.com"
@@ -122,7 +132,35 @@ class NewUserTest: XCTestCase {
         XCTAssertNotNil(sut.epostaTextbox!.text!)
         XCTAssertNotNil(sut.passwordTextbox!.text!)
         XCTAssertNotNil(sut.passwordagainTextbox!.text!)
+
+        let plaka = "34NNN34"
+
         
+        func valideteFields()
+        {
+            if sut.adTextbox!.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" || sut.soyadTextbox!.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+                sut.epostaTextbox!.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+                sut.passwordTextbox!.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+                sut.passwordagainTextbox!.text!.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+            {
+                XCTFail("Lütfen bilgilerinizi giriniz")
+            }
+            else
+            {
+                
+                if sut.passwordTextbox!.text! == sut.passwordagainTextbox!.text!
+                //                password verisinin iki textboxta da aynı olup olmadığı kontrol edildi
+                {
+                    
+                    XCTSkip.self
+                }
+                else
+                {
+                    XCTFail("Şifre aynı olmalı")
+                }
+            }
+            
+        }
     }
     
 
