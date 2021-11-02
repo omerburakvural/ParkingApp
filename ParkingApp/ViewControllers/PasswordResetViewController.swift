@@ -197,30 +197,38 @@ class PasswordResetViewController: UIViewController{
         
     }
     //    HATA KONTROLÜ VE ALERTLER
-    func alertUser(of errorCode: AuthErrorCode) {
+    func alertUser(of errorCode: AuthErrorCode) -> String {
+        var returnMessage: String = ""
         switch errorCode {
         case .internalError:
             let alert = UIAlertController(title: "Başarısız", message: "Uygulamada teknik problem mevcut", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            returnMessage = alert.message ?? ""
         case .keychainError:
             print("Keychain Hatası")
+            returnMessage = "Keychain Hatası"
         case .networkError:
             let alert = UIAlertController(title: "Başarısız", message: "Lütfen internet bağlantınızı kontrol ediniz", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            returnMessage = alert.message ?? ""
         case .weakPassword:
             let alert = UIAlertController(title: "Başarısız", message: "Zayıf şifre. Lütfen 6 karakterden fazla şifre giriniz", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            returnMessage = alert.message ?? ""
         case .wrongPassword:
             let alert = UIAlertController(title: "Başarısız", message: "Mevcut şifreyi doğru giriniz", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            returnMessage = alert.message ?? ""
         default:
             let alert = UIAlertController(title: "Başarısız", message: "Bilinmeyen hata !", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            returnMessage = alert.message ?? ""
         }
+        return returnMessage
     }
 }
