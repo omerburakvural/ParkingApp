@@ -38,19 +38,19 @@ class PasswordResetViewController: UIViewController{
         // [END setup]
         db = Firestore.firestore()
         if let uid = (Auth.auth().currentUser?.uid){
-        let docRef = db.collection("Users").document(uid)
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print(dataDescription)
-                let email = document["Email"] as? String
-                self.usermodeli.email = "\(email!)"
-                print(self.usermodeli.email!)
-                print("Document data: \(dataDescription)")
-            } else {
-                print("Docu bulunamadı")
+            let docRef = db.collection("Users").document(uid)
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print(dataDescription)
+                    let email = document["Email"] as? String
+                    self.usermodeli.email = "\(email!)"
+                    print(self.usermodeli.email!)
+                    print("Document data: \(dataDescription)")
+                } else {
+                    print("Docu bulunamadı")
+                }
             }
-        }
         }else{
             print("User bulunamadı")
         }
@@ -164,11 +164,8 @@ class PasswordResetViewController: UIViewController{
         passwordmodel.yenisifre = (yenisifre)!
         passwordmodel.yenisifretekrar = (yenisifretekrar)!
         
-        
         let durum = validasyon(yenisifre: passwordmodel.yenisifre ?? "", yenisifretekrar: passwordmodel.yenisifretekrar ?? "")
-        if (durum == true)
-        {
-            
+        if (durum == true) {
             
             print(yeniSifreTekrar.text!)
             self.sifredegistir(email: usermodeli.email! , currentPassword: (passwordmodel.sifre)!, newPassword: (passwordmodel.yenisifretekrar)!) { (error) in
@@ -179,22 +176,13 @@ class PasswordResetViewController: UIViewController{
                     print("başarılı")
                 }
             }
-            
-            
-            
         }
-        else
-        {
-            
+        else {
             let alert = UIAlertController(title: "Başarısız", message: "Lütfen yeni şifrenizi tekrarını doğru giriniz", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        
-        
         //        self.dismiss(animated: true, completion: nil)
-        
-        
     }
     //    HATA KONTROLÜ VE ALERTLER
     func alertUser(of errorCode: AuthErrorCode) -> String {

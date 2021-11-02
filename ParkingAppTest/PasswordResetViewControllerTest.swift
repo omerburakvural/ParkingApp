@@ -22,14 +22,20 @@ class PasswordResetViewControllerTest: XCTestCase {
         vc = nil
     }
     
-    func kaydetButtonTest() throws {
+    func testKaydetButtonClicked() throws {
         let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
         vc = (storyboard.instantiateViewController(withIdentifier: "passwordReset") as? PasswordResetViewController)
         vc.loadViewIfNeeded()
         
+        vc.mevcutSifre.text = "123456"
+        vc.yeniSifre.text = "123123123"
+        vc.yeniSifreTekrar.text = "123123123"
+        vc.usermodeli.email = "omerburakvural@gmail.com"
+        
         vc.kaydetButton.sendActions(for: .touchUpInside)
         XCTAssertTrue(((vc.kaydetButton.actions(forTarget: vc, forControlEvent: .touchUpInside)?.contains("kaydetButtonClicked:")) != nil))
     }
+
     
     func testAlertUser() throws{
         let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
