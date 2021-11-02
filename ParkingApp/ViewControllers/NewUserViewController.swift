@@ -146,6 +146,7 @@ class NewUserViewController: UIViewController {
                     }
                     
                     //
+                    
                     //                FİREBASE DATABASE İÇİN KAYIT YAPILDI.
                     
                     

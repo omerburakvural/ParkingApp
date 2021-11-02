@@ -12,6 +12,7 @@ class LoginViewModelTest: XCTestCase {
     
     var usw: LoginViewController!
     var forgot: ForgotPasswordViewController!
+    var newuser: NewUserViewController!
     //    override func setUpWithError() throws {
     //        // Put setup code here. This method is called before the invocation of each test method in the class.
     //    }
@@ -74,10 +75,32 @@ class LoginViewModelTest: XCTestCase {
         forgot.loadViewIfNeeded()
         forgot.emailAddressTextField!.text! = "parkingapp@gmail.com"
         forgot.yenileButton.sendActions(for: .touchUpInside)
+        XCTAssertEqual(forgot.yenileButton.isEnabled, true)
+    }
+    func testNewUser() throws {
+//        Kullanıcı login olduktan sonra şifremi unuttum butonuna basıp, forgot password sayfasında butona basabiliyor mu
+        testsayfaacilis()
+        usw.newUserButtonClicked.sendActions(for: .touchUpInside)
+        let storyboard = UIStoryboard(name: "NewUser", bundle: nil)
+        newuser = storyboard.instantiateViewController(withIdentifier: "newUser") as? NewUserViewController
+        newuser.loadViewIfNeeded()
+
+            newuser.adTextbox!.text! = "Park"
+        newuser.soyadTextbox!.text! = "AppUyg"
+        newuser.epostaTextbox!.text! = "parkingappsı@gmail.com"
+        newuser.passwordTextbox!.text! = "123456"
+        newuser.passwordagainTextbox!.text! = "123456"
+        newuser.kayitButon.sendActions(for: .touchUpInside)
+        XCTAssertEqual(newuser.kayitButon.isEnabled, true)
         
     }
     
-    
+    func testHideButon() throws {
+        
+        testsayfaacilis()
+        usw.hideButton.sendActions(for: .touchUpInside)
+       
+    }
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
