@@ -50,6 +50,9 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "KeyBoardConsTest">
+               </Test>
+               <Test
                   Identifier = "ParkingAppTest">
                </Test>
             </SkippedTests>

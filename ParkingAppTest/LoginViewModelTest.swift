@@ -13,6 +13,7 @@ class LoginViewModelTest: XCTestCase {
     var usw: LoginViewController!
     var forgot: ForgotPasswordViewController!
     var newuser: NewUserViewController!
+    var mainmap: MapViewController!
     //    override func setUpWithError() throws {
     //        // Put setup code here. This method is called before the invocation of each test method in the class.
     //    }
@@ -42,6 +43,30 @@ class LoginViewModelTest: XCTestCase {
         XCTAssertTrue(vm.userAuthCheck(withEmail: testEmail, andWithPassword: testPassword, andWithSwitch: testRememberSwitch))
     }
     
+    func testSecureEntry() throws {
+        
+        testsayfaacilis()
+        usw.hideButton.sendActions(for: .touchUpInside)
+        XCTAssertEqual(usw.txtPassword.isSecureTextEntry, false)
+
+    }
+    
+    func testSwitch() throws {
+        testsayfaacilis()
+        usw.switchRememberMe.isOn = true
+        XCTAssertEqual(usw.switchRememberMe.isOn, true)
+    }
+    
+    func testNoUser() throws {
+        
+        testsayfaacilis()
+        usw.noUserButtonClicked.sendActions(for: .touchUpInside)
+        let storyboard = UIStoryboard(name: "MainMap", bundle: nil)
+        mainmap = storyboard.instantiateViewController(withIdentifier: "mainMap") as? MapViewController
+        mainmap.loadViewIfNeeded()
+        XCTAssertEqual(mainmap.editProfileButton.isEnabled, false)
+        
+    }
     
     func testLoginEmailPlaceandType() throws {
         // This is an example of a functional test case.
@@ -100,6 +125,16 @@ class LoginViewModelTest: XCTestCase {
         testsayfaacilis()
         usw.hideButton.sendActions(for: .touchUpInside)
        
+    }
+    func testUserAuth() throws{
+        testsayfaacilis()
+        let testEmail = "omerburakvural@gmail.com"
+       let  testPassword = "123456"
+         usw.userAuth(withEmail: testEmail, andWithPassword: testPassword)
+        usw.girisButton.sendActions(for: .touchUpInside)
+        var check = usw.isUserLoggedIn()
+        XCTAssertEqual("\(check)", "işlem ok")
+
     }
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

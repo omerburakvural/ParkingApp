@@ -37,6 +37,7 @@
 		0DEFA619272F3502000B0010 /* ParkingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEFA618272F3502000B0010 /* ParkingAppUITestsLaunchTests.swift */; };
 		0DFA4379272C441300F65E6D /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA4378272C441300F65E6D /* PasswordResetViewController.swift */; };
 		2647D321273193C500D84A99 /* UserDetailTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647D320273193C500D84A99 /* UserDetailTest.swift */; };
+		2647D3232731BCC500D84A99 /* KeyBoardConsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647D3222731BCC500D84A99 /* KeyBoardConsTest.swift */; };
 		266A4358272C577C004360E3 /* PasswordChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266A4357272C577C004360E3 /* PasswordChangeModel.swift */; };
 		266D263B271DD3BB00409F3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263A271DD3BB00409F3B /* LoginViewController.swift */; };
 		266D263F271DF65700409F3B /* KeyboardConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266D263E271DF65700409F3B /* KeyboardConstraints.swift */; };
@@ -98,6 +99,7 @@
 		0DEFA618272F3502000B0010 /* ParkingAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0DFA4378272C441300F65E6D /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		2647D320273193C500D84A99 /* UserDetailTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailTest.swift; sourceTree = "<group>"; };
+		2647D3222731BCC500D84A99 /* KeyBoardConsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardConsTest.swift; sourceTree = "<group>"; };
 		266A4357272C577C004360E3 /* PasswordChangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeModel.swift; sourceTree = "<group>"; };
 		266D263A271DD3BB00409F3B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		266D263E271DF65700409F3B /* KeyboardConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConstraints.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		26AD0EDC272D65D30008F225 /* ParkingAppTest */ = {
 			isa = PBXGroup;
 			children = (
+				2647D3222731BCC500D84A99 /* KeyBoardConsTest.swift */,
 				2647D320273193C500D84A99 /* UserDetailTest.swift */,
 				0D3AF534273182F1006D493E /* PasswordResetViewControllerTest.swift */,
 				0D3AF5322731807B006D493E /* ForgotPasswordViewControllerTest.swift */,
@@ -484,6 +487,7 @@
 				0DAB24BB27309F2A00A50E6E /* MapViewModelTest.swift in Sources */,
 				2647D321273193C500D84A99 /* UserDetailTest.swift in Sources */,
 				26AD0EDE272D65D30008F225 /* ParkingAppTest.swift in Sources */,
+				2647D3232731BCC500D84A99 /* KeyBoardConsTest.swift in Sources */,
 				0DAB24C12730B02200A50E6E /* ParkViewControllerTest.swift in Sources */,
 				0D3AF5332731807B006D493E /* ForgotPasswordViewControllerTest.swift in Sources */,
 				0DAB24B7273007FC00A50E6E /* LoginViewModelTest.swift in Sources */,

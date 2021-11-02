@@ -74,7 +74,7 @@ class LoginViewController: UIViewController {
         }
         
     }
-    func isUserLoggedIn(){
+    func isUserLoggedIn()-> String {
         let uid = (Auth.auth().currentUser?.uid)
         let appDelegate = UIApplication.shared.delegate
         
@@ -83,7 +83,9 @@ class LoginViewController: UIViewController {
         
         if ((uid?.isEmpty) != nil){
             appDelegate?.window??.rootViewController = MapViewController
+            
         }
+        return "işlem ok"
     }
     
     func userAuth(withEmail: String,andWithPassword: String){
@@ -94,11 +96,13 @@ class LoginViewController: UIViewController {
                 let alert = UIAlertController(title: "Uyarı", message: "Girdiğiniz kullanıcı bilgileri hatalıdır. Lütfen kontrol ediniz.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Kapat", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+               
             }else{
                 let storyboard = UIStoryboard(name: "MainMap", bundle: nil)
                 if let vc = storyboard.instantiateViewController(withIdentifier: "mainMap") as? MapViewController {
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: false, completion: nil)
+                  
                 }
             }
         }
