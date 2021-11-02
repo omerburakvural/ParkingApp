@@ -79,75 +79,49 @@ class NewUserViewController: UIViewController {
     }
     //    GERİ BUTONU
     
-    func valideteFields() -> String
-    {
-        if adTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || soyadTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            epostaTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            passwordTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            passwordagainTextbox.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
-        {
-            errorLabel.text = "Lütfen bilgilerinizi giriniz"
-            //            bilgiler validasyon edildi
-        }
-        else
-        {
-            errorLabel.text = ""
-            if passwordTextbox.text == passwordagainTextbox.text
-            //                password verisinin iki textboxta da aynı olup olmadığı kontrol edildi
-            {
-                
-                return "problem bulunmuyor"
-            }
-            else
-            {
-                errorLabel.text = "Şifreleriniz aynı olmalıdır"
-                return "problem mevcut"
-            }
-        }
-        return "deger"
-    }
+
     
     @IBAction func kayitButon(_ sender: Any) {
+
+        let name = self.adTextbox.text
+        let surname = self.soyadTextbox.text
+        let email = self.epostaTextbox.text
+        let password = self.passwordTextbox.text
+        let plaka = ""
+        let passwordagain = self.passwordagainTextbox.text
         
-        valideteFields()
+        newuserviewmodel.email = email
+        newuserviewmodel.password = password
+        newuserviewmodel.name = name
+        newuserviewmodel.usersurname = surname
+        newuserviewmodel.plaka = plaka
+        newuserviewmodel.passwordagain = passwordagain
         
-        let durum = valideteFields()
+       
+       let durum = newuserviewmodel.validateFields(user: name!, withSurname: surname!, withEmail: email!, withPassword: password!, withPasswordagain: passwordagain!)
+  
         //        fonksiyondan dönen değer değişkene alındı
-        if durum == "problem mevcut"
+        if durum == "Şifreleriniz aynı olmalıdır"
         {
-            
+            errorLabel.text = durum
         }
         if durum == "problem bulunmuyor"
         //            fonksiyon validasyonu sorunsuz olarak bitirdi ise sign-up işlemi başlatılıyor
         {
+        
             
-            let name = self.adTextbox.text
-            let surname = self.soyadTextbox.text
-            let email = self.epostaTextbox.text
-            let password = self.passwordTextbox.text
-            let plaka = ""
-            
-            newuserviewmodel.email = email
-            newuserviewmodel.password = password
-            newuserviewmodel.name = name
-            newuserviewmodel.usersurname = surname
-            newuserviewmodel.plaka = plaka
-            
-            Auth.auth().createUser(withEmail: newuserviewmodel.email!, password: newuserviewmodel.password!) { (user, error) in
+            Auth.auth().createUser(withEmail: newuserviewmodel.email!, password: newuserviewmodel.password!) { [self] (user, error) in
                 //email ve password değerleri ile, firebase'e auth kaydı yapılıyor
-                
                 if let error = error {
                     if let errCode = AuthErrorCode(rawValue: error._code) {
-                        alertUser(of: errCode)
+                        errorLabel.text = newuserviewmodel.alertUser(of: errCode)
+                        
                     }
                 }
                 else
                 {
-                    
                     //                KAYIT BAŞARILI
                     //                ALERT VERİLDİ VE ANA SAYFAYA YÖNLENDİRECEĞİ BİLGİSİ AKTARILDI.
-                    
-                    
                     let alert = UIAlertController(title: "Kayıt tamamlandı", message: "İşlem başarılı. 2 saniye içinde ana sayfaya yönlendiriliyorsunuz", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
@@ -198,33 +172,7 @@ class NewUserViewController: UIViewController {
                     // 2 saniye bekleme fonksiyonu burada bitiyor
                 }
             }
-            
-            func alertUser(of errorCode: AuthErrorCode) {
-                
-                switch errorCode {
-                case .appVerificationUserInteractionFailure:
-                    errorLabel.text = "Uygulamada teknik problem mevcut"
-                    //                  Uygulamanın Firebase'de doğrulanmaması
-                case .emailAlreadyInUse:
-                    errorLabel.text = "Lütfen başka e-posta adresi ile kaydolunuz"
-                    //                  E-mail'in yeniden kaydolmaya çalışması
-                case .internalError:
-                    errorLabel.text = "Uygulamada teknik problem mevcut"
-                    //                  Internal Error
-                case .invalidEmail:
-                    errorLabel.text = "Geçersiz e-mail adresi"
-                    //                  Yanlış e-mail girişi
-                case .keychainError:
-                    print("Keychain Hatası")
-                case .networkError:
-                    errorLabel.text = "Lütfen internet bağlantınızı kontrol ediniz"
-                case .weakPassword:
-                    errorLabel.text = "Zayıf şifre. Lütfen 6 karakterden fazla şifre giriniz"
-                default:
-                    errorLabel.text = "Bilinmeyen hata"
-                }
-            }
-            
+   
         }
         
         return

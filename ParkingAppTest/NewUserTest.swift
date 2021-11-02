@@ -7,6 +7,7 @@
 
 
 import XCTest
+import FirebaseAuth
 
 @testable import ParkingApp
 
@@ -85,6 +86,85 @@ class NewUserTest: XCTestCase {
     
         
     }
+    
+    func testvalidateerisim() throws{
+        let storyboard = UIStoryboard(name: "NewUser", bundle: nil)
+        sut = storyboard.instantiateViewController(withIdentifier: "newUser") as? NewUserViewController
+        sut.loadViewIfNeeded()
+        
+        sut.adTextbox!.text! = "Park"
+        sut.soyadTextbox!.text! = "Testuyg"
+        sut.epostaTextbox!.text! = "parkapp@gmail.com"
+        sut.passwordTextbox!.text! = "123456"
+        sut.passwordagainTextbox!.text! = "123456"
+        
+//        sut.valideteFields()
+//        let funcCheck = sut.valideteFields()
+//        XCTAssertEqual(funcCheck, "problem bulunmuyor")
+        
+      let kontrolvalidate =  model.validateFields(user: sut.adTextbox!.text!, withSurname: sut.soyadTextbox!.text!, withEmail: sut.epostaTextbox!.text!, withPassword: sut.passwordTextbox!.text!, withPasswordagain: sut.passwordagainTextbox!.text!)
+        XCTAssertEqual(kontrolvalidate, "problem bulunmuyor")
+        XCTAssertNotNil(sut.adTextbox!.text!)
+        XCTAssertNotNil(sut.soyadTextbox!.text!)
+        XCTAssertNotNil(sut.epostaTextbox!.text!)
+        XCTAssertNotNil(sut.passwordTextbox!.text!)
+        XCTAssertNotNil(sut.passwordagainTextbox!.text!)
+        
+        
+    }
+    
+    func testAlert() throws
+    {
+        let weakerror: AuthErrorCode = .weakPassword
+        
+        let kontrol = model.alertUser(of: weakerror)
+        
+        XCTAssertEqual(kontrol, "Zayıf şifre. Lütfen 6 karakterden fazla şifre giriniz")
+        
+        
+        let appVerificationUserInteractionFailure: AuthErrorCode = .appVerificationUserInteractionFailure
+        
+        let appverify = model.alertUser(of: appVerificationUserInteractionFailure)
+        
+        XCTAssertEqual(appverify, "Uygulamada teknik problem mevcut")
+        
+        
+        
+        let emailAlreadyInUse: AuthErrorCode = .emailAlreadyInUse
+        
+        let emailverify = model.alertUser(of: emailAlreadyInUse)
+        
+        XCTAssertEqual(emailverify, "Lütfen başka e-posta adresi ile kaydolunuz")
+        
+        
+        let internalError: AuthErrorCode = .internalError
+        
+        let internalErrorverify = model.alertUser(of: internalError)
+        
+        XCTAssertEqual(internalErrorverify, "Uygulamada teknik problem mevcut")
+        
+    
+        let invalidEmail: AuthErrorCode = .invalidEmail
+        
+        let invalidEmailverify = model.alertUser(of: invalidEmail)
+        
+        XCTAssertEqual(invalidEmailverify, "Geçersiz e-mail adresi")
+        
+        
+        let networkError: AuthErrorCode = .networkError
+        
+        let networkErrorverify = model.alertUser(of: networkError)
+        
+        XCTAssertEqual(networkErrorverify, "Lütfen internet bağlantınızı kontrol ediniz")
+        
+        
+        
+        
+    }
+    
+
+    
+    
     
 }
     
