@@ -323,6 +323,7 @@
                     <connections>
                         <outlet property="hideYeniSifre" destination="gWh-Ng-LJm" id="c1f-cM-68r"/>
                         <outlet property="hidemevcutsifre" destination="cCm-xh-Juk" id="9GN-pM-SQZ"/>
+                        <outlet property="kaydetButton" destination="rmR-Yi-PUp" id="JC8-0m-k6O"/>
                         <outlet property="mevcutSifre" destination="Cqj-7b-hA8" id="lqp-p6-mw8"/>
                         <outlet property="yeniSifre" destination="7xL-tw-8zO" id="vP9-Ie-LUM"/>
                         <outlet property="yeniSifreTekrar" destination="DNf-kP-iLM" id="rxq-i8-EVx"/>

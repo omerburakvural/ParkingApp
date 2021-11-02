@@ -279,6 +279,7 @@
                     </view>
                     <connections>
                         <outlet property="NavBar" destination="eyI-aX-vY2" id="n6j-lV-6zb"/>
+                        <outlet property="backButton" destination="fgH-dJ-tcK" id="DqR-KD-l4y"/>
                         <outlet property="emailAddressTextField" destination="v0i-kt-tlH" id="stV-zu-UNM"/>
                         <outlet property="emailAdresi" destination="SVR-3i-BTz" id="EVf-4G-gUC"/>
                         <outlet property="keyboardViewi" destination="23B-Zf-0Ie" id="pKV-kg-rcB"/>

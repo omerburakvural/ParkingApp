@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3AF5332731807B006D493E /* ForgotPasswordViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3AF5322731807B006D493E /* ForgotPasswordViewControllerTest.swift */; };
+		0D3AF535273182F1006D493E /* PasswordResetViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3AF534273182F1006D493E /* PasswordResetViewControllerTest.swift */; };
 		0D3F8AF927269BEC0082261C /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F8AF527269BEC0082261C /* UserDetailViewController.swift */; };
 		0D3F8AFA27269BEC0082261C /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F8AF627269BEC0082261C /* UserDetailViewModel.swift */; };
 		0D3F8AFD27269C060082261C /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3F8AFC27269C050082261C /* UserDetail.storyboard */; };
@@ -62,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D3AF5322731807B006D493E /* ForgotPasswordViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewControllerTest.swift; sourceTree = "<group>"; };
+		0D3AF534273182F1006D493E /* PasswordResetViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewControllerTest.swift; sourceTree = "<group>"; };
 		0D3F8AF527269BEC0082261C /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		0D3F8AF627269BEC0082261C /* UserDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		0D3F8AFC27269C050082261C /* UserDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = UserDetail.storyboard; path = ParkingApp/UserDetail.storyboard; sourceTree = SOURCE_ROOT; };
@@ -229,6 +233,8 @@
 		26AD0EDC272D65D30008F225 /* ParkingAppTest */ = {
 			isa = PBXGroup;
 			children = (
+				0D3AF534273182F1006D493E /* PasswordResetViewControllerTest.swift */,
+				0D3AF5322731807B006D493E /* ForgotPasswordViewControllerTest.swift */,
 				0DAB24C02730B02200A50E6E /* ParkViewControllerTest.swift */,
 				0DAB24BE2730AFC200A50E6E /* MapViewControllerTest.swift */,
 				0DAB24BC2730A69200A50E6E /* ParkViewModelTest.swift */,
@@ -475,7 +481,9 @@
 				0DAB24BB27309F2A00A50E6E /* MapViewModelTest.swift in Sources */,
 				26AD0EDE272D65D30008F225 /* ParkingAppTest.swift in Sources */,
 				0DAB24C12730B02200A50E6E /* ParkViewControllerTest.swift in Sources */,
+				0D3AF5332731807B006D493E /* ForgotPasswordViewControllerTest.swift in Sources */,
 				0DAB24B7273007FC00A50E6E /* LoginViewModelTest.swift in Sources */,
+				0D3AF535273182F1006D493E /* PasswordResetViewControllerTest.swift in Sources */,
 				0DAB24B927300BB600A50E6E /* testUserDetailViewModel.swift in Sources */,
 				26A606BA272D8475008CBAB8 /* NewUserTest.swift in Sources */,
 			);
