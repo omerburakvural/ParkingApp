@@ -54,6 +54,16 @@ class NewUserTest: XCTestCase {
         sut = nil
     }
     
+    func testBackButton() {
+        let storyboard = UIStoryboard(name: "NewUser", bundle: nil)
+        sut = (storyboard.instantiateViewController(withIdentifier: "newUser") as? NewUserViewController)
+        sut.loadViewIfNeeded()
+        
+        sut.backButton.target?.perform(sut.backButton.action, with: nil)
+        
+        XCTAssertTrue(((sut.backButton.action?.description.contains("backButtonClicked")) != nil))
+    }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
