@@ -217,10 +217,10 @@
 			children = (
 				0DE6795927160EC7002B0234 /* LoginViewModel.swift */,
 				0D5F0CB52716BDCA00E05B01 /* NewUserViewModel.swift */,
+				266A4357272C577C004360E3 /* PasswordChangeModel.swift */,
 				0D5F0CBA2716BE3200E05B01 /* MapViewModel.swift */,
 				0D5F0CBE2716BE9A00E05B01 /* ParkModel.swift */,
 				0D3F8AF627269BEC0082261C /* UserDetailViewModel.swift */,
-				266A4357272C577C004360E3 /* PasswordChangeModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";

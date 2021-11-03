@@ -7,9 +7,16 @@
 
 import XCTest
 import FirebaseAuth
+import Firebase
+
 @testable import ParkingApp
 
 class PasswordResetViewControllerTest: XCTestCase {
+    
+  
+    
+    var passwordmodel = PasswordChangeModel()
+    
     var vc: PasswordResetViewController!
     
     override func setUpWithError() throws {
@@ -38,31 +45,26 @@ class PasswordResetViewControllerTest: XCTestCase {
 
     
     func testAlertUser() throws{
-        let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
-        vc = (storyboard.instantiateViewController(withIdentifier: "passwordReset") as? PasswordResetViewController)
-        vc.loadViewIfNeeded()
-        
-        var checkMessage: String = ""
-        
+   
         let internalError: AuthErrorCode = .internalError
-        checkMessage = vc.alertUser(of: internalError)
+        let checkMessage = passwordmodel.alertUser(of: internalError)
         XCTAssertEqual(checkMessage, "Uygulamada teknik problem mevcut")
         
         let keychainError: AuthErrorCode = .keychainError
-        checkMessage = vc.alertUser(of: keychainError)
-        XCTAssertEqual(checkMessage, "Keychain Hatası")
+        let checkMessagekey = passwordmodel.alertUser(of: keychainError)
+        XCTAssertEqual(checkMessagekey, "Keychain Hatası")
         
         let networkError: AuthErrorCode = .networkError
-        checkMessage = vc.alertUser(of: networkError)
-        XCTAssertEqual(checkMessage, "Lütfen internet bağlantınızı kontrol ediniz")
+        let checkMessagenetwork = passwordmodel.alertUser(of: networkError)
+        XCTAssertEqual(checkMessagenetwork, "Lütfen internet bağlantınızı kontrol ediniz")
         
         let weakPassword: AuthErrorCode = .weakPassword
-        checkMessage = vc.alertUser(of: weakPassword)
-        XCTAssertEqual(checkMessage, "Zayıf şifre. Lütfen 6 karakterden fazla şifre giriniz")
+        let checkMessageweak = passwordmodel.alertUser(of: weakPassword)
+        XCTAssertEqual(checkMessageweak, "Zayıf şifre. Lütfen 6 karakterden fazla şifre giriniz")
         
         let wrongPassword: AuthErrorCode = .wrongPassword
-        checkMessage = vc.alertUser(of: wrongPassword)
-        XCTAssertEqual(checkMessage, "Mevcut şifreyi doğru giriniz")
+        let checkMessagewrong = passwordmodel.alertUser(of: wrongPassword)
+        XCTAssertEqual(checkMessagewrong, "Başka şifre seçiniz")
         
     }
     

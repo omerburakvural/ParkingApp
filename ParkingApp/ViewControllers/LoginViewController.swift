@@ -89,13 +89,18 @@ class LoginViewController: UIViewController {
     }
     
     func userAuth(withEmail: String,andWithPassword: String){
-        Auth.auth().signIn(withEmail: withEmail, password: andWithPassword){
+        Auth.auth().signIn(withEmail: withEmail, password: andWithPassword){ [self]
             (result,error) in
             if error != nil
             {
-                let alert = UIAlertController(title: "Uyarı", message: "Girdiğiniz kullanıcı bilgileri hatalıdır. Lütfen kontrol ediniz.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Kapat", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                if let errCode = AuthErrorCode(rawValue: error!._code) {
+                    //                    self.alertUser(of: errCode)
+                    let hataMesaji = viewModel.alertUser(of: errCode)
+//                    Login View Model üzerinden hata bilgisi alındı.
+                    let alert = UIAlertController(title: "Hata", message: hataMesaji, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
                
             }else{
                 let storyboard = UIStoryboard(name: "MainMap", bundle: nil)

@@ -34,7 +34,7 @@ class PasswordChangeModel : Codable
             returnstring = "Geçersiz e-mail adresi"
             //                  Yanlış e-mail girişi
         case .keychainError:
-            print("Keychain Hatası")
+            returnstring = "Keychain Hatası"
         case .networkError:
             returnstring = "Lütfen internet bağlantınızı kontrol ediniz"
         case .weakPassword:
