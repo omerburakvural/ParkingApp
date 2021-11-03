@@ -105,7 +105,6 @@ class PasswordResetViewController: UIViewController{
             if let error = error {
                 
                 if let errCode = AuthErrorCode(rawValue: error._code) {
-                    //                    self.alertUser(of: errCode)
                     let hataMesaji = passwordmodel.alertUser(of: errCode)
                     //                    HATALAR MODEL ÜZERİNDE TUTULDU
                     let alert = UIAlertController(title: "Hata", message: hataMesaji, preferredStyle: UIAlertController.Style.alert)
@@ -177,7 +176,6 @@ class PasswordResetViewController: UIViewController{
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        //        self.dismiss(animated: true, completion: nil)
     }
 
    

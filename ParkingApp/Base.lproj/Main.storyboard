@@ -27,6 +27,9 @@
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3o-Mj-IZH" userLabel="Email">
                                                         <rect key="frame" x="0.0" y="0.0" width="337" height="40"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="emailSignin">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="xhu-0i-YbP"/>
                                                         </constraints>
@@ -35,11 +38,14 @@
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MO4-S5-sr2">
                                                         <rect key="frame" x="0.0" y="60" width="337" height="40"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Password">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="A2F-6T-DbC"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -68,6 +74,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RQ-F4-tGf">
                                                 <rect key="frame" x="18" y="261" width="337" height="39"/>
                                                 <color key="backgroundColor" red="0.18289321659999999" green="0.41205567119999997" blue="0.58041328189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="girişSignin"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="39" id="4Yo-qh-kZW"/>
                                                 </constraints>
@@ -137,6 +144,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xax-P6-2UM">
                                         <rect key="frame" x="323" y="384.5" width="30" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="hideButton"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xax-P6-2UM" secondAttribute="height" multiplier="1:1" id="HGm-Sm-pEK"/>
                                             <constraint firstAttribute="height" constant="30" id="WCE-7w-1Ks"/>

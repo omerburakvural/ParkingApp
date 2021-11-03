@@ -8,10 +8,11 @@
 import XCTest
 
 
+@testable import ParkingApp
 
 class ParkingAppUITests: XCTestCase {
+  
     
-   
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -25,17 +26,39 @@ class ParkingAppUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testSigninScreen() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        let emailTextbox = app.textFields["emailSignin"]
+        let passwordTextbox = app.secureTextFields["Password"]
+        let hideButton = app.buttons["hideButton"]
+        let signinButton = app.buttons["Giriş"]
         
+        XCTAssertTrue(emailTextbox.isEnabled, "Email girişi açıktır")
+        XCTAssertTrue(emailTextbox.exists, "Email girişi mevcut")
+        
+        XCTAssertTrue(hideButton.exists, "Şifre gizleme butonu mevcut")
+        XCTAssertTrue(hideButton.isEnabled)
+        XCTAssertTrue(hideButton.isEnabled, "Gizleme butonu açık")
+        
+        XCTAssertTrue(passwordTextbox.isEnabled, "Parola giriş mevcut")
+        
+        XCTAssertTrue(signinButton.exists, "Kullanıcı giriş mevcut")
+        XCTAssertTrue(signinButton.isEnabled, "Giriş butonu açık")
+       
+        emailTextbox.tap()
+        emailTextbox.typeText("erademtest@gmail.iu")
+        passwordTextbox.tap()
+        passwordTextbox.typeText("123456")
+        signinButton.tap()
         
         //        XCTAssertEqual(emailTextField.textContentType, UITextContentType.username, "Email address UITextField does not have an Email Address Content Type set")
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {

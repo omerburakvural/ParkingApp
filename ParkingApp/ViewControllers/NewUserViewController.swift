@@ -95,6 +95,9 @@ class NewUserViewController: UIViewController {
         let durum = newuserviewmodel.validateFields(user: name!, withSurname: surname!, withEmail: email!, withPassword: password!, withPasswordagain: passwordagain!)
         
         //        fonksiyondan dönen değer değişkene alındı
+        if durum == "Lütfen bilgilerinizi giriniz" {
+            errorLabel.text = durum
+        }
         if durum == "Şifreleriniz aynı olmalıdır" {
             errorLabel.text = durum
         }
