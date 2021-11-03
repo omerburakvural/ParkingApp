@@ -158,7 +158,7 @@ class PasswordResetViewController: UIViewController{
         passwordmodel.yenisifre = (yenisifre)!
         passwordmodel.yenisifretekrar = (yenisifretekrar)!
         
-        let durum = passwordmodel.validasyon(yenisifre: passwordmodel.yenisifre ?? "", yenisifretekrar: passwordmodel.yenisifretekrar ?? "")
+        let durum = passwordmodel.validasyon(sifre: gecerlisifre!, yenisifre: yenisifre!, yenisifretekrar: yenisifretekrar!)
 //        ŞİFRELERİN AYNI OLUP OLMADIĞI MODEL ÜZERİNDEN KONTROL EDİLDİ
         if (durum == true) {
             

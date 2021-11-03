@@ -34,10 +34,24 @@ class UserDetailTest: XCTestCase {
     func testBackButton()
     {
         sayfabaslatma()
-       
+        XCTAssertTrue(sut.backButton.isEnabled)
         
     }
     
+    func testKaydetButton()
+    {
+        sayfabaslatma()
+        XCTAssertTrue(sut.saveButton.isEnabled)
+        sut.saveButton.action
+        XCTAssertNotNil(usermodelipbclass.userID)
+        XCTAssertNotNil(usermodelipbclass.userEmail)
+        XCTAssertNotNil(usermodelipbclass.userName)
+        XCTAssertNotNil(usermodelipbclass.userPlate)
+        XCTAssertNotNil(UserModel.init(name:email:plate:id:))
+        
+    }
+    
+ 
     func testsignoutButton() throws {
         sayfabaslatma()
         sut.signoutButton.sendActions(for: .touchUpInside)
@@ -107,6 +121,42 @@ class UserDetailTest: XCTestCase {
     
         
     }
+    
+    func testSifreDegistirMevcutHide() throws
+    {
+        sayfabaslatma()
+        let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
+        tus = storyboard.instantiateViewController(withIdentifier: "passwordReset") as? PasswordResetViewController
+        tus.loadViewIfNeeded()
+        tus.hidemevcutsifre.sendActions(for: .touchUpInside)
+        XCTAssertFalse(tus.mevcutSifre.isSecureTextEntry)
+    }
+    func testSifreDegistirYeniHide() throws
+    {
+        sayfabaslatma()
+        let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
+        tus = storyboard.instantiateViewController(withIdentifier: "passwordReset") as? PasswordResetViewController
+        tus.loadViewIfNeeded()
+        tus.hideYeniSifre.sendActions(for: .touchUpInside)
+        XCTAssertFalse(tus.yeniSifre.isSecureTextEntry)
+        tus.yeniSifre!.text! = "234567"
+        tus.yeniSifre.sendActions(for: .editingChanged)
+        print(tus.yeniSifreTekrar!.text!)
+        XCTAssertEqual(tus.yeniSifreTekrar!.text!, "234567")
+        XCTAssertNotNil(tus.yeniSifreTekrar!.text!)
+    }
+    
+    func testTextbox() throws
+    {
+        sayfabaslatma()
+        let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
+        tus = storyboard.instantiateViewController(withIdentifier: "passwordReset") as? PasswordResetViewController
+        tus.loadViewIfNeeded()
+        tus.hideYeniSifre.sendActions(for: .touchUpInside)
+        XCTAssertFalse(tus.yeniSifre.isSecureTextEntry)
+        
+    }
+    
     
     func testModelIsNull() throws {
         sayfabaslatma()

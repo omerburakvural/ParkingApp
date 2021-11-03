@@ -128,6 +128,7 @@
                         <outlet property="hideButton" destination="I6A-ev-UJY" id="BeP-UJ-4PE"/>
                         <outlet property="kayitButon" destination="N0r-B0-t3D" id="p3j-S6-G3I"/>
                         <outlet property="mainView" destination="hli-Hn-gJU" id="LqM-7x-idT"/>
+                        <outlet property="navBar" destination="E2U-He-ZPK" id="AEf-Qc-i3n"/>
                         <outlet property="passwordTextbox" destination="eXq-At-1GD" id="Rp2-7S-Ilg"/>
                         <outlet property="passwordagainTextbox" destination="XLU-Jz-sPH" id="4xo-mH-4up"/>
                         <outlet property="soyadTextbox" destination="f3L-9e-Amj" id="6kB-Ls-ljO"/>

@@ -6,6 +6,9 @@
 //
 
 import XCTest
+import Firebase
+import FirebaseAuth
+
 @testable import ParkingApp
 
 class LoginViewModelTest: XCTestCase {
@@ -14,6 +17,7 @@ class LoginViewModelTest: XCTestCase {
     var forgot: ForgotPasswordViewController!
     var newuser: NewUserViewController!
     var mainmap: MapViewController!
+    let loginModel = LoginViewModel()
     //    override func setUpWithError() throws {
     //        // Put setup code here. This method is called before the invocation of each test method in the class.
     //    }
@@ -137,6 +141,30 @@ class LoginViewModelTest: XCTestCase {
         XCTAssertEqual("\(check)", "işlem ok")
 
     }
+    
+    func testAlertUser() throws{
+   
+        let internalError: AuthErrorCode = .internalError
+        let checkMessage = loginModel.alertUser(of: internalError)
+        XCTAssertEqual(checkMessage, "Uygulamada teknik problem mevcut")
+        
+        let keychainError: AuthErrorCode = .keychainError
+        let checkMessagekey = loginModel.alertUser(of: keychainError)
+        XCTAssertEqual(checkMessagekey, "Keychain Hatası")
+        
+        let networkError: AuthErrorCode = .networkError
+        let checkMessagenetwork = loginModel.alertUser(of: networkError)
+        XCTAssertEqual(checkMessagenetwork, "Lütfen internet bağlantınızı kontrol ediniz")
+        
+        let weakPassword: AuthErrorCode = .weakPassword
+        let checkMessageweak = loginModel.alertUser(of: weakPassword)
+        XCTAssertEqual(checkMessageweak, "Zayıf şifre. Lütfen 6 karakterden fazla şifre giriniz")
+        
+        let wrongPassword: AuthErrorCode = .wrongPassword
+        let checkMessagewrong = loginModel.alertUser(of: wrongPassword)
+        XCTAssertEqual(checkMessagewrong, "Başka şifre seçiniz")
+        
+    }
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
@@ -145,3 +173,5 @@ class LoginViewModelTest: XCTestCase {
     }
     
 }
+
+

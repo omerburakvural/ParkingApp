@@ -42,6 +42,7 @@ class PasswordResetViewControllerTest: XCTestCase {
         vc.kaydetButton.sendActions(for: .touchUpInside)
         XCTAssertTrue(((vc.kaydetButton.actions(forTarget: vc, forControlEvent: .touchUpInside)?.contains("kaydetButtonClicked:")) != nil))
     }
+    
 
     
     func testAlertUser() throws{
@@ -67,7 +68,28 @@ class PasswordResetViewControllerTest: XCTestCase {
         XCTAssertEqual(checkMessagewrong, "Başka şifre seçiniz")
         
     }
+    func testValidasyon() throws
+    {
+        
+        let yenisifre = "234567"
+        let sifre = "123456"
+        let yenisifretekrar = "234567"
+        
+        let kontrolValidasyonReturn = passwordmodel.validasyon(sifre: sifre, yenisifre: yenisifre, yenisifretekrar: yenisifretekrar)
+        XCTAssertEqual(kontrolValidasyonReturn, true)
+        XCTAssertTrue(kontrolValidasyonReturn)
+     
+    }
     
+    func testValidasyonFalseRetur() throws
+    {
+        let sifre = "123456"
+        let yenisifres = "123456"
+        let yenisifrestekrar = "123456"
+        let kontrolValidasyonHataDondur = passwordmodel.validasyon(sifre: sifre, yenisifre: yenisifres, yenisifretekrar: yenisifrestekrar)
+        XCTAssertFalse(kontrolValidasyonHataDondur)
+    }
+
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

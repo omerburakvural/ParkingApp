@@ -41,6 +41,8 @@ class NewUserViewController: UIViewController {
     @IBOutlet weak var passwordTextbox: UITextField!
     @IBOutlet weak var passwordagainTextbox: UITextField!
     
+   
+    @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var hideButton: UIButton!
     
     @IBAction func hideButton(_ sender: Any) {

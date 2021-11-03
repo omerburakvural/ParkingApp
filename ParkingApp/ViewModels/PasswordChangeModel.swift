@@ -47,9 +47,9 @@ class PasswordChangeModel : Codable
         return returnstring
     }
     
-    func validasyon (yenisifre:String, yenisifretekrar:String) -> Bool
+    func validasyon (sifre:String, yenisifre:String, yenisifretekrar: String) -> Bool
     {
-        if ( yenisifre == yenisifretekrar) && (sifre != yenisifre)
+        if (  yenisifre == yenisifretekrar) && (sifre != yenisifre)
         {
          return true
             

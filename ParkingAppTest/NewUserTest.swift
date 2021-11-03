@@ -41,8 +41,15 @@ class NewUserTest: XCTestCase {
         sut.loadViewIfNeeded()
         let passwordtext = try XCTUnwrap(sut.passwordTextbox, "Password textbox")
         XCTAssertTrue(passwordtext.isSecureTextEntry, "Password secure giriş ok")
+       
+        XCTAssertNotNil(self.sut.navBar.leftBarButtonItem)
     }
     
+    func testgeriButon() throws
+    {
+        XCTAssertNotNil(self.sut.navBar.leftBarButtonItem)
+        XCTAssertTrue((self.sut.navBar.leftBarButtonItem != nil))
+    }
     override func tearDownWithError() throws {
         sut = nil
     }
@@ -196,31 +203,47 @@ func testAlert() throws
     let networkErrorverify = model.alertUser(of: networkError)
     XCTAssertEqual(networkErrorverify, "Lütfen internet bağlantınızı kontrol ediniz")
 }
-
-    
-    func testKaydetButton () throws{
+    func sayfaac()
+    {
         let storyboard = UIStoryboard(name: "NewUser", bundle: nil)
         sut = (storyboard.instantiateViewController(withIdentifier: "newUser") as? NewUserViewController)
         sut.loadViewIfNeeded()
+    }
+    
+    func testKaydetButton () throws{
+        sayfaac()
         sut.kayitButon.sendActions(for: .touchUpInside)
         XCTAssertTrue(((sut.kayitButon.actions(forTarget: sut, forControlEvent: .touchUpInside)?.contains("kayitButon:")) != nil))
     }
 
     func testHideButton () throws{
-        let storyboard = UIStoryboard(name: "NewUser", bundle: nil)
-        sut = (storyboard.instantiateViewController(withIdentifier: "newUser") as? NewUserViewController)
-        sut.loadViewIfNeeded()
+        sayfaac()
         sut.hideButton.sendActions(for: .touchUpInside)
         XCTAssertTrue(((sut.hideButton.actions(forTarget: sut, forControlEvent: .touchUpInside)?.contains("hideButton:")) != nil))
     }
+    func testHideButtonPushTextbox () throws{
+        sayfaac()
+        sut.hideButton.sendActions(for: .touchUpInside)
+        XCTAssertFalse(sut.passwordTextbox.isSecureTextEntry)
+    }
+    
     func testpasswordtextboxEditchanged () throws{
-        let storyboard = UIStoryboard(name: "NewUser", bundle: nil)
-        sut = (storyboard.instantiateViewController(withIdentifier: "newUser") as? NewUserViewController)
-        sut.loadViewIfNeeded()
+        sayfaac()
         sut.passwordTextbox.sendActions(for: .editingChanged)
         XCTAssertTrue(((sut.passwordTextbox.actions(forTarget: sut, forControlEvent: .editingChanged)?.contains("passwordTextbox:")) != nil))
     }
-  
+    func testKaydolYeniHide() throws
+    {
+        sayfaac()
+        
+        sut.hideButton.sendActions(for: .touchUpInside)
+        XCTAssertFalse(sut.passwordTextbox.isSecureTextEntry)
+        sut.passwordTextbox!.text! = "234567"
+        sut.passwordTextbox.sendActions(for: .editingChanged)
+        XCTAssertEqual(sut.passwordagainTextbox!.text!, "234567")
+        XCTAssertNotNil(sut.passwordagainTextbox!.text!)
+//        New user sayfasında, şifre girildikten sonra editchanged scene test edilerek diğer textboxta da verinin doğru olup olmadığı test edilmektedir.
+    }
 
 
 }
