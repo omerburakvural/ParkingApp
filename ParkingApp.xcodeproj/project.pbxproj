@@ -204,10 +204,10 @@
 				266D263A271DD3BB00409F3B /* LoginViewController.swift */,
 				266D26402725B26D00409F3B /* ForgotPasswordViewController.swift */,
 				0D5F0CB32716BDA800E05B01 /* NewUserViewController.swift */,
+				0DFA4378272C441300F65E6D /* PasswordResetViewController.swift */,
 				0D5F0CB82716BE1400E05B01 /* MapViewController.swift */,
 				0D5F0CBC2716BE7B00E05B01 /* ParkViewController.swift */,
 				0D3F8AF527269BEC0082261C /* UserDetailViewController.swift */,
-				0DFA4378272C441300F65E6D /* PasswordResetViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

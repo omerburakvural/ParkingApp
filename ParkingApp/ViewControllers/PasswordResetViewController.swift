@@ -69,8 +69,6 @@ class PasswordResetViewController: UIViewController{
         }
     }
     
-    
-    
     @IBAction func yeniSifre(_ sender: Any) {
         
         if yeniSifre.isSecureTextEntry == false
@@ -91,20 +89,14 @@ class PasswordResetViewController: UIViewController{
             yeniSifreTekrarLabel.isHidden = false
         }
         else {
-            
             let image = UIImage(systemName: "eye")
             hideYeniSifre.setImage(image, for: .normal)
             yeniSifreTekrar.isHidden = true
             yeniSifreTekrarLabel.isHidden = true
         }
-        
-        
     }
     
-    
-    
-    
-    
+
     
     func sifredegistir(email: String, currentPassword: String, newPassword: String, completion:(Error?)->Void ){
         
@@ -113,27 +105,40 @@ class PasswordResetViewController: UIViewController{
             if let error = error {
                 
                 if let errCode = AuthErrorCode(rawValue: error._code) {
-                    self.alertUser(of: errCode)
+                    //                    self.alertUser(of: errCode)
+                    let hataMesaji = passwordmodel.alertUser(of: errCode)
+                    //                    HATALAR MODEL ÜZERİNDE TUTULDU
+                    let alert = UIAlertController(title: "Hata", message: hataMesaji, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
-                
-                
             }
             else {
                 Auth.auth().currentUser?.updatePassword(to: newPassword, completion: { (error) in
-                    let alert = UIAlertController(title: "Başarılı", message: "Şifreniz başarıyla değiştirildi.", preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (_) in
-                        self.dismiss(animated: true, completion: nil)
-                    }))
-                    self.present(alert, animated: true, completion: nil)
-                    
-                    //                    self.present(alert, animated: true, completion: nil)
+                    if let error = error {
+                        if let errCode = AuthErrorCode(rawValue: error._code) {
+                            //                    self.alertUser(of: errCode)
+                            let hataMesaji = passwordmodel.alertUser(of: errCode)
+                            //                    HATALAR MODEL ÜZERİNDE
+                            if hataMesaji == ""
+                            {
+                            let alert = UIAlertController(title: "Başarılı", message: "Şifreniz başarıyla değiştirildi.", preferredStyle: UIAlertController.Style.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (_) in
+                                self.dismiss(animated: true, completion: nil)
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                            }
+                            else
+                            {
+                                let alert = UIAlertController(title: "Hata", message: hataMesaji, preferredStyle: UIAlertController.Style.alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (_) in
+                                    self.dismiss(animated: true, completion: nil)
+                                }))
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                        }
+                    }
                 })
-                //                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 ) {
-                //                    self.dismiss(animated: true, completion: nil)
-                //                    print("başarılıııı")
-                //                }
-                
-                
             }
         })
     }
@@ -141,18 +146,7 @@ class PasswordResetViewController: UIViewController{
     func changePassword(email: String, currentPassword: String, newPassword: String, completion: @escaping (Error?) -> Void) {
     }
     
-    func validasyon (yenisifre:String, yenisifretekrar:String) -> Bool
-    {
-        if ( yenisifre == yenisifretekrar)
-        {
-            return true
-        }
-        else
-        {
-            return false
-        }
-        
-    }
+   
     @IBAction func kaydetButtonClicked(_ sender: Any) {
         // kaydetme işlemleri yapılacak
         
@@ -164,11 +158,12 @@ class PasswordResetViewController: UIViewController{
         passwordmodel.yenisifre = (yenisifre)!
         passwordmodel.yenisifretekrar = (yenisifretekrar)!
         
-        let durum = validasyon(yenisifre: passwordmodel.yenisifre ?? "", yenisifretekrar: passwordmodel.yenisifretekrar ?? "")
+        let durum = passwordmodel.validasyon(yenisifre: passwordmodel.yenisifre ?? "", yenisifretekrar: passwordmodel.yenisifretekrar ?? "")
+//        ŞİFRELERİN AYNI OLUP OLMADIĞI MODEL ÜZERİNDEN KONTROL EDİLDİ
         if (durum == true) {
             
             print(yeniSifreTekrar.text!)
-            self.sifredegistir(email: usermodeli.email! , currentPassword: (passwordmodel.sifre)!, newPassword: (passwordmodel.yenisifretekrar)!) { (error) in
+            self.sifredegistir(email: usermodeli.email! , currentPassword: (passwordmodel.sifre)!, newPassword: (passwordmodel.yenisifre)!) { (error) in
                 if error != nil {
                     print("hata")
                 }
@@ -184,39 +179,6 @@ class PasswordResetViewController: UIViewController{
         }
         //        self.dismiss(animated: true, completion: nil)
     }
-    //    HATA KONTROLÜ VE ALERTLER
-    func alertUser(of errorCode: AuthErrorCode) -> String {
-        var returnMessage: String = ""
-        switch errorCode {
-        case .internalError:
-            let alert = UIAlertController(title: "Başarısız", message: "Uygulamada teknik problem mevcut", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            returnMessage = alert.message ?? ""
-        case .keychainError:
-            print("Keychain Hatası")
-            returnMessage = "Keychain Hatası"
-        case .networkError:
-            let alert = UIAlertController(title: "Başarısız", message: "Lütfen internet bağlantınızı kontrol ediniz", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            returnMessage = alert.message ?? ""
-        case .weakPassword:
-            let alert = UIAlertController(title: "Başarısız", message: "Zayıf şifre. Lütfen 6 karakterden fazla şifre giriniz", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            returnMessage = alert.message ?? ""
-        case .wrongPassword:
-            let alert = UIAlertController(title: "Başarısız", message: "Mevcut şifreyi doğru giriniz", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            returnMessage = alert.message ?? ""
-        default:
-            let alert = UIAlertController(title: "Başarısız", message: "Bilinmeyen hata !", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            returnMessage = alert.message ?? ""
-        }
-        return returnMessage
-    }
+
+   
 }
