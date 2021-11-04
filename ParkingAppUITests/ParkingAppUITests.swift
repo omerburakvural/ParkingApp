@@ -31,7 +31,8 @@ class ParkingAppUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         let emailTextbox = app.textFields["emailSignin"]
-        let passwordTextbox = app.secureTextFields["Password"]
+        let passwordTextbox = app.textFields.element(boundBy: 1)
+//        let passwordTextbox = app.secureTextFields["Password"]
         let hideButton = app.buttons["hideButton"]
         let signinButton = app.buttons["Giriş"]
         
@@ -84,8 +85,8 @@ class ParkingAppUITests: XCTestCase {
         
         let sifremiUnuttumButton = app.buttons["Şifremi Unuttum"]
         sifremiUnuttumButton.tap()
-        let forgotpasswordtextbox = app.textFields["Email"]
-        XCTAssertTrue(forgotpasswordtextbox.exists)
+        let forgotemail = app.textFields["Email"]
+        XCTAssertTrue(forgotemail.exists)
     }
     func testNoUserButtonExists() throws
     {
@@ -98,8 +99,17 @@ class ParkingAppUITests: XCTestCase {
         let forgotPasswordSendButtton = app.buttons["sendButton"]
         XCTAssertTrue(forgotPasswordSendButtton.isEnabled)
         app.navigationBars.buttons.element(boundBy: 0).tap()
+      
     }
     
+    func testValue() throws
+    {
+        let app = XCUIApplication()
+        app.launch()
+        let a = app.textFields.element(boundBy: 1)
+        a.placeholderValue
+        print(a)
+    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {

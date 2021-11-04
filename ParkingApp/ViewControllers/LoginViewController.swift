@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
         
         isUserLoggedIn()
         hideButton.maximumContentSizeCategory = .small
-//        txtPassword.isSecureTextEntry.toggle()
+        txtPassword.isSecureTextEntry.toggle()
         
         // cardView
         cardView.layer.cornerRadius = 10.0

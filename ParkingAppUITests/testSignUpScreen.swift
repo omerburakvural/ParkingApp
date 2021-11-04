@@ -16,7 +16,7 @@ class testSignUpScreen: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testKayitolNameTextBox() throws {
         let app = XCUIApplication()
         app.launch()
@@ -26,9 +26,9 @@ class testSignUpScreen: XCTestCase {
         let isim = app.textFields["Name"]
         let soyisim = app.textFields["Surname"]
         let email = app.textFields["Email"]
-        let password = app.textFields.element(boundBy: 3)
-        let password_confirm = app.textFields.element(boundBy: 4)
-//        Çözümü olmayan bir hiyerarşi hatası oluştu. Objeler element üzerinden alındı.
+        let password = app.secureTextFields["Password"]
+        let password_confirm = app.secureTextFields["Password Confirm"]
+        let kaydol = app.buttons.element(boundBy: 0)
         XCTAssertTrue(isim.isEnabled)
         XCTAssertEqual(isim.exists, true)
         
@@ -45,7 +45,8 @@ class testSignUpScreen: XCTestCase {
         
         XCTAssertEqual(password_confirm.exists, true)
         XCTAssertTrue(password_confirm.isEnabled)
-
+        kaydol.tap()
+        
     }
     
 

@@ -45,7 +45,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="A2F-6T-DbC"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>

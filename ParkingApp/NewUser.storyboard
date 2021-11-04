@@ -48,7 +48,7 @@
                                                 <rect key="frame" x="0.0" y="330" width="340" height="34"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="Password"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" textContentType="password"/>
                                                 <connections>
                                                     <action selector="passwordTextbox:" destination="otX-AA-kiq" eventType="editingChanged" id="POz-yY-Jay"/>
                                                 </connections>
@@ -57,7 +57,7 @@
                                                 <rect key="frame" x="0.0" y="384" width="340" height="34"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="Password Confirm"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="754" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0r-B0-t3D">
                                                 <rect key="frame" x="0.0" y="438" width="340" height="39"/>
