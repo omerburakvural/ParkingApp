@@ -40,9 +40,9 @@ class NewUserTest: XCTestCase {
         sut = storyboard.instantiateViewController(withIdentifier: "newUser") as? NewUserViewController
         sut.loadViewIfNeeded()
         let passwordtext = try XCTUnwrap(sut.passwordTextbox, "Password textbox")
-        XCTAssertTrue(passwordtext.isSecureTextEntry, "Password secure giriş ok")
+        XCTAssertFalse(passwordtext.isSecureTextEntry)
        
-        XCTAssertNotNil(self.sut.navBar.leftBarButtonItem)
+       
     }
     
     func testgeriButon() throws
@@ -234,7 +234,7 @@ func testAlert() throws
     func testHideButtonPushTextbox () throws{
         sayfaac()
         sut.hideButton.sendActions(for: .touchUpInside)
-        XCTAssertFalse(sut.passwordTextbox.isSecureTextEntry)
+        XCTAssertTrue(sut.passwordTextbox.isSecureTextEntry)
     }
     
     func testpasswordtextboxEditchanged () throws{
@@ -246,8 +246,7 @@ func testAlert() throws
     {
         sayfaac()
         
-        sut.hideButton.sendActions(for: .touchUpInside)
-        XCTAssertFalse(sut.passwordTextbox.isSecureTextEntry)
+        
         sut.passwordTextbox!.text! = "234567"
         sut.passwordTextbox.sendActions(for: .editingChanged)
         XCTAssertEqual(sut.passwordagainTextbox!.text!, "234567")

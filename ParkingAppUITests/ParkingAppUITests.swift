@@ -41,7 +41,6 @@ class ParkingAppUITests: XCTestCase {
         XCTAssertTrue(hideButton.exists, "Şifre gizleme butonu mevcut")
         XCTAssertTrue(hideButton.isEnabled)
         XCTAssertTrue(hideButton.isEnabled, "Gizleme butonu açık")
-        
         XCTAssertTrue(passwordTextbox.isEnabled, "Parola giriş mevcut")
         
         XCTAssertTrue(signinButton.exists, "Kullanıcı giriş mevcut")
@@ -57,6 +56,48 @@ class ParkingAppUITests: XCTestCase {
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    func testSigninSwitch() throws
+    {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        let `switch` = app.switches["benihatırla"]
+        XCTAssertTrue(`switch`.isEnabled, "beni hatırla switch kullanılabilir durumda")
+       
+    }
+    func testIcon() throws
+    {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        let image = app.images["ikon"]
+        XCTAssertTrue(image.exists, "İkon yerinde")
+    }
+    func testNoUserTextFieldExists() throws
+    {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        let sifremiUnuttumButton = app.buttons["Şifremi Unuttum"]
+        sifremiUnuttumButton.tap()
+        let forgotpasswordtextbox = app.textFields["Email"]
+        XCTAssertTrue(forgotpasswordtextbox.exists)
+    }
+    func testNoUserButtonExists() throws
+    {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        let sifremiUnuttumButton = app.buttons["Şifremi Unuttum"]
+        sifremiUnuttumButton.tap()
+        let forgotPasswordSendButtton = app.buttons["sendButton"]
+        XCTAssertTrue(forgotPasswordSendButtton.isEnabled)
+        app.navigationBars.buttons.element(boundBy: 0).tap()
     }
     
 

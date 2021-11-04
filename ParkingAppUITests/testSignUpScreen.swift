@@ -10,24 +10,43 @@ import XCTest
 class testSignUpScreen: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
+        continueAfterFailure = true
         XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
-
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testKayitolNameTextBox() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let signupButton = app.buttons["Üye Ol"]
+        signupButton.tap()
+        let isim = app.textFields["Name"]
+        let soyisim = app.textFields["Surname"]
+        let email = app.textFields["Email"]
+        let password = app.textFields.element(boundBy: 3)
+        let password_confirm = app.textFields.element(boundBy: 4)
+//        Çözümü olmayan bir hiyerarşi hatası oluştu. Objeler element üzerinden alındı.
+        XCTAssertTrue(isim.isEnabled)
+        XCTAssertEqual(isim.exists, true)
+        
+        XCTAssertTrue(soyisim.isEnabled)
+        XCTAssertEqual(soyisim.exists, true)
+        
+        XCTAssertTrue(email.isEnabled)
+        XCTAssertEqual(email.exists, true)
+        email.tap()
+        sleep(2)
+        
+        XCTAssertEqual(password.exists, true)
+        XCTAssertTrue(password.isEnabled)
+        
+        XCTAssertEqual(password_confirm.exists, true)
+        XCTAssertTrue(password_confirm.isEnabled)
+
     }
+    
 
 }

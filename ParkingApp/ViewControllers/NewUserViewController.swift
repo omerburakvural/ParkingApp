@@ -44,8 +44,8 @@ class NewUserViewController: UIViewController {
     @IBOutlet weak var hideButton: UIButton!
     
     @IBAction func hideButton(_ sender: Any) {
-        passwordTextbox.isSecureTextEntry.toggle()
-        passwordagainTextbox.isSecureTextEntry.toggle()
+      passwordTextbox.isSecureTextEntry.toggle()
+     passwordagainTextbox.isSecureTextEntry.toggle()
         if passwordTextbox.isSecureTextEntry && passwordagainTextbox.isSecureTextEntry {
             let image = UIImage(systemName: "eye")
             hideButton.setImage(image, for: .normal)
