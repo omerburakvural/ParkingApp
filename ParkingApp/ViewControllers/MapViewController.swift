@@ -172,7 +172,12 @@ extension MapViewController: MKMapViewDelegate{
             annotationView?.annotation = annotation
             annotationView?.tag = (annotation as! CustomPointAnnotation).tag
         }
-        annotationView?.image = UIImage(named: "mapPin")
+        let pinImage = UIImage(named: "mapPin")
+        let size = CGSize(width: 40.0, height: 40.0)
+        UIGraphicsBeginImageContext(size)
+        pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        annotationView?.image = resizedImage
         
         return annotationView
     }

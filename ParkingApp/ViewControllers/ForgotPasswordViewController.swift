@@ -36,6 +36,7 @@ class ForgotPasswordViewController: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func sendButtonTapped(_ sender: Any) {
         
         let auth = Auth.auth()
@@ -53,7 +54,8 @@ class ForgotPasswordViewController: UIViewController {
             
             let alert = UIAlertController(title: "Bilgi", message: "Şifre resetlemek için mail adresinize mail yollanmıştır.", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Tamam", style: .default, handler: { (action) -> Void in
-                print("Ok button tapped")
+                print("Ok button tapped2")
+                self.dismiss(animated: true, completion: nil)
             })
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)
