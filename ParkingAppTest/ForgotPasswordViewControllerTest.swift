@@ -39,12 +39,5 @@ class ForgotPasswordViewControllerTest: XCTestCase {
         vc.yenileButton.sendActions(for: .touchUpInside)
         XCTAssertTrue(((vc.yenileButton.actions(forTarget: vc, forControlEvent: .touchUpInside)?.contains("sendButtonTapped:")) != nil))
     }
-    
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 
 }

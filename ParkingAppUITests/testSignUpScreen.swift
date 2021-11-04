@@ -10,11 +10,18 @@ import XCTest
 class testSignUpScreen: XCTestCase {
 
     override func setUpWithError() throws {
-        continueAfterFailure = true
-        XCUIApplication().launch()
+        continueAfterFailure = false
+        let application = XCUIApplication()
+        application.launchEnvironment = ["UITESTS":"1"]
+        application.launch()
     }
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+    override func setUp() {
+        super.setUp()
+        let app = XCUIApplication()
+        app.launchArguments += ["UI-Testing"]
     }
     
     func testKayitolNameTextBox() throws {
@@ -60,6 +67,19 @@ class testSignUpScreen: XCTestCase {
      
         XCTAssertEqual(profileButton.isEnabled, false)
     }
+    func testKayitOlmadanHaritaOrtalama() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let noUserButton = app.buttons["Üye Olmadan Devam Et"]
+        noUserButton.tap()
+       
+        let arrowButton = app.buttons["arrowButton"]
+        print(arrowButton.title)
+     
+        XCTAssertEqual(arrowButton.isEnabled, true)
+    }
+    
     
 
 }

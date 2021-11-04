@@ -42,7 +42,6 @@ class UserDetailTest: XCTestCase {
     {
         sayfabaslatma()
         XCTAssertTrue(sut.saveButton.isEnabled)
-        sut.saveButton.action
         XCTAssertNotNil(usermodelipbclass.userID)
         XCTAssertNotNil(usermodelipbclass.userEmail)
         XCTAssertNotNil(usermodelipbclass.userName)

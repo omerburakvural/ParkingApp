@@ -16,9 +16,7 @@ class PasswordResetViewControllerTest: XCTestCase {
   
     
     var passwordmodel = PasswordChangeModel()
-    
     var vc: PasswordResetViewController!
-    
     override func setUpWithError() throws {
         let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
         vc = (storyboard.instantiateViewController(withIdentifier: "passwordReset") as? PasswordResetViewController)
@@ -88,13 +86,6 @@ class PasswordResetViewControllerTest: XCTestCase {
         let yenisifrestekrar = "123456"
         let kontrolValidasyonHataDondur = passwordmodel.validasyon(sifre: sifre, yenisifre: yenisifres, yenisifretekrar: yenisifrestekrar)
         XCTAssertFalse(kontrolValidasyonHataDondur)
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
     
 }

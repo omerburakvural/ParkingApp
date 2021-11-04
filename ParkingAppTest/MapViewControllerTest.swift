@@ -48,13 +48,4 @@ class MapViewControllerTest: XCTestCase {
         vc.backButton.target?.perform(vc.backButton.action, with: nil)
         XCTAssertTrue(((vc.backButton.action?.description.contains("backButtonClicked")) != nil))
     }
-
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

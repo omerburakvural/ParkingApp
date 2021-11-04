@@ -40,6 +40,7 @@
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C0-w0-sET">
                                 <rect key="frame" x="320" y="123" width="59" height="37"/>
+                                <accessibility key="accessibilityConfiguration" identifier="arrowButton"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="rmm-xV-07j"/>
                                 </constraints>

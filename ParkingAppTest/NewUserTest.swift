@@ -262,8 +262,7 @@ func testAlert() throws
         
         sayfaac()
         sut.passwordTextbox.text = "234567"
-        
-        
+        XCTAssertEqual(sut.passwordTextbox!.text!, "234567")
     }
 
 
