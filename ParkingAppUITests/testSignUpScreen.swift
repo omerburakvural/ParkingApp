@@ -37,7 +37,7 @@ class testSignUpScreen: XCTestCase {
         
         XCTAssertTrue(email.isEnabled)
         XCTAssertEqual(email.exists, true)
-        email.tap()
+       
         sleep(2)
         
         XCTAssertEqual(password.exists, true)
@@ -47,6 +47,18 @@ class testSignUpScreen: XCTestCase {
         XCTAssertTrue(password_confirm.isEnabled)
         kaydol.tap()
         
+    }
+    func testKayitOlmadanNoUser() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let noUserButton = app.buttons["Üye Olmadan Devam Et"]
+        noUserButton.tap()
+       
+        let profileButton = app.navigationBars.buttons.element(boundBy: 1)
+        print(profileButton.title)
+     
+        XCTAssertEqual(profileButton.isEnabled, false)
     }
     
 

@@ -28,7 +28,8 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3o-Mj-IZH" userLabel="Email">
                                                         <rect key="frame" x="0.0" y="0.0" width="337" height="40"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="emailSignin">
-                                                            <bool key="isElement" value="NO"/>
+                                                            <accessibilityTraits key="traits" none="YES"/>
+                                                            <bool key="isElement" value="YES"/>
                                                         </accessibility>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="xhu-0i-YbP"/>
@@ -100,6 +101,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pou-mR-xp0">
                                                 <rect key="frame" x="175" y="320" width="180" height="43"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Üye Olmadan Devam Et"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Üye Olmadan Devam Et">
                                                     <color key="titleColor" red="0.18289321659999999" green="0.41205567119999997" blue="0.58041328189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

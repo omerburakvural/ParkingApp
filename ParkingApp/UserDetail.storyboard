@@ -18,6 +18,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FL1-gg-7v8">
                                 <rect key="frame" x="146" y="831" width="122.5" height="31"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Oturumu Kapat"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Oturumu Kapat" cornerStyle="medium"/>
                                 <connections>
@@ -95,6 +96,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text Field" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tzm-h9-Akw">
                                                 <rect key="frame" x="151.5" y="0.0" width="186.5" height="31"/>
                                                 <color key="backgroundColor" red="0.18350580329999999" green="0.41160207989999997" blue="0.58041334150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Eposta"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits" textContentType="email"/>
@@ -126,6 +128,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text Field" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gSr-Qg-eeq">
                                                 <rect key="frame" x="122" y="0.0" width="216" height="31"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Plaka"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits" textContentType="address-level3"/>
@@ -163,6 +166,7 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a57-sk-xks">
                                                 <rect key="frame" x="338" y="0.0" width="40" height="31"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="PasswordReset"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="3ja-EX-m3E"/>
                                                 </constraints>

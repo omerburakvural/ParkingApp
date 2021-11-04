@@ -31,33 +31,59 @@ class ParkingAppUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         let emailTextbox = app.textFields["emailSignin"]
-        let passwordTextbox = app.textFields.element(boundBy: 1)
-//        let passwordTextbox = app.secureTextFields["Password"]
+//        let passwordTextbox = app.textFields.element(boundBy: 1)
+        let passwordTextbox = app.secureTextFields["Password"]
         let hideButton = app.buttons["hideButton"]
         let signinButton = app.buttons["Giriş"]
         
-        XCTAssertTrue(emailTextbox.isEnabled, "Email girişi açıktır")
-        XCTAssertTrue(emailTextbox.exists, "Email girişi mevcut")
+        XCTAssertTrue(emailTextbox.isEnabled, "Email girişi açık değil")
+        XCTAssertTrue(emailTextbox.exists, "Email girişi mevcut değil")
         
-        XCTAssertTrue(hideButton.exists, "Şifre gizleme butonu mevcut")
+        XCTAssertTrue(hideButton.exists, "Şifre gizleme butonu mevcut değil")
         XCTAssertTrue(hideButton.isEnabled)
-        XCTAssertTrue(hideButton.isEnabled, "Gizleme butonu açık")
-        XCTAssertTrue(passwordTextbox.isEnabled, "Parola giriş mevcut")
+        XCTAssertTrue(hideButton.isEnabled, "Gizleme butonu açık değil")
+        XCTAssertTrue(passwordTextbox.isEnabled, "Parola giriş mevcut değil")
         
-        XCTAssertTrue(signinButton.exists, "Kullanıcı giriş mevcut")
-        XCTAssertTrue(signinButton.isEnabled, "Giriş butonu açık")
-       
-        emailTextbox.tap()
-        emailTextbox.typeText("erademtest@gmail.iu")
+        XCTAssertTrue(signinButton.exists, "Kullanıcı giriş mevcut değil")
+        XCTAssertTrue(signinButton.isEnabled, "Giriş butonu açık değil")
+        app.switches["benihatırla"].tap()
+        if emailTextbox.isHittable
+        {
+            emailTextbox.tap()
+            emailTextbox.typeText("")
+            emailTextbox.typeText("erademtest@gmail.iu")
+        }
+        
         passwordTextbox.tap()
         passwordTextbox.typeText("123456")
         signinButton.tap()
+        let alert = app.alerts["Uyarı!!!"]
+        if alert.isHittable
+        {
+        let devamediliyor = alert.buttons["Tamam"]
+            devamediliyor.tap()
+        }
+        let profile = app.navigationBars.buttons["editProfileButton"]
+//        print(profile.isEnabled)
+        profile.tap()
+        
+        let eposta = app.textFields["Eposta"]
+        let plaka = app.textFields["Plaka"]
+        XCTAssertEqual(eposta.exists, true)
+        XCTAssertEqual(plaka.exists, true)
+        let signoutButton = app.buttons["Oturumu Kapat"]
+        XCTAssertEqual(signoutButton.exists, true)
+        XCTAssertEqual(signoutButton.isEnabled, true)
+        signoutButton.tap()
+       
         
         //        XCTAssertEqual(emailTextField.textContentType, UITextContentType.username, "Email address UITextField does not have an Email Address Content Type set")
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    
     func testSigninSwitch() throws
     {
         
@@ -65,7 +91,7 @@ class ParkingAppUITests: XCTestCase {
         app.launch()
         
         let `switch` = app.switches["benihatırla"]
-        XCTAssertTrue(`switch`.isEnabled, "beni hatırla switch kullanılabilir durumda")
+        XCTAssertTrue(`switch`.isEnabled, "beni hatırla switch kullanılabilir durumda değil")
        
     }
     func testIcon() throws
@@ -75,7 +101,7 @@ class ParkingAppUITests: XCTestCase {
         app.launch()
         
         let image = app.images["ikon"]
-        XCTAssertTrue(image.exists, "İkon yerinde")
+        XCTAssertTrue(image.exists, "İkon yerinde değil")
     }
     func testNoUserTextFieldExists() throws
     {
@@ -102,14 +128,7 @@ class ParkingAppUITests: XCTestCase {
       
     }
     
-    func testValue() throws
-    {
-        let app = XCUIApplication()
-        app.launch()
-        let a = app.textFields.element(boundBy: 1)
-        a.placeholderValue
-        print(a)
-    }
+ 
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {

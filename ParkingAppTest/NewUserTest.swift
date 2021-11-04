@@ -125,6 +125,7 @@ class NewUserTest: XCTestCase {
         sut = storyboard.instantiateViewController(withIdentifier: "newUser") as? NewUserViewController
         sut.loadViewIfNeeded()
         
+        
 
         func datafilledtest() {
             
@@ -242,17 +243,28 @@ func testAlert() throws
         sut.passwordTextbox.sendActions(for: .editingChanged)
         XCTAssertTrue(((sut.passwordTextbox.actions(forTarget: sut, forControlEvent: .editingChanged)?.contains("passwordTextbox:")) != nil))
     }
-//    func testKaydolYeniHide() throws
-//    {
-//        sayfaac()
-//        sut.passwordTextbox!.text! = "2345678"
-//        sut.passwordTextbox.sendActions(for: .editingChanged)
-//        sut.passwordTextbox!.sendActions(for: .editingChanged)
-//        print(sut.passwordagainTextbox!.text!)
-////        XCTAssertEqual(sut.passwordagainTextbox!.text!, "234567")
-//        XCTAssertNotNil(sut.passwordagainTextbox!.text!)
-////        New user sayfasında, şifre girildikten sonra editchanged scene test edilerek diğer textboxta da verinin doğru olup olmadığı test edilmektedir.
-//    }
+    func testKaydolYeniHide() throws
+    {
+        sayfaac()
+        sut.hideButton.sendActions(for: .touchUpInside)
+        sut.passwordTextbox!.text! = "2345678"
+        sut.passwordTextbox.sendActions(for: .editingChanged)
+        print(sut.passwordagainTextbox!.text!)
+        XCTAssertEqual(sut.passwordagainTextbox!.text!, "2345678")
+        XCTAssertNotNil(sut.passwordagainTextbox!.text!)
+        
+        
+//        New user sayfasında, şifre girildikten sonra editchanged scene test edilerek diğer textboxta da verinin doğru olup olmadığı test edilmektedir.
+    }
+    
+    func testKaydol() throws
+    {
+        
+        sayfaac()
+        sut.passwordTextbox.text = "234567"
+        
+        
+    }
 
 
 }

@@ -57,6 +57,16 @@
                </Test>
             </SkippedTests>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0DEFA613272F3502000B0010"
+               BuildableName = "ParkingAppUITests.xctest"
+               BlueprintName = "ParkingAppUITests"
+               ReferencedContainer = "container:ParkingApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
